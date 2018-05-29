@@ -24,4 +24,8 @@ hs_err_pid*
 /.metadata/
 =======
 /.DS_Store
+<<<<<<< HEAD
 >>>>>>> f296c8cf8a2a64a0c32c5a35f6b4474efee13697
+=======
+lib/.DS_Store
+>>>>>>> b195f2ade463834fcf57b28480afef11b4e28595
