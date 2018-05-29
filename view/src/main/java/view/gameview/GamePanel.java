@@ -3,24 +3,27 @@ package view.gameview;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.Model;
+import model.component.Component;
+
 public class GamePanel {
 	private JLabel[][] labels;
 	private Model model;
 
 	
-public GamePanel(model Model) {
+public GamePanel(Model model) {
 	
 }
 	
-package initializeMap() {
+void gameview() {
 	
 }
 	
-public updateMap(components Component[][]) {
+public void updateMap(Component[][] components) {
 	
 }
 
-private addListener() {
+private void addListener() {
 	
 }
 

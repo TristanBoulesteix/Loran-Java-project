@@ -2,17 +2,20 @@ package view.gameview;
 
 import javax.swing.JFrame;
 
+import model.Model;
+import model.component.Component;
+
 public class GameFrame {
 
 	private GamePanel panel;
 	private Model model;
 
-public GameFrame(model Model) {
+public GameFrame(Model model) {
 	
 }
 	
-public initializeMapComponent(component Component[][]) {
-	
+public void initializeMapComponent(Component[][] component) {
+
 }
 
 public GamePanel getPanel() {
