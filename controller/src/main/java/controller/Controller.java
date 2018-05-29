@@ -18,7 +18,9 @@ public class Controller { // Create class controller
 	private Thread demon;
 	private int score;
 
-	public Controller(GameFrame gameFrame, Model model) { // Create the controller with parameters
+	public Controller(Model model) { // Create the controller with parameters
+		this.model = model;
+		gameFrame = new GameFrame(model);
 	}
 
 	public void play() { // Launch the game

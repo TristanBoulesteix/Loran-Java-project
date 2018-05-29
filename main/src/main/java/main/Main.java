@@ -1,10 +1,7 @@
 package main;
 
-import java.sql.SQLException;
-
-import controller.ControllerFacade;
-import model.ModelFacade;
-import view.levelselector.ViewFacade;
+import controller.Controller;
+import model.Model;
 
 /**
  * <h1>The Class Main.</h1>
@@ -14,20 +11,16 @@ import view.levelselector.ViewFacade;
  */
 public abstract class Main {
 
-    /**
-     * The main method.
-     *
-     * @param args
-     *            the arguments
-     */
-    public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
-
-        try {
-            controller.start();
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }
-    }
+	/**
+	 * The main method.
+	 *
+	 * @param args
+	 *            the arguments
+	 */
+	public static void main(final String[] args) {
+		final Model model = new Model();
+		final Controller controller = new Controller(model);
+		controller.play();
+	}
 
 }
