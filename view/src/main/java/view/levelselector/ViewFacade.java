@@ -1,4 +1,4 @@
-package levelselector;
+package view.levelselector;
 
 import javax.swing.JOptionPane;
 

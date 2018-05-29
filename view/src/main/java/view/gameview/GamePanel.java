@@ -1,4 +1,4 @@
-package gameview;
+package view.gameview;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
