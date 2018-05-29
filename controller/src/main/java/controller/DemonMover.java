@@ -1,19 +1,28 @@
 package controller;
 
-public class DemonMover implements Runable{ // Create the class DemonMover wich is implements by Runable
+import model.component.Component;
+import model.component.Direction;
 
-	private Direction direction;  //Create the attribute direction
-	
-	public DemonMover(Componement[][] componementsPosition) {  //Demons Movement
-		
+public class DemonMover implements Runnable { // Create the class DemonMover wich is implements by Runable
+
+	private Direction direction; // Create the attribute direction
+
+	public DemonMover(Component[][] componementsPosition) { // Demons Movement
+
 	}
-	
-	public Componement[][] getComponementsPosition(){  //Access to variables
-		
+
+	public Component[][] getComponementsPosition() { // Access to variables
+		return null;
 	}
-	
-	public void setComponement(Componement[][] componementsPosition) { //Edit variables
-		
+
+	public void setComponement(Component[][] componementsPosition) { // Edit variables
+
 	}
-			
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
 }
