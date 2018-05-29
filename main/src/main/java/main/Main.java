@@ -3,8 +3,8 @@ package main;
 import java.sql.SQLException;
 
 import controller.ControllerFacade;
+import levelselector.ViewFacade;
 import model.ModelFacade;
-import view.ViewFacade;
 
 /**
  * <h1>The Class Main.</h1>

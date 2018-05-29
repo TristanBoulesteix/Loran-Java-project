@@ -1,6 +1,8 @@
-package view;
+package levelselector;
 
 import javax.swing.JOptionPane;
+
+import view.IView;
 
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
