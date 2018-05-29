@@ -9,8 +9,8 @@ public class ComponentFactory {
 		return new Spell(false, coordinate, false);
 	}
 
-	public static Kyacj createKyacj(Coordinate coordinate) {
-		return new Kyacj(false, coordinate);
+	public static Kyracj createKyacj(Coordinate coordinate) {
+		return new Kyracj(false, coordinate);
 	}
 
 	public static Maarcg createMarrcg(Coordinate coordinate) {
