@@ -22,7 +22,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/maxim/eclipe_workspaceTristan/lib/showboard.jar" sourcepath="/lorann/lib/showboard-master">
+=======
+	<classpathentry kind="lib" path="/Users/cpt_n2mo/Desktop/WORKSPACE/Loran-Java-project/lib/showboard.jar" sourcepath="/lorann/lib/showboard-master">
+>>>>>>> f296c8cf8a2a64a0c32c5a35f6b4474efee13697
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/lorann/lib/showboard.doc.jar!/doc"/>
 		</attributes>
