@@ -1,6 +1,6 @@
 package controller;
 
-public class DemonMover implements Runable{
+public class DemonMover implements Runable{ // Create the class DemonMover wich is implements by Runable
 
 	private Direction direction;  //Create the attribute direction
 	
