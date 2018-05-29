@@ -1,17 +1,22 @@
 package controller;
 
+import java.util.ArrayList;
+
 import model.Model;
 import model.component.Component;
 import model.component.Coordinate;
 import view.gameview.GameFrame;
+import view.gameview.GamePanel;
 
 public class Controller { // Create class controller
 
-	private GameFrame gameFrame; /*
-									 * private GamePanel gamePanel; private Model model; Declaration of attributes
-									 * private ArrayList<Thread> processus; private Thread playerMover; private
-									 * Thread demon; private int score;
-									 */
+	private GameFrame gameFrame;
+	private GamePanel gamePanel;
+	private Model model;
+	private ArrayList<Thread> processus;
+	private Thread playerMover;
+	private Thread demon;
+	private int score;
 
 	public Controller(GameFrame gameFrame, Model model) { // Create the controller with parameters
 	}
