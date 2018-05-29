@@ -1,9 +1,9 @@
 package model.component;
 
-public class Kyacj extends Demon {
+public class Kyracj extends Demon {
 	private final static String PATH = "";
 
-	public Kyacj(boolean permeability, Coordinate coordinate) {
+	public Kyracj(boolean permeability, Coordinate coordinate) {
 		super(PATH, permeability, coordinate);
 	}
 
