@@ -60,7 +60,7 @@ INSERT INTO `level` (`id`, `map`) VALUES
 (2, 'CHHHHHHHHHHHHHCCCCCCVP            VHCCCCV               VHCCV                VHCV        V VVVV   VHV        V V       VV        V V     TVHV        V V   G VHCV        V V    VHCCVHHHHHHHHH V   VHCCCV2        LV  VHCCCCCHHHHHHHHHHHHHCCCCCC'),
 (3, 'CHHHHHHHHHHHHHHHHHHCVP                 V             VVVVVV             VV      VVVVVVVVVVVVVV1                 VVVVVVVVV         VLVVVVVVVVV   VVVVVVVVVV          VVVVVVVVVV  V               VVT V            V  VVG V            V 3VCHHHHHHHHHHHHHHHHHHC'),
 (4, 'CHHHHHHHHHHHHHHHHHHCVP                 V             VHHHHHHHHHHHHHHHHT VVHHHHHHHHHHHHHHHH  VVL2                VV  HHHHHHHHHHHHHHHHVV  HHHHHHHHHHHHHHHHVV                  VVHHHHHHHHHHHH      VVTTTTT             VVGT                VCHHHHHHHHHHHHHHHHHHC'),
-(5, 'CHHHHHHHHHHHHHHHHHHCVP                 V             V                  VVHHHHHHHHHHHHHHHHH VVHHHHHHHHHHHHHHHHH VV2                 VVHHHHHHHHHHHHHHH   VVHHHHHHHHHHHHHHH   VV4                 VVHHHHHHHHH         VVGT               LVCHHHHHHHHHHHHHHHHHHC');
+(5, 'CHHHHHHHHHHHHHHHHHHCVP                 VV                  VVHHHHHHHHHHHHHHHHH VVHHHHHHHHHHHHHHHHH VV2                 VVHHHHHHHHHHHHHHH   VVHHHHHHHHHHHHHHH   VV4                 VVHHHHHHHHH         VVGT               LVCHHHHHHHHHHHHHHHHHHC');
 
 --
 -- Index pour les tables exportées
