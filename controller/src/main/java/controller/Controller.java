@@ -12,7 +12,7 @@ import view.gameview.GameFrame;
 import view.gameview.GamePanel;
 import view.levelselector.LevelSelector;
 
-public class Controller implements Observer{ // Create class controller
+public class Controller implements Observer { // Create class controller
 
 	private GameFrame gameFrame;
 	private GamePanel gamePanel;
@@ -23,7 +23,7 @@ public class Controller implements Observer{ // Create class controller
 	private int score;
 
 	public Controller(Model model) { // Create the controller with parameters
-	
+
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
 	}
@@ -37,6 +37,7 @@ public class Controller implements Observer{ // Create class controller
 		}
 		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
+		gameFrame.setVisible(true);
 	}
 
 	private void initializeGame() { // Initialization of the game
@@ -63,6 +64,6 @@ public class Controller implements Observer{ // Create class controller
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		System.out.println(arg1);
-		
+
 	}
 }

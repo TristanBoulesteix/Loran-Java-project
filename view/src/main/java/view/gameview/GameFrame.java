@@ -23,7 +23,6 @@ public class GameFrame extends JFrame {
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setUndecorated(true);
 		this.setContentPane(panel);
-		this.setVisible(true);
 		this.setResizable(false);
 	}
 
