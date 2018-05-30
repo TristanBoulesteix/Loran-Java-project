@@ -1,7 +1,7 @@
 package model.component;
 
 public class CornerSet extends Setting {
-	private final static String PATH = "";
+	private final static String PATH = "/src/main/ressources/Pictures/set/cornerSet";
 
 	public CornerSet(Coordinate coordinate) {
 		super(coordinate, PATH);

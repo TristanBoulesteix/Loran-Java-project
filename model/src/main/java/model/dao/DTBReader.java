@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DTBReader extends AbstractDAO {
-	private static final String PROCEDURE_CALL = "{CALL getLevelByID(?)}";
+	private static final String PROCEDURE_CALL = "{CALL findMapByID(?)}";
 
 	public static String ReturnMap(int id) throws SQLException {
 		final CallableStatement callStatement = prepareCall(PROCEDURE_CALL);

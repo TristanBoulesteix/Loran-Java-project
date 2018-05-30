@@ -23,6 +23,7 @@ hs_err_pid*
 /.metadata/
 /.DS_Store
 lib/.DS_Store
+
 model/.DS_Store
 model/src/.DS_Store
 model/src/main/.DS_Store
@@ -30,3 +31,6 @@ vpp/.DS_Store
 model/src/main/ressources/Pictures/set/.DS_Store
 model/src/main/ressources/Pictures/.DS_Store
 model/src/main/ressources/.DS_Store
+
+vpp/.LorannTeam.vpp.lck
+
