@@ -34,7 +34,7 @@ public abstract class ComponentFactory {
 					components[x][y] = createLorann(new Coordinate(x, y));
 					break;
 
-				case 'O':
+				case 'L':
 					components[x][y] = createEnergySphere(new Coordinate(x, y));
 					break;
 
@@ -64,7 +64,6 @@ public abstract class ComponentFactory {
 
 				default:
 					components[x][y] = components[x][y] = createEmpty(new Coordinate(x, y));
-					;
 					break;
 				}
 			}

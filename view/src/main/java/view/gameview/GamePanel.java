@@ -37,12 +37,9 @@ public class GamePanel extends JPanel implements KeyListener {
 				GridBagConstraints constraints = new GridBagConstraints();
 				constraints.gridx = x;
 				constraints.gridx = y;
+				constraints.fill = GridBagConstraints.BOTH;
 				JLabel label = new JLabel(new ImageIcon(components[x][y].getImage(Direction.DOWN)));
 				this.add(label, constraints);
-
-				System.out.print("x = " + x + " ");
-				System.out.println("y = " + y);
-
 			}
 		}
 	}
