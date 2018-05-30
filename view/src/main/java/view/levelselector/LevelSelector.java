@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class LevelSelector {
 
 	private int level;
-	private final static String[] LEVEL_LIST = { "Map 1", "Map 2", "Map 3", "Map 4" };;
+	private final static String[] LEVEL_LIST = { "Map 1", "Map 2", "Map 3", "Map 4","Map 5" };;
 
 	public LevelSelector() {
 		super();
