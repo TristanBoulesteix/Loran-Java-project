@@ -13,7 +13,7 @@ public class Model {
 
 	public Model() {
 		components = new Component[12][20];
-	}
+	} f
 
 	public Component[][] getMap() {
 		return components;
