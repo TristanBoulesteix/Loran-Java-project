@@ -58,8 +58,8 @@ CREATE TABLE `level` (
 INSERT INTO `level` (`id`, `map`) VALUES
 (1, 'CHHHHHHHHHHHHHHHHHHCV                VLVV  P             V VV                V VV                V VV                  VV                  VV                  VVHHHH              VVT  H        HHHHHHVVG    V           1VCHHHHHHHHHHHHHHHHHHC'),
 (2, 'CHHHHHHHHHHHHHCCCCCCVP            VHCCCCV               VHCCV                VHCV        V VVVV   VHV        V V       VV        V V     TVHV        V V   G VHCV        V V    VHCCVHHHHHHHHH V   VHCCCV2        LV  VHCCCCCHHHHHHHHHHHHHCCCCCC'),
-(3, 'CHHHHHHHHHHHHHHHHHHCVP                 V             VVVVVV             VV      VVVVVVVVVVVVVV1                 VVVVVVVVV         VLVVVVVVVVV   VVVVVVVVVV          VVVVVVVVVV  V               VVT V            V  VVG V            V 3VCHHHHHHHHHHHHHHHHHHC'),
-(4, 'CHHHHHHHHHHHHHHHHHHCVP                 V             VHHHHHHHHHHHHHHHHT VVHHHHHHHHHHHHHHHH  VVL2                VV  HHHHHHHHHHHHHHHHVV  HHHHHHHHHHHHHHHHVV                  VVHHHHHHHHHHHH      VVTTTTT             VVGT                VCHHHHHHHHHHHHHHHHHHC'),
+(3, 'CHHHHHHHHHHHHHHHHHHCVP                 VVVVVVV             VV      VVVVVVVVVVVVVV1                 VVVVVVVVV         VLVVVVVVVVV   VVVVVVVVVV          VVVVVVVVVV  V               VVT V            V  VVG V            V 3VCHHHHHHHHHHHHHHHHHHC'),
+(4, 'CHHHHHHHHHHHHHHHHHHCVP                 VVHHHHHHHHHHHHHHHHT VVHHHHHHHHHHHHHHHH  VVL2                VV  HHHHHHHHHHHHHHHHVV  HHHHHHHHHHHHHHHHVV                  VVHHHHHHHHHHHH      VVTTTTT             VVGT                VCHHHHHHHHHHHHHHHHHHC'),
 (5, 'CHHHHHHHHHHHHHHHHHHCVP                 VV                  VVHHHHHHHHHHHHHHHHH VVHHHHHHHHHHHHHHHHH VV2                 VVHHHHHHHHHHHHHHH   VVHHHHHHHHHHHHHHH   VV4                 VVHHHHHHHHH         VVGT               LVCHHHHHHHHHHHHHHHHHHC');
 
 --
