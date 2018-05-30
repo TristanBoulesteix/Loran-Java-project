@@ -1,6 +1,8 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import model.Model;
 import model.component.Component;
@@ -9,7 +11,7 @@ import view.gameview.GameFrame;
 import view.gameview.GamePanel;
 import view.levelselector.LevelSelector;
 
-public class Controller { // Create class controller
+public class Controller implements Observer{ // Create class controller
 
 	private GameFrame gameFrame;
 	private GamePanel gamePanel;
@@ -22,7 +24,7 @@ public class Controller { // Create class controller
 	public Controller(Model model) { // Create the controller with parameters
 	
 		this.model = model;
-		gameFrame = new GameFrame(model);
+		gameFrame = new GameFrame(model, this);
 	}
 
 	public void play() { // Launch the game
@@ -50,5 +52,11 @@ public class Controller { // Create class controller
 
 	private void closeAllThread() { // Finish all Thread
 
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		System.out.println(arg1);
+		
 	}
 }

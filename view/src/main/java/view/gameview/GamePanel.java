@@ -11,14 +11,20 @@ import model.Model;
 import model.component.Component;
 import model.component.Direction;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.Observer;
 
-public class GamePanel extends JPanel{
+public class GamePanel extends JPanel implements KeyListener{
 	private JLabel[][] labels;
 	private Model model;
-
+	private Observer observer;
 	
-public GamePanel(Model model) {
+	
+public GamePanel(Model model, Observer observer) {
 	setLayout(new GridBagLayout());
+	this.addKeyListener(this);
+	this.observer = observer;
 }
 	
 void gameview() {
@@ -42,8 +48,41 @@ public void updateMap(Component[][] components) {
 	}
 }
 
-private void addListener() {
-	
-}
+		@Override
+		public void keyPressed(KeyEvent e) {
+			int keyCode = e.getKeyCode();
+			
+			switch(keyCode) {
+			case KeyEvent.VK_UP:
+	            observer.update(null, Direction.UP);
+	            break;
+	        case KeyEvent.VK_DOWN:
+	        	observer.update(null, Direction.DOWN);
+	            break;
+	        case KeyEvent.VK_LEFT:
+	        	observer.update(null, Direction.LEFT);
+	            break;
+	        case KeyEvent.VK_RIGHT :
+	        	observer.update(null, Direction.RIGHT);
+	            break;
+	        case KeyEvent.VK_SPACE:
+	        	observer.update();
+	            
+			}
+			
+		}
+
+		@Override
+		public void keyReleased(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		
+		}
+
+		@Override
+		public void keyTyped(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
 
 }

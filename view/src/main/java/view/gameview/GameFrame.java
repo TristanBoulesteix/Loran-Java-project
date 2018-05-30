@@ -1,6 +1,7 @@
 package view.gameview;
 
 import java.awt.Color;
+import java.util.Observer;
 
 import javax.swing.JFrame;
 
@@ -12,9 +13,9 @@ public class GameFrame extends JFrame{
 	private GamePanel panel;
 	private Model model;
 	
-public GameFrame(Model model) {
+public GameFrame(Model model, Observer observer) {
 	
-	panel=new GamePanel(model);
+	panel=new GamePanel(model, observer);
 	this.setTitle("Lorann");
 	this.setSize(1000, 800);
 	this.setLocationRelativeTo(null);
