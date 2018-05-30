@@ -21,7 +21,6 @@ public class DemonMover implements Runnable { // Create the class DemonMover wic
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 
 	}
 

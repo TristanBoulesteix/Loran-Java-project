@@ -25,6 +25,7 @@ public class Controller implements Observer { // Create class controller
 	public Controller(Model model) { // Create the controller with parameters
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
+		processus = new ArrayList<Thread>();
 		initializeGame();
 	}
 
