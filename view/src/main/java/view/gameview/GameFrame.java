@@ -25,8 +25,8 @@ public GameFrame(Model model) {
     this.setResizable(false);
 }
 	
-public void initializeMapComponent(Component[][] component) {
-
+public void initializeMapComponent(Component[][] components) {
+	panel.updateMap(components);
 }
 
 public GamePanel getPanel() {

@@ -24,7 +24,8 @@ public class Controller { // Create class controller
 	}
 
 	public void play() { // Launch the game
-
+		Component[][] components = model.generateMap(idMap);
+		gameFrame.initializeMapComponent(components);
 	}
 
 	private void initializeGame() { // Initialization of the game
