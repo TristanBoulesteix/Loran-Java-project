@@ -1,5 +1,6 @@
 package view.gameview;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.KeyEvent;
@@ -24,6 +25,8 @@ public class GamePanel extends JPanel implements KeyListener {
 		setLayout(new GridBagLayout());
 		this.addKeyListener(this);
 		this.observer = observer;
+		this.setBackground(Color.BLACK);
+		;
 	}
 
 	void gameview() {

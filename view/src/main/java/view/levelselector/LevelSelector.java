@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class LevelSelector {
 
 	private int level;
-	private final static String[] LEVEL_LIST = { "Map 1", "Map 2", "Map 3", "Map 4","Map 5" };;
+	private final static String[] LEVEL_LIST = { "Map 1", "Map 2", "Map 3", "Map 4", "Map 5" };;
 
 	public LevelSelector() {
 		super();
@@ -16,7 +16,7 @@ public class LevelSelector {
 		String nom = (String) JOptionPane.showInputDialog(null, "Choose a Map!", "Lorann-MapSelector",
 				JOptionPane.QUESTION_MESSAGE, null, LEVEL_LIST, LEVEL_LIST[0]);
 
-		if (nom.equals(null)) {
+		if (nom == null) {
 			System.exit(0);
 		}
 		switch (nom) {
