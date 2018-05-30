@@ -24,6 +24,7 @@ public class GameFrame extends JFrame {
 		this.setUndecorated(true);
 		this.setContentPane(panel);
 		this.setResizable(false);
+		this.pack();
 	}
 
 	public void initializeMapComponent(Component[][] components) {
