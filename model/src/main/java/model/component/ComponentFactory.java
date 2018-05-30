@@ -1,6 +1,8 @@
 package model.component;
 
 public abstract class ComponentFactory {
+	private static Lorann lorann;
+
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
 
@@ -31,10 +33,11 @@ public abstract class ComponentFactory {
 					break;
 
 				case 'P':
-					components[x][y] = createLorann(new Coordinate(x, y));
+					lorann = createLorann(new Coordinate(x, y));
+					components[x][y] = getLorann();
 					break;
 
-				case 'O':
+				case 'L':
 					components[x][y] = createEnergySphere(new Coordinate(x, y));
 					break;
 
@@ -64,7 +67,6 @@ public abstract class ComponentFactory {
 
 				default:
 					components[x][y] = components[x][y] = createEmpty(new Coordinate(x, y));
-					;
 					break;
 				}
 			}
@@ -123,5 +125,9 @@ public abstract class ComponentFactory {
 
 	private static Empty createEmpty(Coordinate coordinate) {
 		return new Empty(true, coordinate);
+	}
+
+	public static Lorann getLorann() {
+		return lorann;
 	}
 }

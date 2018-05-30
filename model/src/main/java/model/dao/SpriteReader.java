@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class SpriteReader {
-
 	public static final int SIZE = 0;
 	private ArrayList<Image> sprites;
 	private String path;
