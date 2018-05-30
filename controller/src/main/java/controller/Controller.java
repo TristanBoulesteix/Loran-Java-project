@@ -18,18 +18,17 @@ public class Controller implements Observer { // Create class controller
 	private GamePanel gamePanel;
 	private Model model;
 	private ArrayList<Thread> processus;
-	private Thread playerMover;
+	private Thread player;
 	private Thread demon;
 	private int score;
 
 	public Controller(Model model) { // Create the controller with parameters
-
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
 		initializeGame();
 	}
 
-	public void play() { // Launch the game
+	public void play() { // Run the game
 
 	}
 
@@ -42,6 +41,12 @@ public class Controller implements Observer { // Create class controller
 		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
 		gameFrame.setVisible(true);
+
+		demon = new Thread(new DemonMover(components));
+		player = new Thread(new PlayerMover());
+
+		processus.add(demon);
+		processus.add(player);
 	}
 
 	private void updateMap() { // Update Map
@@ -54,11 +59,9 @@ public class Controller implements Observer { // Create class controller
 	}
 
 	private void runAllThread() { // Run all Thread
-
-	}
-
-	private void closeAllThread() { // Finish all Thread
-
+		for (int i = 0; i < processus.size(); i++) {
+			processus.get(i).run();
+		}
 	}
 
 	@Override
