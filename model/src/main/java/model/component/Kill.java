@@ -1,5 +1,5 @@
 package model.component;
 
 public interface Kill {
-	public void kill();
+	public void kill(Component target);
 }

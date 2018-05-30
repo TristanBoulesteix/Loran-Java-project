@@ -1,9 +1,11 @@
 package model.component;
 
-public class Lorann extends Component {
-	private final static String PATH = "";
+import java.awt.Image;
 
-	public boolean alive;
+public class Lorann extends Component {
+	private final static String PATH = "/src/main/ressources/Pictures/Lorann";
+
+	private boolean alive;
 
 	public Lorann(boolean permeability, Coordinate coordinate) {
 		super(PATH, permeability, coordinate);
@@ -23,4 +25,35 @@ public class Lorann extends Component {
 		this.alive = false;
 	}
 
+	@Override
+	public Image getImage(Direction direction) {
+		switch (direction) {
+		case DOWN:
+			return getSprites().get(0);
+
+		case DOWNLEFT:
+			return getSprites().get(1);
+
+		case DOWNRIGHT:
+			return getSprites().get(2);
+
+		case LEFT:
+			return getSprites().get(3);
+
+		case RIGHT:
+			return getSprites().get(4);
+
+		case UP:
+			return getSprites().get(5);
+
+		case UPLEFT:
+			return getSprites().get(6);
+
+		case UPRIGHT:
+			return getSprites().get(7);
+
+		default:
+			return getSprites().get(0);
+		}
+	}
 }
