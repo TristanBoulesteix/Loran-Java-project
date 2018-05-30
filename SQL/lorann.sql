@@ -34,7 +34,7 @@ FROM level
 WHERE level.id = id$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `findMapByName` (IN `map` VARCHAR(255))  NO SQL
-SELECT id, map
+SELECT map
 FROM level
 WHERE example.map = map$$
 
