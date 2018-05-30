@@ -14,7 +14,7 @@ public LevelSelector() {
 	
 }
 
-public int getLevel() {
+public static int getLevel() {
 	  String[] LEVEL_LIST = {"Map 1", "Map 2", "Map 3", "Map 4"};
 	    String nom = (String)JOptionPane.showInputDialog(null, "Choose a Map!", "Lorann-MapSelector",JOptionPane.OK_CANCEL_OPTION);
 		

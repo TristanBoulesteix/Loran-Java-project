@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.Model;
@@ -27,7 +28,12 @@ public class Controller { // Create class controller
 
 	public void play() { // Launch the game
 		LevelSelector lvlselect = new LevelSelector();
-		Component[][] components = model.generateMap(lvlselect);
+		try {
+			model.generateMap(LevelSelector.getLevel());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
 	}
 
