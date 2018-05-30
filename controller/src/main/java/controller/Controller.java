@@ -8,6 +8,7 @@ import java.util.Observer;
 import model.Model;
 import model.component.Component;
 import model.component.Coordinate;
+import model.component.Direction;
 import view.gameview.GameFrame;
 import view.gameview.GamePanel;
 import view.levelselector.LevelSelector;
@@ -50,10 +51,11 @@ public class Controller implements Observer { // Create class controller
 	}
 
 	private void updateMap() { // Update Map
-
+		Component[][] map = model.getMap();
+		gameFrame.initializeMapComponent(map);
 	}
 
-	public void moveComponement(Component componement, Coordinate coordinate) { // Displays the componements with
+	public void moveComponent(Component component, Direction direction) { // Displays the components with
 																				// their coordinate
 
 	}
@@ -67,6 +69,6 @@ public class Controller implements Observer { // Create class controller
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		System.out.println(arg1);
-
+		moveComponent(null, (Direction) arg1);
 	}
 }
