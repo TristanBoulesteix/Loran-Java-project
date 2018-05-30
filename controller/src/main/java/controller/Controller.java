@@ -26,10 +26,14 @@ public class Controller implements Observer { // Create class controller
 
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
+		initializeGame();
 	}
 
 	public void play() { // Launch the game
-		LevelSelector lvlselect = new LevelSelector();
+
+	}
+
+	private void initializeGame() { // Initialization of the game
 		try {
 			model.generateMap(LevelSelector.getLevel());
 		} catch (SQLException e) {
@@ -38,10 +42,6 @@ public class Controller implements Observer { // Create class controller
 		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
 		gameFrame.setVisible(true);
-	}
-
-	private void initializeGame() { // Initialization of the game
-
 	}
 
 	private void updateMap() { // Update Map
