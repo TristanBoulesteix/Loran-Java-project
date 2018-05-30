@@ -7,6 +7,7 @@ import model.component.Component;
 import model.component.Coordinate;
 import view.gameview.GameFrame;
 import view.gameview.GamePanel;
+import view.levelselector.LevelSelector;
 
 public class Controller { // Create class controller
 
@@ -19,12 +20,14 @@ public class Controller { // Create class controller
 	private int score;
 
 	public Controller(Model model) { // Create the controller with parameters
+	
 		this.model = model;
 		gameFrame = new GameFrame(model);
 	}
 
 	public void play() { // Launch the game
-		Component[][] components = model.generateMap(idMap);
+		LevelSelector lvlselect = new LevelSelector();
+		Component[][] components = model.generateMap(lvlselect);
 		gameFrame.initializeMapComponent(components);
 	}
 
