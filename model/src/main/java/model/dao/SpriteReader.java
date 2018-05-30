@@ -25,11 +25,11 @@ public class SpriteReader {
 	}
 
 	private void generateImagesList() throws IOException {
-		File folder = new File(path);
+		File folder = new File(getClass().getClassLoader().getResource(path).getFile()).getAbsoluteFile();
 		File[] listOfFiles = folder.listFiles();
 
 		for (int i = 0; i < listOfFiles.length; i++) {
-			sprites.add(ImageIO.read(this.getClass().getResourceAsStream(listOfFiles[i].getName())));
+			sprites.add(ImageIO.read(listOfFiles[i].getAbsoluteFile()));
 		}
 	}
 

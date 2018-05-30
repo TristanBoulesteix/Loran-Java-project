@@ -3,7 +3,7 @@ package model.component;
 import java.awt.Image;
 
 public class Gate extends Touch implements Kill {
-	private final static String PATH = "/src/main/ressources/Pictures/gate";
+	private final static String PATH = "Pictures/gate";
 
 	public Gate(boolean permeability, Coordinate coordinate, boolean available) {
 		super(PATH, permeability, coordinate, available);

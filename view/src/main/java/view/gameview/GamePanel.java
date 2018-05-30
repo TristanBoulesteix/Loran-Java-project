@@ -14,6 +14,7 @@ import model.Model;
 import model.component.Component;
 import model.component.Direction;
 
+@SuppressWarnings("serial")
 public class GamePanel extends JPanel implements KeyListener {
 	private JLabel[][] labels;
 	private Model model;
@@ -31,17 +32,17 @@ public class GamePanel extends JPanel implements KeyListener {
 
 	public void updateMap(Component[][] components) {
 
-		for (int x = 0; x < components.length; x++)
-
-		{
-			for (int y = 0; y < components[x].length; y++)
-
-			{
+		for (int x = 0; x < components.length; x++) {
+			for (int y = 0; y < components[x].length; y++) {
 				GridBagConstraints constraints = new GridBagConstraints();
 				constraints.gridx = x;
 				constraints.gridx = y;
 				JLabel label = new JLabel(new ImageIcon(components[x][y].getImage(Direction.DOWN)));
 				this.add(label, constraints);
+
+				System.out.print("x = " + x + " ");
+				System.out.println("y = " + y);
+
 			}
 		}
 	}

@@ -14,7 +14,7 @@ public class DTBReader extends AbstractDAO {
 		if (callStatement.execute()) {
 			final ResultSet result = callStatement.getResultSet();
 			if (result.first()) {
-				map = result.getString(0);
+				map = result.getString(1);
 			}
 			result.close();
 		}

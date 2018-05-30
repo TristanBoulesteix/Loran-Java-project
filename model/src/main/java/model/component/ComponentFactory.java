@@ -3,11 +3,17 @@ package model.component;
 public abstract class ComponentFactory {
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
+
+		System.out.println(map);
+
+		char[] charArray = map.toCharArray();
+
 		int index = 0;
 
-		for (int x = 0; x < 20; x++) {
-			for (int y = 0; y < 12; y++) {
-				switch (map.charAt(index)) {
+		for (int x = 0; x < 12; x++) {
+			for (int y = 0; y < 20; y++, index++) {
+
+				switch (charArray[index]) {
 				case 'C':
 					components[x][y] = createCornerSet(new Coordinate(x, y));
 					break;
@@ -21,7 +27,7 @@ public abstract class ComponentFactory {
 					break;
 
 				case ' ':
-					components[x][y] = null;
+					components[x][y] = createEmpty(new Coordinate(x, y));
 					break;
 
 				case 'P':
@@ -57,7 +63,8 @@ public abstract class ComponentFactory {
 					break;
 
 				default:
-					components[x][y] = null;
+					components[x][y] = components[x][y] = createEmpty(new Coordinate(x, y));
+					;
 					break;
 				}
 			}
@@ -112,5 +119,9 @@ public abstract class ComponentFactory {
 
 	private static VerticalSet createVerticalSet(Coordinate coordinate) {
 		return new VerticalSet(coordinate);
+	}
+
+	private static Empty createEmpty(Coordinate coordinate) {
+		return new Empty(true, coordinate);
 	}
 }

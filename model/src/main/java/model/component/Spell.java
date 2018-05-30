@@ -1,7 +1,7 @@
 package model.component;
 
 public class Spell extends Touch implements Kill {
-	private final static String PATH = "/src/main/ressources/Pictures/spell";
+	private final static String PATH = "Pictures/spell";
 
 	public Spell(boolean permeability, Coordinate coordinate, boolean available) {
 		super(PATH, permeability, coordinate, available);

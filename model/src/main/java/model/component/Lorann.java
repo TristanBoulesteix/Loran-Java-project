@@ -3,7 +3,7 @@ package model.component;
 import java.awt.Image;
 
 public class Lorann extends Component {
-	private final static String PATH = "/src/main/ressources/Pictures/Lorann";
+	private final static String PATH = "Pictures/Lorann";
 
 	private boolean alive;
 
