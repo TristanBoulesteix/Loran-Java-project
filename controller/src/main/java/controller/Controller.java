@@ -39,7 +39,7 @@ public class Controller implements Observer { // Create class controller
 			model.generateMap(LevelSelector.getLevel());
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} l
+		} 
 		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
 		gameFrame.setVisible(true);
