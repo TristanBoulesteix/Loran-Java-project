@@ -24,19 +24,19 @@ DELIMITER $$
 --
 -- Procédures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `findAllExamples` ()  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `findAllMaps` ()  NO SQL
 SELECT id, map
 FROM level$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `findExampleById` (IN `id` INT)  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `findMapById` (IN `id` INT)  NO SQL
 SELECT id, map
 FROM level
 WHERE level.id = id$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `findExampleByName` (IN `map` VARCHAR(255))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `findMapByName` (IN `map` VARCHAR(255))  NO SQL
 SELECT id, map
 FROM level
-WHERE example.name = name$$
+WHERE example.map = map$$
 
 DELIMITER ;
 
@@ -57,10 +57,10 @@ CREATE TABLE `level` (
 
 INSERT INTO `level` (`id`, `map`) VALUES
 (1, 'CHHHHHHHHHHHHHHHHHHCV                VLVV  P             V VV                V VV                V VV                  VV                  VV                  VVHHHH              VVT  H        HHHHHHVVG    V           1VCHHHHHHHHHHHHHHHHHHC'),
-(2, 'MAP 2'),
-(3, 'MAP 3'),
-(4, 'MAP 4'),
-(5, 'MAP 5');
+(2, 'CHHHHHHHHHHHHHCCCCCCVP            VHCCCCV               VHCCV                VHCV        V VVVV   VHV        V V       VV        V V     TVHV        V V   G VHCV        V V    VHCCVHHHHHHHHH V   VHCCCV2        LV  VHCCCCCHHHHHHHHHHHHHCCCCCC'),
+(3, 'CHHHHHHHHHHHHHHHHHHCVP                 V             VVVVVV             VV      VVVVVVVVVVVVVV1                 VVVVVVVVV         VLVVVVVVVVV   VVVVVVVVVV          VVVVVVVVVV  V               VVT V            V  VVG V            V 3VCHHHHHHHHHHHHHHHHHHC'),
+(4, 'CHHHHHHHHHHHHHHHHHHCVP                 V             VHHHHHHHHHHHHHHHHT VVHHHHHHHHHHHHHHHH  VVL2                VV  HHHHHHHHHHHHHHHHVV  HHHHHHHHHHHHHHHHVV                  VVHHHHHHHHHHHH      VVTTTTT             VVGT                VCHHHHHHHHHHHHHHHHHHC'),
+(5, 'CHHHHHHHHHHHHHHHHHHCVP                 V             V                  VVHHHHHHHHHHHHHHHHH VVHHHHHHHHHHHHHHHHH VV2                 VVHHHHHHHHHHHHHHH   VVHHHHHHHHHHHHHHH   VV4                 VVHHHHHHHHH         VVGT               LVCHHHHHHHHHHHHHHHHHHC');
 
 --
 -- Index pour les tables exportées
