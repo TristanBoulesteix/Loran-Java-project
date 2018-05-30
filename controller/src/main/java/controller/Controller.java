@@ -12,24 +12,27 @@ import view.gameview.GameFrame;
 import view.gameview.GamePanel;
 import view.levelselector.LevelSelector;
 
-public class Controller implements Observer{ // Create class controller
+public class Controller implements Observer { // Create class controller
 
 	private GameFrame gameFrame;
 	private GamePanel gamePanel;
 	private Model model;
 	private ArrayList<Thread> processus;
-	private Thread playerMover;
+	private Thread player;
 	private Thread demon;
 	private int score;
 
 	public Controller(Model model) { // Create the controller with parameters
-	
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
+		initializeGame();
 	}
 
-	public void play() { // Launch the game
-		LevelSelector lvlselect = new LevelSelector();
+	public void play() { // Run the game
+
+	}
+
+	private void initializeGame() { // Initialization of the game
 		try {
 			model.generateMap(LevelSelector.getLevel());
 		} catch (SQLException e) {
@@ -37,10 +40,13 @@ public class Controller implements Observer{ // Create class controller
 		}
 		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
-	}
+		gameFrame.setVisible(true);
 
-	private void initializeGame() { // Initialization of the game
+		demon = new Thread(new DemonMover(components));
+		player = new Thread(new PlayerMover());
 
+		processus.add(demon);
+		processus.add(player);
 	}
 
 	private void updateMap() { // Update Map
@@ -53,16 +59,14 @@ public class Controller implements Observer{ // Create class controller
 	}
 
 	private void runAllThread() { // Run all Thread
-
-	}
-
-	private void closeAllThread() { // Finish all Thread
-
+		for (int i = 0; i < processus.size(); i++) {
+			processus.get(i).run();
+		}
 	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		System.out.println(arg1);
-		
+
 	}
 }
