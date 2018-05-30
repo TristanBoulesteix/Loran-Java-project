@@ -7,7 +7,6 @@ import java.util.Observer;
 
 import model.Model;
 import model.component.Component;
-import model.component.Coordinate;
 import model.component.Direction;
 import view.gameview.GameFrame;
 import view.gameview.GamePanel;
@@ -31,7 +30,9 @@ public class Controller implements Observer { // Create class controller
 	}
 
 	public void play() { // Run the game
+		while (model.getLorann().isAlive()) {
 
+		}
 	}
 
 	private void initializeGame() { // Initialization of the game
@@ -39,7 +40,7 @@ public class Controller implements Observer { // Create class controller
 			model.generateMap(LevelSelector.getLevel());
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
+		}
 		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
 		gameFrame.setVisible(true);
@@ -57,7 +58,7 @@ public class Controller implements Observer { // Create class controller
 	}
 
 	public void moveComponent(Component component, Direction direction) { // Displays the components with
-																				// their coordinate
+																			// their coordinate
 
 	}
 

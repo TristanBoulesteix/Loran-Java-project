@@ -26,7 +26,6 @@ public class GamePanel extends JPanel implements KeyListener {
 		this.addKeyListener(this);
 		this.observer = observer;
 		this.setBackground(Color.BLACK);
-		;
 	}
 
 	void gameview() {
@@ -34,7 +33,6 @@ public class GamePanel extends JPanel implements KeyListener {
 	}
 
 	public void updateMap(Component[][] components) {
-
 		for (int x = 0; x < components.length; x++) {
 			for (int y = 0; y < components[x].length; y++) {
 				GridBagConstraints constraints = new GridBagConstraints();
