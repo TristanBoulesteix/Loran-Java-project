@@ -7,7 +7,7 @@ import model.component.ComponentFactory;
 import model.dao.DTBReader;
 
 public class Model {
-	Component[][] components;
+	private Component[][] components;
 
 	public Model() {
 		components = new Component[12][20];
