@@ -7,19 +7,19 @@ import javax.swing.JFrame;
 import model.Model;
 import model.component.Component;
 
+@SuppressWarnings("serial")
 public class GameFrame extends JFrame {
-
 	private GamePanel panel;
 	private Model model;
 
 	public GameFrame(Model model, Observer observer) {
-		panel = new GamePanel(model, observer);
-		panel.setFocusable(true);
+		this.panel = new GamePanel(model, observer);
+		this.panel.setFocusable(true);
+		this.setUndecorated(true);
 		this.setTitle("Lorann");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		this.setUndecorated(true);
 		this.setContentPane(panel);
 		this.setResizable(false);
 		this.pack();
