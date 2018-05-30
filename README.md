@@ -1,47 +1,52 @@
 # Loran-Java-project
 
-      ...                                                                                .                ..                                        ..                     ....      ..                                                                s    
-  .zf"` `"tu                                                                         .x88888x.         :**888H: `: .xH""                         :**888H: `: .xH""       +^""888h. ~"888h                               ..                            :8    
- x88      '8N.        u.      .u    .                  u.    u.      u.    u.       :8**888888X.  :>  X   `8888k XX888         ...     ..       X   `8888k XX888        8X.  ?8888X  8888f     .u    .          u.     888>                          .88    
- 888k     d88&  ...ue888b   .d88B :@8c        u      x@88k u@88c.  x@88k u@88c.     f    `888888x./  '8hx  48888 ?8888      :~""888h.:^"888:   '8hx  48888 ?8888       '888x  8888X  8888~   .d88B :@8c   ...ue888b    "8P        .u          .     :888ooo 
- 8888N.  @888F  888R Y888r ="8888f8888r    us888u.  ^"8888""8888" ^"8888""8888"    '       `*88888~  '8888 '8888 `8888     8X   `8888X  8888>  '8888 '8888 `8888       '88888 8888X   "88x: ="8888f8888r  888R Y888r    .      ud8888.   .udR88N  -*8888888 
- `88888 9888%   888R I888>   4888>'88"  .@88 "8888"   8888  888R    8888  888R      \.    .  `?)X.    %888>'8888  8888    X888n. 8888X  ?888>   %888>'8888  8888        `8888 8888X  X88x.    4888>'88"   888R I888>  u888u. :888'8888. <888'888k   8888    
-   %888 "88F    888R I888>   4888> '    9888  9888    8888  888R    8888  888R       `~=-^   X88> ~     "8 '888"  8888    '88888 8888X   ?**h.    "8 '888"  8888          `*` 8888X '88888X   4888> '     888R I888> `'888E  d888 '88%" 9888 'Y"    8888    
-    8"   "*h=~  888R I888>   4888>      9888  9888    8888  888R    8888  888R              X8888  ~   .-` X*"    8888      `*88 8888~ x88x.     .-` X*"    8888         ~`...8888X  "88888   4888>       888R I888>   888E  8888.+"    9888        8888    
-  z8Weu        u8888cJ888   .d888L .+   9888  9888    8888  888R    8888  888R              488888       .xhx.    8888     ..<"  88*`  88888X      .xhx.    8888          x8888888X.   `%8"  .d888L .+   u8888cJ888    888E  8888L      9888       .8888Lu= 
- ""88888i.   Z  "*888*P"    ^"8888*"    9888  9888   "*88*" 8888"  "*88*" 8888"     .xx.     88888X    .H88888h.~`8888.>      ..XC.    `*8888k   .H88888h.~`8888.>       '%"*8888888h.   "   ^"8888*"     "*888*P"     888E  '8888c. .+ ?8888u../  ^%888*   
-"   "8888888*     'Y"          "Y"      "888*""888"    ""   'Y"      ""   'Y"      '*8888.   '88888>  .~  `%88!` '888*~     :888888H.    `%88>  .~  `%88!` '888*~        ~    888888888!`       "Y"         'Y"        888E   "88888%    "8888P'     'Y"    
-      ^"**""                             ^Y"   ^Y'                                   88888    '8888>        `"     ""      <  `"888888:    X"         `"     ""               X888^"""                                 888E     "YP'       "P'              
-                                                                                     `8888>    `888                              %888888x.-`                                  `88f                                     888E                                 
-                                                                                      "8888     8%                                 ""**""                                      88                                      888P                                 
-                                                                                       `"888x:-"                                                                               ""                                    .J88" "                                
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                            
+## Presentation of the project concept
+The goal of this project is to realize in Java LORANN of Loriciels using the MVC Pattern. This game was originally edited for MO5
+and TO7.
+
+LORANN is a PacMan type game, that a character moves from box to box while trying
+to collect a maximum of objects without being caught by 4 monsters in 101 levels. No
+super pacgom, but a spell that the character can cast to kill his attackers. The difficulty
+being that he only has one spell. The only way to get a new one is to kill a
+monster or pick up the previous one.
+
+## Constraints
+The use of Java, Maven, Git and Junit is mandatory.
+
+No graphical framework other than Swing is allowed.
+
+Start of the project: Monday, May 28, 2018.
+
+End of the project: Wednesday, June 6, 2018.
+
+## Deliverables
+
+- Full JavaDoc of your project (tests included).
+
+- Full JXR of your project (tests included).
+
+- SureFire report of your project.
+
+- Component diagram.
+
+- Package diagram.
+
+- Class diagram (one per package).
+
+- sequence diagram (as much as you will find it useful to understand and explain the
+your program).
+
+- A GIT report to identify the production of each member of the team.
+
+- CDM, stored procedures, other diagrams, comments, ...).
+
+## Author of this program
+
+- Tristan Boulesteix
+
+- Zacharia Azzouzi
+
+- Maxime Maitre
+
+- Jean-Pierre Kardous
+	
