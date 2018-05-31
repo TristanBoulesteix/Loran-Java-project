@@ -56,11 +56,11 @@ CREATE TABLE `level` (
 --
 
 INSERT INTO `level` (`id`, `map`) VALUES
-(1, 'CHHHHHHHHHHHHHHHHHHHCV                VLVV  P             V VV                V VV                V VV                  VV                  VV                  VVHHHH              VVT  H        HHHHHHVVG    V           1VCHHHHHHHHHHHHHHHHHHHC'),
-(2, 'CHHHHHHHHHHHHHHCCCCCCVP            VHCCCCV               VHCCV                VHCV        V VVVV   VHV        V V       VV        V V     TVHV        V V   G VHCV        V V    VHCCVHHHHHHHHH V   VHCCCV2        LV  VHCCCCCHHHHHHHHHHHHHHCCCCCC'),
-(3, 'CHHHHHHHHHHHHHHHHHHHCVP                 VVVVVVV             VV      VVVVVVVVVVVVVV1                 VVVVVVVVV         VLVVVVVVVVV   VVVVVVVVVV          VVVVVVVVVV  V               VVT V            V  VVG V            V 3VCHHHHHHHHHHHHHHHHHHHC'),
-(4, 'CHHHHHHHHHHHHHHHHHHHCVP                 VVHHHHHHHHHHHHHHHHT VVHHHHHHHHHHHHHHHH  VVL2                VV  HHHHHHHHHHHHHHHHVV  HHHHHHHHHHHHHHHHVV                  VVHHHHHHHHHHHH      VVTTTTT             VVGT                VCHHHHHHHHHHHHHHHHHHHC'),
-(5, 'CHHHHHHHHHHHHHHHHHHHCVP                 VV                  VVHHHHHHHHHHHHHHHHH VVHHHHHHHHHHHHHHHHH VV2                 VVHHHHHHHHHHHHHHH   VVHHHHHHHHHHHHHHH   VV4                 VVHHHHHHHHH         VVGT               LVCHHHHHHHHHHHHHHHHHHHC');
+(1, 'CHHHHHHHHHHHHHHHHHHHCV                 VLVV  P              V VV                 V VV                 V VV                   VV                   VV                   VVHHHH               VVT  H        HHHHHHHVVG    V           1 VCHHHHHHHHHHHHHHHHHHHC'),
+(2, 'CHHHHHHHHHHHHHHCCCCCCVP             VHCCCCV                VHCCV                 VHCV        V VVVV    VHV        V V        VV        V V      TVHV        V V    G VHCV        V V     VHCCVHHHHHHHHH V    VHCCCV2        LV   VHCCCCCHHHHHHHHHHHHHHCCCCCC'),
+(3, 'CHHHHHHHHHHHHHHHHHHHCVP                  VVVVVVV              VV       VVVVVVVVVVVVVV1                  VVVVVVVVV          VLVVVVVVVVV    VVVVVVVVVV           VVVVVVVVVV  V                VVT V            V   VVG V            V 3 VCHHHHHHHHHHHHHHHHHHHC'),
+(4, 'CHHHHHHHHHHHHHHHHHHHCVP                  VVHHHHHHHHHHHHHHHHT  VVHHHHHHHHHHHHHHHH   VVL2                 VV   HHHHHHHHHHHHHHHHVV   HHHHHHHHHHHHHHHHVV                   VVHHHHHHHHHHHH       VVTTTTT              VVGT                 VCHHHHHHHHHHHHHHHHHHHC'),
+(5, 'CHHHHHHHHHHHHHHHHHHHCVP                HHVV                   VVHHHHHHHHHHHHHHHHH  VVHHHHHHHHHHHHHHHHH  VV2                  VVHHHHHHHHHHHHHHH    VVHHHHHHHHHHHHHHH    VV4                  VVHHHHHHHHH          VVGT               L VCHHHHHHHHHHHHHHHHHHHC');
 
 --
 -- Index pour les tables exportées

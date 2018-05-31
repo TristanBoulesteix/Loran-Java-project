@@ -3,6 +3,12 @@ package model;
 import java.sql.SQLException;
 import java.util.List;
 
+import model.component.Component;
+import model.component.ComponentFactory;
+import model.component.Gate;
+import model.component.Lorann;
+import model.dao.DTBReader;
+
 /**
  * <h1>The Interface IModel.</h1>
  *
@@ -11,34 +17,15 @@ import java.util.List;
  */
 public interface IModel {
 
-    /**
-     * Gets the example by id.
-     *
-     * @param id
-     *            the id
-     * @return the example by id
-     * @throws SQLException
-     *             the SQL exception
-     */
-    Example getExampleById(int id) throws SQLException;
+	public Model();
 
-    /**
-     * Gets the example by name.
-     *
-     * @param name
-     *            the name
-     * @return the example by name
-     * @throws SQLException
-     *             the SQL exception
-     */
-    Example getExampleByName(String name) throws SQLException;
+	public synchronized Component[][] getMap();
 
-    /**
-     * Gets the all examples.
-     *
-     * @return the all examples
-     * @throws SQLException
-     *             the SQL exception
-     */
-    List<Example> getAllExamples() throws SQLException;
+	private String getMapFromDTB(int idMap) throws SQLException;
+
+	public void generateMap(int idMap) throws SQLException;
+
+	public Lorann getLorann();
+
+	public Gate getGate();
 }
