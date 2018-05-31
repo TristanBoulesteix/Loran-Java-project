@@ -20,6 +20,7 @@ public class ComponentFactoryTest {
 
 	@Before
 	public void setUp() throws Exception {
+		Lorann Lorann = new Lorann(false, null);
 	}
 
 	@After
@@ -28,7 +29,14 @@ public class ComponentFactoryTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		
+	}
+
+	public void getLorann() {
+		final Object expected  =new Lorann(false, null);
+		
+		assertEquals(expected, getLorann());
 	}
 
 }
+
