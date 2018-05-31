@@ -7,7 +7,6 @@ import java.util.Observer;
 import javax.swing.JFrame;
 
 import model.Model;
-import model.component.Component;
 
 @SuppressWarnings("serial")
 public class GameFrame extends JFrame {
@@ -25,10 +24,6 @@ public class GameFrame extends JFrame {
 		this.getContentPane().setBackground(Color.BLACK);
 		this.getContentPane().add(panel, BorderLayout.CENTER);
 		this.setResizable(false);
-	}
-
-	public void initializeMapComponent(Component[][] components) {
-		panel.createGraphicsForMap(components);
 	}
 
 	public GamePanel getPanel() {
