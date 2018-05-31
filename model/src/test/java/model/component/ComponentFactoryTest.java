@@ -20,7 +20,7 @@ public class ComponentFactoryTest {
 
 	@Before
 	public void setUp() throws Exception {
-		Lorann Lorann = new Lorann(false, null);
+		Lorann Lorann = new Lorann(true,new Coordinate(0,0));
 	}
 
 	@After
@@ -31,11 +31,10 @@ public class ComponentFactoryTest {
 	public void test() {
 		
 	}
-
+	@Test
 	public void getLorann() {
-		final Object expected  =new Lorann(false, null);
-		
-		assertEquals(expected, getLorann());
+		final Object expected  =new Lorann(true,new Coordinate(0,0));
+		assertEquals(expected, ComponentFactory.getLorann());
 	}
 
 }
