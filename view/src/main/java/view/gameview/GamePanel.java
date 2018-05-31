@@ -13,12 +13,13 @@ import javax.swing.JPanel;
 
 import model.Model;
 import model.component.Component;
+import model.component.Coordinate;
 import model.component.Direction;
+import model.component.Lorann;
 
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements KeyListener {
 	private JLabel[][] labels;
-	private Model model;
 	private Observer observer;
 
 	public GamePanel(Model model, Observer observer) {
@@ -28,19 +29,26 @@ public class GamePanel extends JPanel implements KeyListener {
 		this.setBackground(Color.BLACK);
 	}
 
-	void gameview() {
+	public void createGraphicsForMap(Component[][] components) {
+		labels = new JLabel[12][20];
 
-	}
-
-	public void updateMap(Component[][] components) {
 		for (int x = 0; x < components.length; x++) {
 			for (int y = 0; y < components[x].length; y++) {
 				GridBagConstraints constraints = new GridBagConstraints();
 				constraints.gridx = x;
 				constraints.gridx = y;
 				constraints.fill = GridBagConstraints.BOTH;
-				JLabel label = new JLabel(new ImageIcon(components[x][y].getImage(Direction.DOWN)));
+				JLabel label = new JLabel(new ImageIcon(components[x][y].getImage(Direction.UP)));
+				labels[x][y] = label;
 				this.add(label, constraints);
+			}
+		}
+	}
+
+	public void updateMap(Component[][] components) {
+		for (int x = 0; x < components.length; x++) {
+			for (int y = 0; y < components[x].length; y++) {
+				labels[x][y].setIcon(new ImageIcon(new Lorann(true, new Coordinate)));
 			}
 		}
 	}

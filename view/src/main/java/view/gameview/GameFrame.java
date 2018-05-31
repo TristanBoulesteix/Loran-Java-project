@@ -26,7 +26,7 @@ public class GameFrame extends JFrame {
 	}
 
 	public void initializeMapComponent(Component[][] components) {
-		panel.updateMap(components);
+		panel.createGraphicsForMap(components);
 	}
 
 	public GamePanel getPanel() {

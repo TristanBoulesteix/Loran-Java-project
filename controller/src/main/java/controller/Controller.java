@@ -21,8 +21,6 @@ public class Controller implements Observer { // Create class controller
 	public Controller(Model model) { // Create the controller with parameters
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
-		gameController = new GameController(model.getLorann(), this);
-		game = new Thread(gameController);
 		initializeGame();
 	}
 
@@ -38,12 +36,9 @@ public class Controller implements Observer { // Create class controller
 		}
 		Component[][] components = model.getMap();
 		gameFrame.initializeMapComponent(components);
+		gameController = new GameController(model.getLorann(), this);
+		game = new Thread(gameController);
 		gameFrame.setVisible(true);
-	}
-
-	void updateMap() { // Update Map
-		Component[][] map = model.getMap();
-		gameFrame.initializeMapComponent(map);
 	}
 
 	public void moveComponent(Component component, Direction direction) { // Displays the components with their
@@ -91,9 +86,6 @@ public class Controller implements Observer { // Create class controller
 		if (directionisAvailable(newCoordinates)) {
 			component.setCoordinate(newCoordinates);
 		}
-
-		gameFrame.getPanel().updateMap(model.getMap());
-
 	}
 
 	public boolean directionisAvailable(Coordinate coordinateToCheck) {
@@ -108,8 +100,7 @@ public class Controller implements Observer { // Create class controller
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		System.out.println(arg1);
-		moveComponent(null, (Direction) arg1);
+		moveComponent(model.getLorann(), (Direction) arg1);
 	}
 
 	public Model getModel() {
