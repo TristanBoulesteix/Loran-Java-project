@@ -23,7 +23,7 @@ End of the project: Wednesday, June 6, 2018.
 
 - Full JavaDoc of your project (tests included).
 
-- Full JXR of your project (tests included).
+- Full JXR of our project (tests included).
 
 - SureFire report of your project.
 
@@ -33,7 +33,7 @@ End of the project: Wednesday, June 6, 2018.
 
 - Class diagram (one per package).
 
-- sequence diagram (as much as you will find it useful to understand and explain the
+- sequence diagram (as much as we will find it useful to understand and explain the
 your program).
 
 - A GIT report to identify the production of each member of the team.

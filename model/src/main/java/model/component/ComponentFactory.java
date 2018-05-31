@@ -6,8 +6,6 @@ public abstract class ComponentFactory {
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
 
-		System.out.println(map);
-
 		char[] charArray = map.toCharArray();
 
 		int index = 0;
