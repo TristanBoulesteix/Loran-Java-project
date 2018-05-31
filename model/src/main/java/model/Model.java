@@ -4,12 +4,14 @@ import java.sql.SQLException;
 
 import model.component.Component;
 import model.component.ComponentFactory;
+import model.component.Gate;
 import model.component.Lorann;
 import model.dao.DTBReader;
 
 public class Model {
 	private Component[][] components;
 	private Lorann lorann;
+	private Gate gate;
 
 	public Model() {
 		components = new Component[12][20];
@@ -27,29 +29,14 @@ public class Model {
 		String map = getMapFromDTB(idMap);
 		components = ComponentFactory.buildComponentsFromMap(map);
 		lorann = ComponentFactory.getLorann();
+		gate = ComponentFactory.getGate();
 	}
 
 	public Lorann getLorann() {
 		return lorann;
 	}
 
-	// private Component[][] generateOriginalMap(Component[][] components) {
-	// Component[][] map = new Component[12][20];
-	//
-	// for (int i = 0; i < components.length; i++) {
-	// for (int j = 0; j < components[i].length; j++) {
-	// Component element = components[i][j];
-	//
-	// if ((element instanceof Lorann) || (element instanceof Arrbarr) || (element
-	// instanceof Cargyv)
-	// || (element instanceof Maarcg) || (element instanceof Kyracj)) {
-	// map[i][j] = null;
-	// } else {
-	// map[i][j] = element;
-	// }
-	// }
-	// }
-	//
-	// return map;
-	// }
+	public Gate getGate() {
+		return gate;
+	}
 }

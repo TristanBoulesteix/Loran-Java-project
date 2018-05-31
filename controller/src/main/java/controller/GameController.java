@@ -14,16 +14,18 @@ public class GameController implements Runnable {
 
 	@Override
 	public void run() {
-		while (player.isAlive()) {
+		while (player.isAlive() || !controller.isVictory()) {
 			Component[][] components = controller.getModel().getMap();
-			controller.getGameFrame().initializeMapComponent(components);
+			controller.getGameFrame().getPanel().updateMap(components);
 
 			try {
-				Thread.sleep(200);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+
+		System.out.println("Dead");
 	}
 
 }

@@ -1,11 +1,12 @@
 package view.gameview;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.util.Observer;
 
 import javax.swing.JFrame;
 
 import model.Model;
-import model.component.Component;
 
 @SuppressWarnings("serial")
 public class GameFrame extends JFrame {
@@ -20,13 +21,9 @@ public class GameFrame extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		this.setContentPane(panel);
+		this.getContentPane().setBackground(Color.BLACK);
+		this.getContentPane().add(panel, BorderLayout.CENTER);
 		this.setResizable(false);
-		this.pack();
-	}
-
-	public void initializeMapComponent(Component[][] components) {
-		panel.updateMap(components);
 	}
 
 	public GamePanel getPanel() {

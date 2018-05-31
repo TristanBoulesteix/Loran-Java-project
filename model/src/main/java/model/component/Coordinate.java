@@ -30,4 +30,13 @@ public class Coordinate {
 		this.y = y;
 	}
 
+	@Override
+	public String toString() {
+		String toReturn;
+
+		toReturn = "x = " + x;
+		toReturn = toReturn + " y = " + y;
+		return toReturn;
+	}
+
 }
