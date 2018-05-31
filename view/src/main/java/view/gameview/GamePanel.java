@@ -21,7 +21,6 @@ public class GamePanel extends JPanel implements KeyListener {
 		this.addKeyListener(this);
 		this.observer = observer;
 		this.setBackground(Color.BLACK);
-
 	}
 
 	public void updateMap(Component[][] components) {

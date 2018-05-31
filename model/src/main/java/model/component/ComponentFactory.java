@@ -2,6 +2,7 @@ package model.component;
 
 public abstract class ComponentFactory {
 	private static Lorann lorann;
+	private static Gate gate;
 
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
@@ -60,7 +61,8 @@ public abstract class ComponentFactory {
 					break;
 
 				case 'G':
-					components[x][y] = createGate(new Coordinate(x, y));
+					gate = createGate(new Coordinate(x, y));
+					components[x][y] = gate;
 					break;
 
 				default:
@@ -77,7 +79,7 @@ public abstract class ComponentFactory {
 		return new Lorann(false, coordinate);
 	}
 
-	private static Spell createSpell(Coordinate coordinate) {
+	public static Spell createSpell(Coordinate coordinate) {
 		return new Spell(false, coordinate, false);
 	}
 
@@ -127,5 +129,9 @@ public abstract class ComponentFactory {
 
 	public static Lorann getLorann() {
 		return lorann;
+	}
+
+	public static Gate getGate() {
+		return gate;
 	}
 }

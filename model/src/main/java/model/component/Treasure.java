@@ -8,7 +8,7 @@ public class Treasure extends Touch {
 		super(PATH, permeability, coordinate, available);
 	}
 
-	public static int getValue() {
+	public int getValue() {
 		return VALUE;
 	}
 

@@ -14,7 +14,7 @@ public class GameController implements Runnable {
 
 	@Override
 	public void run() {
-		while (player.isAlive()) {
+		while (player.isAlive() || !controller.isVictory()) {
 			Component[][] components = controller.getModel().getMap();
 			controller.getGameFrame().getPanel().updateMap(components);
 

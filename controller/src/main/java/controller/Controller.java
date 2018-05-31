@@ -7,8 +7,13 @@ import java.util.Observer;
 import model.Model;
 import model.component.Component;
 import model.component.Coordinate;
+import model.component.Demon;
 import model.component.Direction;
 import model.component.Empty;
+import model.component.EnergySphere;
+import model.component.Gate;
+import model.component.Lorann;
+import model.component.Treasure;
 import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
 
@@ -18,6 +23,7 @@ public class Controller implements Observer { // Create class controller
 	private GameController gameController;
 	private Thread game;
 	private int score;
+	private boolean victory;
 
 	public Controller(Model model) { // Create the controller with parameters
 		this.model = model;
@@ -30,6 +36,8 @@ public class Controller implements Observer { // Create class controller
 	}
 
 	private void initializeGame() { // Initialization of the game
+		setVictory(false);
+
 		try {
 			model.generateMap(LevelSelector.getLevel());
 		} catch (SQLException e) {
@@ -84,13 +92,15 @@ public class Controller implements Observer { // Create class controller
 		}
 
 		if (directionisAvailable(newCoordinates)) {
+			checkTargetLocation(component, model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()]);
+
 			component.setCoordinate(newCoordinates);
 			model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(true, currentCoordinates);
 			model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 		}
 	}
 
-	public synchronized boolean directionisAvailable(Coordinate coordinateToCheck) {
+	private synchronized boolean directionisAvailable(Coordinate coordinateToCheck) {
 		Component destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 
 		if (destination.isPERMEABLE()) {
@@ -98,6 +108,35 @@ public class Controller implements Observer { // Create class controller
 		} else {
 			return false;
 		}
+	}
+
+	private synchronized Component checkTargetLocation(Component componentToMove, Component componentInPosition) {
+		if (componentToMove instanceof Lorann) {
+			Lorann lorann = (Lorann) componentToMove;
+
+			if (componentInPosition instanceof Treasure) {
+				Treasure treasure = (Treasure) componentInPosition;
+
+				this.score = score + treasure.getValue();
+
+				return new Empty(true, new Coordinate(componentInPosition.getCoordinate()));
+			} else if (componentInPosition instanceof Demon) {
+				lorann.kill();
+				return null;
+			} else if (componentInPosition instanceof Gate) {
+				Gate gate = (Gate) componentInPosition;
+
+				if (gate.isAvailable()) {
+					setVictory(true);
+				} else {
+					lorann.kill();
+				}
+			} else if (componentInPosition instanceof EnergySphere) {
+				model.getGate().setAvailable(true);
+			}
+		}
+
+		return null;
 	}
 
 	@Override
@@ -120,5 +159,13 @@ public class Controller implements Observer { // Create class controller
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	public boolean isVictory() {
+		return victory;
+	}
+
+	public void setVictory(boolean victory) {
+		this.victory = victory;
 	}
 }

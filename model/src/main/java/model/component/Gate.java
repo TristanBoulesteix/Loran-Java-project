@@ -11,9 +11,11 @@ public class Gate extends Touch implements Kill {
 
 	@Override
 	public void kill(Component target) {
-		if (target instanceof Lorann) {
-			Lorann character = (Lorann) target;
-			character.kill();
+		if (!isAvailable()) {
+			if (target instanceof Lorann) {
+				Lorann character = (Lorann) target;
+				character.kill();
+			}
 		}
 	}
 
