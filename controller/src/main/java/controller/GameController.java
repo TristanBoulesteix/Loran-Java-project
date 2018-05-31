@@ -16,7 +16,7 @@ public class GameController implements Runnable {
 	public void run() {
 		while (player.isAlive()) {
 			Component[][] components = controller.getModel().getMap();
-			controller.getGameFrame().initializeMapComponent(components);
+			controller.getGameFrame().getPanel().updateMap(components);
 
 			try {
 				Thread.sleep(200);
@@ -24,6 +24,8 @@ public class GameController implements Runnable {
 				e.printStackTrace();
 			}
 		}
+
+		System.out.println("Dead");
 	}
 
 }
