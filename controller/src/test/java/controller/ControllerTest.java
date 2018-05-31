@@ -8,8 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ControllerTest {
+import model.Model;
 
+public class ControllerTest {
+Controller control;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -20,6 +22,7 @@ public class ControllerTest {
 
 	@Before
 	public void setUp() throws Exception {
+		control = new Controller(new Model());
 	}
 
 	@After
@@ -28,7 +31,10 @@ public class ControllerTest {
 
 	@Test
 	public void testGetScore() {
-		fail("Not yet implemented");
+		final int expected = 0;
+		assertEquals(expected,control.getScore());
+		
+		
 	}
 
 }
