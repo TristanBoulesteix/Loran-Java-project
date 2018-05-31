@@ -15,7 +15,7 @@ public class Model {
 		components = new Component[12][20];
 	}
 
-	public Component[][] getMap() {
+	public synchronized Component[][] getMap() {
 		return components;
 	}
 
