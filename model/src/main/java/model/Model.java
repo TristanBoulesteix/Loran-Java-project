@@ -32,24 +32,4 @@ public class Model {
 	public Lorann getLorann() {
 		return lorann;
 	}
-
-	// private Component[][] generateOriginalMap(Component[][] components) {
-	// Component[][] map = new Component[12][20];
-	//
-	// for (int i = 0; i < components.length; i++) {
-	// for (int j = 0; j < components[i].length; j++) {
-	// Component element = components[i][j];
-	//
-	// if ((element instanceof Lorann) || (element instanceof Arrbarr) || (element
-	// instanceof Cargyv)
-	// || (element instanceof Maarcg) || (element instanceof Kyracj)) {
-	// map[i][j] = null;
-	// } else {
-	// map[i][j] = element;
-	// }
-	// }
-	// }
-	//
-	// return map;
-	// }
 }

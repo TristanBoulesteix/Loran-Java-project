@@ -40,8 +40,9 @@ public class Controller implements Observer { // Create class controller
 		gameFrame.setVisible(true);
 	}
 
-	public void moveComponent(Component component, Direction direction) { // Displays the components with their
-																			// direction
+	public synchronized void moveComponent(Component component, Direction direction) { // Displays the components with
+																						// their
+		// direction
 		Coordinate currentCoordinates = component.getCoordinate();
 		Coordinate newCoordinates;
 
@@ -89,7 +90,7 @@ public class Controller implements Observer { // Create class controller
 		}
 	}
 
-	public boolean directionisAvailable(Coordinate coordinateToCheck) {
+	public synchronized boolean directionisAvailable(Coordinate coordinateToCheck) {
 		Component destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 
 		if (destination.isPERMEABLE()) {
