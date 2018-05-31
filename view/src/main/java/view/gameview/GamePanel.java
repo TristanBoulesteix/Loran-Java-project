@@ -6,7 +6,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Observer;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import model.Model;
@@ -15,7 +14,6 @@ import model.component.Direction;
 
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements KeyListener {
-	private JLabel[][] labels;
 	private Component[][] components;
 	private Observer observer;
 
@@ -24,23 +22,6 @@ public class GamePanel extends JPanel implements KeyListener {
 		this.observer = observer;
 		this.setBackground(Color.BLACK);
 
-	}
-
-	public void createGraphicsForMap(Component[][] components) {
-		labels = new JLabel[12][20];
-
-		// for (int x = 0; x < components.length; x++) {
-		// for (int y = 0; y < components[x].length; y++) {
-		// GridBagConstraints constraints = new GridBagConstraints();
-		// constraints.gridx = x;
-		// constraints.gridx = y;
-		// constraints.fill = GridBagConstraints.BOTH;
-		// JLabel label = new JLabel(new
-		// ImageIcon(components[x][y].getImage(Direction.UP)));
-		// labels[x][y] = label;
-		// this.add(label, constraints);
-		// }
-		// }
 	}
 
 	public void updateMap(Component[][] components) {

@@ -8,6 +8,7 @@ import model.Model;
 import model.component.Component;
 import model.component.Coordinate;
 import model.component.Direction;
+import model.component.Empty;
 import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
 
@@ -35,7 +36,6 @@ public class Controller implements Observer { // Create class controller
 			e.printStackTrace();
 		}
 		Component[][] components = model.getMap();
-		gameFrame.initializeMapComponent(components);
 		gameController = new GameController(model.getLorann(), this);
 		game = new Thread(gameController);
 		gameFrame.setVisible(true);
@@ -48,35 +48,35 @@ public class Controller implements Observer { // Create class controller
 
 		switch (direction) {
 		case DOWN:
-			newCoordinates = new Coordinate(currentCoordinates.getX(), currentCoordinates.getY() - 1);
-			break;
-
-		case DOWNLEFT:
-			newCoordinates = new Coordinate(currentCoordinates.getX() - 1, currentCoordinates.getY() - 1);
-			break;
-
-		case DOWNRIGHT:
-			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY() - 1);
-			break;
-
-		case LEFT:
-			newCoordinates = new Coordinate(currentCoordinates.getX() - 1, currentCoordinates.getY());
-			break;
-
-		case RIGHT:
 			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY());
 			break;
 
-		case UP:
+		case DOWNLEFT:
+			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY() - 1);
+			break;
+
+		case DOWNRIGHT:
+			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY() + 1);
+			break;
+
+		case LEFT:
+			newCoordinates = new Coordinate(currentCoordinates.getX(), currentCoordinates.getY() - 1);
+			break;
+
+		case RIGHT:
 			newCoordinates = new Coordinate(currentCoordinates.getX(), currentCoordinates.getY() + 1);
+			break;
+
+		case UP:
+			newCoordinates = new Coordinate(currentCoordinates.getX() - 1, currentCoordinates.getY());
 			break;
 
 		case UPLEFT:
-			newCoordinates = new Coordinate(currentCoordinates.getX(), currentCoordinates.getY() + 1);
+			newCoordinates = new Coordinate(currentCoordinates.getX() - 1, currentCoordinates.getY());
 			break;
 
 		case UPRIGHT:
-			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY() + 1);
+			newCoordinates = new Coordinate(currentCoordinates.getX() - 1, currentCoordinates.getY() + 1);
 			break;
 		default:
 			newCoordinates = new Coordinate(currentCoordinates.getX(), currentCoordinates.getY());
@@ -85,6 +85,8 @@ public class Controller implements Observer { // Create class controller
 
 		if (directionisAvailable(newCoordinates)) {
 			component.setCoordinate(newCoordinates);
+			model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(true, currentCoordinates);
+			model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 		}
 	}
 
@@ -101,6 +103,7 @@ public class Controller implements Observer { // Create class controller
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		moveComponent(model.getLorann(), (Direction) arg1);
+		System.out.println(arg1);
 	}
 
 	public Model getModel() {
