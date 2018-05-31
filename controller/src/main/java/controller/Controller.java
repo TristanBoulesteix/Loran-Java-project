@@ -35,7 +35,6 @@ public class Controller implements Observer { // Create class controller
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		Component[][] components = model.getMap();
 		gameController = new GameController(model.getLorann(), this);
 		game = new Thread(gameController);
 		gameFrame.setVisible(true);
