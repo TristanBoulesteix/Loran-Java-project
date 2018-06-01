@@ -6,7 +6,11 @@ import controller.Order;
 
 public enum Direction {
 	UP, UPRIGHT, UPLEFT, RIGHT, LEFT, DOWN, DOWNRIGHT, DOWNLEFT;
-
+/**
+ * 
+ * @param order
+ * @return
+ */
 	public static Direction getDirectionFromOrder(Order order) {
 		switch (order) {
 		case DOWN:
