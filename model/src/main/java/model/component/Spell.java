@@ -3,8 +3,8 @@ package model.component;
 public class Spell extends Touch implements Kill {
 	private final static String PATH = "Pictures/spell";
 
-	public Spell(boolean permeability, Coordinate coordinate, boolean available) {
-		super(PATH, permeability, coordinate, available);
+	public Spell(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available) {
+		super(PATH, lorannPermeability, demonPermeability, coordinate, available);
 	}
 
 	@Override

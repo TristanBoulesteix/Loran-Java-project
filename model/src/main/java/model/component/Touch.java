@@ -4,8 +4,9 @@ public abstract class Touch extends Component {
 	private boolean available;
 	private boolean touched;
 
-	public Touch(String path, boolean permeability, Coordinate coordinate, boolean available) {
-		super(path, permeability, coordinate);
+	public Touch(String path, boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate,
+			boolean available) {
+		super(path, lorannPermeability, demonPermeability, coordinate);
 		this.setAvailable(available);
 	}
 

@@ -5,8 +5,8 @@ import java.awt.Image;
 public class Gate extends Touch implements IGate, Kill {
 	private final static String PATH = "Pictures/gate";
 
-	public Gate(boolean permeability, Coordinate coordinate, boolean available) {
-		super(PATH, permeability, coordinate, available);
+	public Gate(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available) {
+		super(PATH, lorannPermeability, demonPermeability, coordinate, available);
 	}
 
 	@Override
@@ -22,10 +22,10 @@ public class Gate extends Touch implements IGate, Kill {
 	@Override
 	public Image getImage(Direction direction) { // If direction equal up, the sprite of the door is closed else, it's
 													// open
-		if (direction.equals(Direction.UP)) {
-			return getSprites().get(0);
-		} else {
+		if (isAvailable()) {
 			return getSprites().get(1);
+		} else {
+			return getSprites().get(0);
 		}
 	}
 
