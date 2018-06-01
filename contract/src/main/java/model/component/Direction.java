@@ -45,4 +45,37 @@ public enum Direction {
 			return null;
 		}
 	}
+
+	public static Direction getOpositeDirection(Direction direction) {
+		switch (direction) {
+		case DOWN:
+			return UP;
+
+		case DOWNLEFT:
+			return UPRIGHT;
+
+		case DOWNRIGHT:
+			return UPLEFT;
+
+		case LEFT:
+			return RIGHT;
+
+		case RIGHT:
+			return LEFT;
+
+		case UP:
+			return DOWN;
+
+		case UPLEFT:
+			return DOWNRIGHT;
+
+		case UPRIGHT:
+			return DOWNLEFT;
+
+		default:
+			JOptionPane.showMessageDialog(null, "Critical error !\nAn error occured", "Error",
+					JOptionPane.ERROR_MESSAGE);
+			return null;
+		}
+	}
 }
