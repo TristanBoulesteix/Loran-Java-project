@@ -22,7 +22,7 @@ public class GameController implements Runnable {
 	public void run() {
 		int count = 0;
 
-		while (player.isAlive() /* || !controller.isVictory() */) {
+		while (player.isAlive()) {
 			IComponent[][] components = controller.getModel().getMap();
 
 			if (count == 4) {
@@ -41,7 +41,12 @@ public class GameController implements Runnable {
 			}
 
 			count++;
+
+			if (controller.isVictory()) {
+				break;
+			}
 		}
+
 		if (controller.isVictory()) { // Add Popup for victory or defeat
 			int finalscore = 100 + controller.getScore();
 			JOptionPane.showMessageDialog(null, "CONGRATULATION !\nYour score is " + finalscore, "GAME OVER",
