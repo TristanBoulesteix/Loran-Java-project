@@ -6,14 +6,16 @@ public class Lorann extends Component implements ILorann {
 	private final static String PATH = "Pictures/Lorann";
 
 	private boolean alive;
+	private boolean spellLaunched;
 
 	public Lorann(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, Direction direction) {
 		super(PATH, lorannPermeability, demonPermeability, coordinate, direction);
 
 		this.alive = true;
+		this.spellLaunched = false;
 	}
 
-	public void launchSpell() {
+	public boolean launchSpell() {
 
 	}
 

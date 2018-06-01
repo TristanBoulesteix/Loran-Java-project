@@ -1,7 +1,7 @@
 package model.component;
 
 public interface ILorann {
-	public void launchSpell();
+	public boolean launchSpell();
 
 	public boolean isAlive();
 
