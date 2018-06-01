@@ -3,7 +3,7 @@ package controller;
 import model.IModel;
 import model.component.Direction;
 import model.component.IComponent;
-import view.IView;
+import view.IGameFrame;
 
 /**
  * <h1>The Interface IController.</h1>
@@ -18,7 +18,7 @@ public interface IController {
 
 	public IModel getModel();
 
-	public IView getGameFrame();
+	public IGameFrame getGameFrame();
 
 	public int getScore();
 

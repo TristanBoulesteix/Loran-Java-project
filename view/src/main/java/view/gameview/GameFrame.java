@@ -7,10 +7,10 @@ import java.util.Observer;
 import javax.swing.JFrame;
 
 import model.Model;
-import view.IView;
+import view.IGameFrame;
 
 @SuppressWarnings("serial")
-public class GameFrame extends JFrame implements IView {
+public class GameFrame extends JFrame implements IGameFrame {
 	private GamePanel panel;
 	private Model model;
 
