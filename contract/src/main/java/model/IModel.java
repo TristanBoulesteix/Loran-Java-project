@@ -15,7 +15,7 @@ import model.component.ILorann;
 public interface IModel {
 	/**
 	 * 
-	 * @return
+	 * @return IComponent
 	 */
 	public IComponent[][] getMap();
 	
@@ -28,12 +28,12 @@ public interface IModel {
 	
 	/**
 	 * 
-	 * @return
+	 * @return ILorann
 	 */
 	public ILorann getLorann();
 	/**
 	 * 
-	 * @return
+	 * @return IGate
 	 */
 	public IGate getGate();
 }

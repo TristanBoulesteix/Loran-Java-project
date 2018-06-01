@@ -4,15 +4,17 @@ public interface ILorann {
 	
 	/**
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean launchSpell();
 	/**
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isAlive();
 
-	
+	/**
+	 * 
+	 */
 	public void kill();
 }
