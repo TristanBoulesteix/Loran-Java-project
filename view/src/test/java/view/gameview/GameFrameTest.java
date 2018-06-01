@@ -1,11 +1,5 @@
 package view.gameview;
 
-import static org.junit.Assert.*;
-
-import java.awt.Panel;
-import java.util.Observable;
-import java.util.Observer;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,7 +9,9 @@ import org.junit.Test;
 import model.Model;
 
 public class GameFrameTest {
-	GamePanel panel;
+	GameFrame frame;
+	Model model;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -26,7 +22,8 @@ public class GameFrameTest {
 
 	@Before
 	public void setUp() throws Exception {
-		panel = new GamePanel(new Model(),null);
+		model = new Model();
+		frame = new GameFrame(model, null);
 	}
 
 	@After
@@ -35,8 +32,8 @@ public class GameFrameTest {
 
 	@Test
 	public void testGetPanel() {
-		final Panel expected;
-		asserEquals(expected, panel.GetPanel());
+		final GamePanel expected = new GamePanel(model, null);
+		asserEquals(expected, frame.getPanel());
 	}
 
 }

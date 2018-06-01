@@ -2,7 +2,7 @@ package model.component;
 
 import java.awt.Image;
 
-public class Gate extends Touch implements Kill {
+public class Gate extends Touch implements IGate, Kill {
 	private final static String PATH = "Pictures/gate";
 
 	public Gate(boolean permeability, Coordinate coordinate, boolean available) {

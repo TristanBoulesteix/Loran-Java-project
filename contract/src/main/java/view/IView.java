@@ -7,12 +7,5 @@ package view;
  * @version 1.0
  */
 public interface IView {
-
-    /**
-     * Display message.
-     *
-     * @param message
-     *            the message
-     */
-    void displayMessage(String message);
+	public IGamePanel getPanel();
 }

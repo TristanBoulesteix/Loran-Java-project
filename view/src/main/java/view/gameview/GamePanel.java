@@ -9,12 +9,13 @@ import java.util.Observer;
 import javax.swing.JPanel;
 
 import model.Model;
-import model.component.Component;
 import model.component.Direction;
+import model.component.IComponent;
+import view.IGamePanel;
 
 @SuppressWarnings("serial")
-public class GamePanel extends JPanel implements KeyListener {
-	private Component[][] components;
+public class GamePanel extends JPanel implements IGamePanel, KeyListener {
+	private IComponent[][] components;
 	private Observer observer;
 
 	public GamePanel(Model model, Observer observer) {
@@ -23,7 +24,7 @@ public class GamePanel extends JPanel implements KeyListener {
 		this.setBackground(Color.BLACK);
 	}
 
-	public void updateMap(Component[][] components) {
+	public void updateMap(IComponent[][] components) {
 		this.components = components;
 		repaint();
 	}

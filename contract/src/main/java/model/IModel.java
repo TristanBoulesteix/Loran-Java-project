@@ -1,13 +1,10 @@
 package model;
 
 import java.sql.SQLException;
-import java.util.List;
 
-import model.component.Component;
-import model.component.ComponentFactory;
-import model.component.Gate;
-import model.component.Lorann;
-import model.dao.DTBReader;
+import model.component.IComponent;
+import model.component.IGate;
+import model.component.ILorann;
 
 /**
  * <h1>The Interface IModel.</h1>
@@ -16,16 +13,11 @@ import model.dao.DTBReader;
  * @version 1.0
  */
 public interface IModel {
-
-	public Model();
-
-	public synchronized Component[][] getMap();
-
-	private String getMapFromDTB(int idMap) throws SQLException;
+	public IComponent[][] getMap();
 
 	public void generateMap(int idMap) throws SQLException;
 
-	public Lorann getLorann();
+	public ILorann getLorann();
 
-	public Gate getGate();
+	public IGate getGate();
 }

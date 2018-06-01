@@ -1,6 +1,6 @@
 package model.component;
 
-public class Coordinate {
+public class Coordinate implements ICoordinate {
 	private int x;
 	private int y;
 
@@ -9,7 +9,7 @@ public class Coordinate {
 		this.y = y;
 	}
 
-	public Coordinate(Coordinate coordinate) {
+	public Coordinate(ICoordinate coordinate) {
 		this.x = coordinate.getX();
 		this.y = coordinate.getY();
 	}

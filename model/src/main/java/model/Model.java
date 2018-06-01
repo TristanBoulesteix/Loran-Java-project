@@ -5,11 +5,12 @@ import java.sql.SQLException;
 import model.component.Component;
 import model.component.ComponentFactory;
 import model.component.Gate;
+import model.component.IComponent;
 import model.component.Lorann;
 import model.dao.DTBReader;
 
-public class Model {
-	private Component[][] components;
+public class Model implements IModel {
+	private IComponent[][] components;
 	private Lorann lorann;
 	private Gate gate;
 
@@ -17,7 +18,7 @@ public class Model {
 		components = new Component[12][20];
 	}
 
-	public synchronized Component[][] getMap() {
+	public synchronized IComponent[][] getMap() {
 		return components;
 	}
 
