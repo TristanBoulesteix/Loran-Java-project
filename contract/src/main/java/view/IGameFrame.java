@@ -8,4 +8,6 @@ package view;
  */
 public interface IGameFrame {
 	public IGamePanel getPanel();
+
+	public void dispose();
 }
