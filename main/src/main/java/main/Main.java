@@ -18,8 +18,11 @@ public abstract class Main {
 	 *            the arguments
 	 */
 	public static void main(final String[] args) {
+		//Instantiate new model
 		final Model model = new Model();
+		//Instantiate new controller
 		final Controller controller = new Controller(model);
+		//Run the game
 		controller.play();
 	}
 

@@ -5,7 +5,7 @@ public class Treasure extends Touch {
 	private final static int VALUE = 10;
 
 	public Treasure(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available) {
-		super(PATH, lorannPermeability, demonPermeability, coordinate, available);
+		super(PATH, lorannPermeability, demonPermeability, coordinate, available, Direction.UP);
 	}
 
 	public int getValue() {

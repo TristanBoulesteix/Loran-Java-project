@@ -33,11 +33,12 @@ public class ComponentFactoryTest {
 
 	@Test
 	public void getLorann() {
-		//get Lorann is a method who return the object Lorann
-		final Object expected = new Lorann(true, true, new Coordinate(0, 0));
+		// get Lorann is a method who return the object Lorann
+		final Object expected = new Lorann(true, true, new Coordinate(0, 0), Direction.UP);
 		// so we created a new Loran with the basic setup
 		assertEquals(expected, ComponentFactory.getLorann());
-		//then we use assertEquals to find if expected and the return Lorann are the same
+		// then we use assertEquals to find if expected and the return Lorann are the
+		// same
 	}
 
 }

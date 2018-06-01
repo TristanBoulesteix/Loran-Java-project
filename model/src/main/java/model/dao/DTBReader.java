@@ -8,6 +8,7 @@ public class DTBReader extends AbstractDAO {
 	private static final String PROCEDURE_CALL = "{CALL findMapByID(?)}";
 
 	public static String ReturnMap(int id) throws SQLException {
+		//Call stored procedure in SQL
 		final CallableStatement callStatement = prepareCall(PROCEDURE_CALL);
 		String map = null;
 		callStatement.setInt(1, id);
@@ -18,7 +19,7 @@ public class DTBReader extends AbstractDAO {
 			}
 			result.close();
 		}
-
+		//Return the map
 		return map;
 	}
 }

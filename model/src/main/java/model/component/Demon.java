@@ -1,10 +1,23 @@
 package model.component;
-
+/**
+ * Demon class
+ * 
+ * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public abstract class Demon extends Component implements Kill {
 	private boolean alive;
-
-	public Demon(String path, boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate) {
-		super(path, lorannPermeability, demonPermeability, coordinate);
+	/**
+	 * 
+	 * @param path
+	 * @param lorannPermeability
+	 * @param demonPermeability
+	 * @param coordinate
+	 * @param direction
+	 */
+	public Demon(String path, boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate,
+			Direction direction) {
+		super(path, lorannPermeability, demonPermeability, coordinate, direction);
 		this.alive = true;
 	}
 
@@ -15,11 +28,14 @@ public abstract class Demon extends Component implements Kill {
 			character.kill();
 		}
 	}
-
+	/**
+	 * 
+	 * @return alive
+	 */
 	public boolean isAlive() {
 		return alive;
 	}
-
+	
 	public void kill() {
 		this.alive = false;
 	}

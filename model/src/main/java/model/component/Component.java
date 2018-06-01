@@ -11,12 +11,22 @@ public abstract class Component implements IComponent {
 
 	private ICoordinate coordinate;
 	private ArrayList<Image> sprites;
+	private Direction direction;
 
-	public Component(String path, boolean lorannPermeability, boolean demonPermeability, ICoordinate coordinate) {
+	/**
+	 * 
+	 * @param path
+	 * @param lorannPermeability
+	 * @param demonPermeability
+	 * @param coordinate
+	 */
+	public Component(String path, boolean lorannPermeability, boolean demonPermeability, ICoordinate coordinate,
+			Direction direction) {
 		this.LORANN_PERMEABILITY = lorannPermeability;
 		this.DEMON_PERMEABILITY = demonPermeability;
 		this.coordinate = coordinate;
 		this.sprites = new ArrayList<Image>();
+		this.setDirection(direction);
 
 		SpriteReader reader = new SpriteReader(path);
 		sprites = reader.getSprites();
@@ -42,11 +52,26 @@ public abstract class Component implements IComponent {
 		return LORANN_PERMEABILITY;
 	}
 
+	/**
+	 * 
+	 * @return sprites
+	 */
 	protected ArrayList<Image> getSprites() {
 		return sprites;
 	}
 
+	/**
+	 * @return DEMON_PERMEABILITY
+	 */
 	public boolean isDEMON_PERMEABLE() {
 		return DEMON_PERMEABILITY;
+	}
+
+	public Direction getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
 	}
 }
