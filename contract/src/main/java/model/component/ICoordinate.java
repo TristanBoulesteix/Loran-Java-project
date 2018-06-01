@@ -3,7 +3,7 @@ package model.component;
 public interface ICoordinate {
 	/**
 	 * 
-	 * @return
+	 * @return int
 	 */
 	public int getX();
 	/**
@@ -13,7 +13,7 @@ public interface ICoordinate {
 	public void setX(int x);
 /**
  * 
- * @return
+ * @return int
  */
 	public int getY();
 	

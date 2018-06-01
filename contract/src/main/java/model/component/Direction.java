@@ -9,7 +9,7 @@ public enum Direction {
 /**
  * 
  * @param order
- * @return
+ * @return Direction
  */
 	public static Direction getDirectionFromOrder(Order order) {
 		switch (order) {
@@ -46,6 +46,11 @@ public enum Direction {
 		}
 	}
 
+	/**
+	 * 
+	 * @param direction
+	 * @return Direction
+	 */
 	public static Direction getOpositeDirection(Direction direction) {
 		switch (direction) {
 		case DOWN:

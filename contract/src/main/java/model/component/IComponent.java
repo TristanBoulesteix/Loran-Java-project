@@ -5,13 +5,13 @@ import java.awt.Image;
 public interface IComponent {
 	/**
 	 * 
-	 * @return
+	 * @return ICoordinate
 	 */
 	public ICoordinate getCoordinate();
 	/**
 	 * 
 	 * @param direction
-	 * @return
+	 * @return Image
 	 */
 	public Image getImage(Direction direction);
 	
@@ -23,13 +23,13 @@ public interface IComponent {
 	
 	/**
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isLORANN_PERMEABLE();
 
 	/**
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isDEMON_PERMEABLE();
 
