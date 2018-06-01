@@ -3,8 +3,9 @@ package model.component;
 public abstract class Demon extends Component implements Kill {
 	private boolean alive;
 
-	public Demon(String path, boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate) {
-		super(path, lorannPermeability, demonPermeability, coordinate);
+	public Demon(String path, boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate,
+			Direction direction) {
+		super(path, lorannPermeability, demonPermeability, coordinate, direction);
 		this.alive = true;
 	}
 

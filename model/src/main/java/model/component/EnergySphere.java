@@ -5,7 +5,7 @@ public class EnergySphere extends Touch {
 
 	public EnergySphere(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate,
 			boolean available) {
-		super(PATH, lorannPermeability, demonPermeability, coordinate, available);
+		super(PATH, lorannPermeability, demonPermeability, coordinate, available, Direction.UP);
 	}
 
 	@Override

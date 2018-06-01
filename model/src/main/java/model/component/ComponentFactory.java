@@ -85,7 +85,7 @@ public abstract class ComponentFactory {
 	}
 
 	private static Lorann createLorann(Coordinate coordinate) {
-		return new Lorann(true, true, coordinate);
+		return new Lorann(true, true, coordinate, Direction.UP);
 	}
 
 	public static Spell createSpell(Coordinate coordinate) {
@@ -93,19 +93,19 @@ public abstract class ComponentFactory {
 	}
 
 	private static Kyracj createKyacj(Coordinate coordinate) {
-		return new Kyracj(true, false, coordinate);
+		return new Kyracj(true, false, coordinate, Direction.UP);
 	}
 
 	private static Maarcg createMarrcg(Coordinate coordinate) {
-		return new Maarcg(true, false, coordinate);
+		return new Maarcg(true, false, coordinate, Direction.UP);
 	}
 
 	private static Arrbarr createArrbarr(Coordinate coordinate) {
-		return new Arrbarr(true, false, coordinate);
+		return new Arrbarr(true, false, coordinate, Direction.UP);
 	}
 
 	private static Cargyv createCargyv(Coordinate coordinate) {
-		return new Cargyv(true, false, coordinate);
+		return new Cargyv(true, false, coordinate, Direction.UP);
 	}
 
 	private static Treasure createTreasure(Coordinate coordinate) {
