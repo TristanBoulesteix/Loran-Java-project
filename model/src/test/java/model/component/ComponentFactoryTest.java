@@ -1,6 +1,6 @@
 package model.component;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,7 +20,6 @@ public class ComponentFactoryTest {
 
 	@Before
 	public void setUp() throws Exception {
-		Lorann Lorann = new Lorann(true,new Coordinate(0,0));
 	}
 
 	@After
@@ -29,13 +28,16 @@ public class ComponentFactoryTest {
 
 	@Test
 	public void test() {
-		
+
 	}
+
 	@Test
 	public void getLorann() {
-		final Object expected  =new Lorann(true,new Coordinate(0,0));
+		//get Lorann is a method who return the object Lorann
+		final Object expected = new Lorann(true, true, new Coordinate(0, 0));
+		// so we created a new Loran with the basic setup
 		assertEquals(expected, ComponentFactory.getLorann());
+		//then we use assertEquals to find if expected and the return Lorann are the same
 	}
 
 }
-

@@ -6,13 +6,15 @@ import java.util.ArrayList;
 import model.dao.SpriteReader;
 
 public abstract class Component implements IComponent {
-	private final boolean PERMEABILITY;
+	private final boolean LORANN_PERMEABILITY;
+	private final boolean DEMON_PERMEABILITY;
 
 	private ICoordinate coordinate;
 	private ArrayList<Image> sprites;
 
-	public Component(String path, boolean permeability, ICoordinate coordinate) {
-		this.PERMEABILITY = permeability;
+	public Component(String path, boolean lorannPermeability, boolean demonPermeability, ICoordinate coordinate) {
+		this.LORANN_PERMEABILITY = lorannPermeability;
+		this.DEMON_PERMEABILITY = demonPermeability;
 		this.coordinate = coordinate;
 		this.sprites = new ArrayList<Image>();
 
@@ -36,11 +38,15 @@ public abstract class Component implements IComponent {
 	}
 
 	@Override
-	public boolean isPERMEABLE() {
-		return PERMEABILITY;
+	public boolean isLORANN_PERMEABLE() {
+		return LORANN_PERMEABILITY;
 	}
 
 	protected ArrayList<Image> getSprites() {
 		return sprites;
+	}
+
+	public boolean isDEMON_PERMEABLE() {
+		return DEMON_PERMEABILITY;
 	}
 }

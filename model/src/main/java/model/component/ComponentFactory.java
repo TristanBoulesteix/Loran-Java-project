@@ -9,6 +9,7 @@ public abstract class ComponentFactory {
 
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
+		demons = new ArrayList<Demon>();
 
 		char[] charArray = map.toCharArray();
 
@@ -49,6 +50,8 @@ public abstract class ComponentFactory {
 
 				case '1':
 					components[x][y] = createCargyv(new Coordinate(x, y));
+					demons.add((Demon) components[x][y]);
+
 					break;
 
 				case '2':
@@ -82,39 +85,39 @@ public abstract class ComponentFactory {
 	}
 
 	private static Lorann createLorann(Coordinate coordinate) {
-		return new Lorann(true, coordinate);
+		return new Lorann(true, true, coordinate);
 	}
 
 	public static Spell createSpell(Coordinate coordinate) {
-		return new Spell(true, coordinate, false);
+		return new Spell(true, true, coordinate, false);
 	}
 
 	private static Kyracj createKyacj(Coordinate coordinate) {
-		return new Kyracj(true, coordinate);
+		return new Kyracj(true, false, coordinate);
 	}
 
 	private static Maarcg createMarrcg(Coordinate coordinate) {
-		return new Maarcg(true, coordinate);
+		return new Maarcg(true, false, coordinate);
 	}
 
 	private static Arrbarr createArrbarr(Coordinate coordinate) {
-		return new Arrbarr(true, coordinate);
+		return new Arrbarr(true, false, coordinate);
 	}
 
 	private static Cargyv createCargyv(Coordinate coordinate) {
-		return new Cargyv(true, coordinate);
+		return new Cargyv(true, false, coordinate);
 	}
 
 	private static Treasure createTreasure(Coordinate coordinate) {
-		return new Treasure(true, coordinate, true);
+		return new Treasure(true, false, coordinate, true);
 	}
 
 	private static EnergySphere createEnergySphere(Coordinate coordinate) {
-		return new EnergySphere(true, coordinate, true);
+		return new EnergySphere(true, false, coordinate, true);
 	}
 
 	private static Gate createGate(Coordinate coordinate) {
-		return new Gate(true, coordinate, false);
+		return new Gate(true, false, coordinate, false);
 	}
 
 	private static CornerSet createCornerSet(Coordinate coordinate) {
@@ -130,7 +133,7 @@ public abstract class ComponentFactory {
 	}
 
 	private static Empty createEmpty(Coordinate coordinate) {
-		return new Empty(true, coordinate);
+		return new Empty(coordinate);
 	}
 
 	public static Lorann getLorann() {

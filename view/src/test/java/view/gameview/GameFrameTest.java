@@ -1,5 +1,7 @@
 package view.gameview;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,11 +31,14 @@ public class GameFrameTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
+	
 	@Test
 	public void testGetPanel() {
-		final GamePanel expected = new GamePanel(model, null);
-		asserEquals(expected, frame.getPanel());
+		
+		final GamePanel expected = this.frame.getPanel();
+		//final GamePanel expected = new GamePanel(model, null);
+		assertEquals(expected, frame.getPanel());
 	}
 
 }

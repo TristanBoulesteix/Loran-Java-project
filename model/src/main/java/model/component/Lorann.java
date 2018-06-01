@@ -7,8 +7,8 @@ public class Lorann extends Component implements ILorann {
 
 	private boolean alive;
 
-	public Lorann(boolean permeability, Coordinate coordinate) {
-		super(PATH, permeability, coordinate);
+	public Lorann(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate) {
+		super(PATH, lorannPermeability, demonPermeability, coordinate);
 
 		this.alive = true;
 	}
