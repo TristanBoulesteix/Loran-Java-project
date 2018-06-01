@@ -20,7 +20,7 @@ public class GameController implements Runnable {
 	public void run() {
 		int count = 0;
 
-		while (player.isAlive() || !controller.isVictory()) {
+		while (player.isAlive() /* || !controller.isVictory() */) {
 			IComponent[][] components = controller.getModel().getMap();
 
 			if (count == 4) {
