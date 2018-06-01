@@ -18,23 +18,30 @@ public class GameController implements Runnable {
 
 	@Override
 	public void run() {
-		while (player.isAlive() || !controller.isVictory()) {
+		int count = 0;
+
+		while (player.isAlive() /* || !controller.isVictory() */) {
 			IComponent[][] components = controller.getModel().getMap();
 
-			for (DemonMover mover : movers) {
-				mover.move();
+			if (count == 4) {
+				for (DemonMover mover : movers) {
+					mover.move();
+				}
+				count = 0;
 			}
 
 			controller.getGameFrame().getPanel().updateMap(components);
 
 			try {
-				Thread.sleep(50);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+
+			count++;
 		}
 
-		System.out.println("Dead");
+		System.out.println("Dead !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
 
 }

@@ -5,8 +5,8 @@ import java.awt.Image;
 public class Gate extends Touch implements IGate, Kill {
 	private final static String PATH = "Pictures/gate";
 
-	public Gate(boolean permeability, Coordinate coordinate, boolean available) {
-		super(PATH, permeability, coordinate, available);
+	public Gate(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available) {
+		super(PATH, lorannPermeability, demonPermeability, coordinate, available);
 	}
 
 	@Override

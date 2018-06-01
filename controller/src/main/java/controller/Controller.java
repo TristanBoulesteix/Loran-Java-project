@@ -6,7 +6,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 import model.Model;
-import model.component.Component;
 import model.component.ComponentFactory;
 import model.component.Coordinate;
 import model.component.Demon;
@@ -107,26 +106,47 @@ public class Controller implements IController, Observer { // Create class contr
 			break;
 		}
 
-		if (directionisAvailable(newCoordinates)) {
-			checkTargetLocation(component, model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()]);
+		if (component instanceof Lorann) {
+			if (directionisAvailableForLorann(newCoordinates)) {
+				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
 
-			component.setCoordinate(newCoordinates);
-			model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(true, currentCoordinates);
-			model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
+				component.setCoordinate(newCoordinates);
+				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
+				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
+			}
+		} else if (component instanceof Demon) {
+			if (directionIsAvailableForDemons(newCoordinates)) {
+				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
+
+				component.setCoordinate(newCoordinates);
+				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
+				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
+			}
 		}
 	}
 
-	private synchronized boolean directionisAvailable(ICoordinate coordinateToCheck) {
+	private synchronized boolean directionisAvailableForLorann(ICoordinate coordinateToCheck) {
 		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 
-		if (destination.isPERMEABLE()) {
+		if (destination.isLORANN_PERMEABLE()) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	private synchronized Component checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
+	private synchronized boolean directionIsAvailableForDemons(ICoordinate coordinateToCheck) {
+		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
+
+		if (destination.isDEMON_PERMEABLE()) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+	private synchronized void checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
 			Lorann lorann = (Lorann) componentToMove;
 
@@ -134,11 +154,9 @@ public class Controller implements IController, Observer { // Create class contr
 				Treasure treasure = (Treasure) componentInPosition;
 
 				this.score = score + treasure.getValue();
-
-				return new Empty(true, new Coordinate(componentInPosition.getCoordinate()));
 			} else if (componentInPosition instanceof Demon) {
-				lorann.kill();
-				return null;
+				this.model.getLorann().kill();
+
 			} else if (componentInPosition instanceof Gate) {
 				Gate gate = (Gate) componentInPosition;
 
@@ -147,18 +165,37 @@ public class Controller implements IController, Observer { // Create class contr
 				} else {
 					lorann.kill();
 				}
+
 			} else if (componentInPosition instanceof EnergySphere) {
-				model.getGate().setAvailable(true);
+				EnergySphere sphere = (EnergySphere) componentInPosition;
+
+				if (sphere.isAvailable()) {
+					model.getGate().setAvailable(true);
+				}
+				sphere.setAvailable(false);
+			}
+
+		} else if (componentToMove instanceof Demon) {
+			Demon demon = (Demon) componentToMove;
+
+			if (componentInPosition instanceof Lorann) {
+				Lorann lorann = (Lorann) componentInPosition;
+				lorann.kill();
+
+			} else if (componentInPosition instanceof Demon) {
+				DemonMover.move(demon);
+
+			} else if (componentInPosition instanceof EnergySphere) {
+				DemonMover.move(demon);
 			}
 		}
 
-		return null;
 	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		moveComponent(model.getLorann(), (Direction) arg1);
-		System.out.println(arg1);
+		// System.out.println(arg1);
 	}
 
 	public Model getModel() {

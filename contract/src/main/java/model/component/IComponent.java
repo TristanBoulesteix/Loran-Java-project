@@ -9,6 +9,8 @@ public interface IComponent {
 
 	public void setCoordinate(ICoordinate coordinate);
 
-	public boolean isPERMEABLE();
+	public boolean isLORANN_PERMEABLE();
+
+	public boolean isDEMON_PERMEABLE();
 
 }
