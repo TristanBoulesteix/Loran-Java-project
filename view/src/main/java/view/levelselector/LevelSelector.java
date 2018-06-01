@@ -6,12 +6,12 @@ import javax.swing.JPanel;
 public class LevelSelector {
 
 	private int level;
-	private final static String[] LEVEL_LIST = { "Map 1", "Map 2", "Map 3", "Map 4", "Map 5" };;
+	private final static String[] LEVEL_LIST = { "Map 1", "Map 2", "Map 3", "Map 4", "Map 5" };
 
 	public LevelSelector() {
 		super();
 	}
-
+	// Display the popup to select level and return the level number
 	public static int getLevel() {
 		String nom = (String) JOptionPane.showInputDialog(null, "Choose a Map!", "Lorann-MapSelector",
 				JOptionPane.QUESTION_MESSAGE, null, LEVEL_LIST, LEVEL_LIST[0]);
@@ -34,9 +34,9 @@ public class LevelSelector {
 
 		case "Map 5":
 			return 5;
-
+			//Default, its an error
 		default:
-
+	
 			final JPanel panel = new JPanel();
 			JOptionPane.showMessageDialog(panel, "Invalid choice !", "Error", JOptionPane.ERROR_MESSAGE);
 			return 1;
