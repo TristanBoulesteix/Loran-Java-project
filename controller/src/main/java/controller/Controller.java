@@ -176,17 +176,10 @@ public class Controller implements IController, Observer { // Create class contr
 			}
 
 		} else if (componentToMove instanceof Demon) {
-			Demon demon = (Demon) componentToMove;
-
 			if (componentInPosition instanceof Lorann) {
 				Lorann lorann = (Lorann) componentInPosition;
 				lorann.kill();
 
-			} else if (componentInPosition instanceof Demon) {
-				DemonMover.move(demon);
-
-			} else if (componentInPosition instanceof EnergySphere) {
-				DemonMover.move(demon);
 			}
 		}
 
