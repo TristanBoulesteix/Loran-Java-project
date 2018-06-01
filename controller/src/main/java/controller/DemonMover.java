@@ -20,13 +20,13 @@ public class DemonMover { // Create the class DemonMover wich is implements by R
 	}
 
 	public void move() {
-		// methode move appel d'autre methode crer un nbr aléatoir
+		// Creation of the new Random
 		Random random = new Random();
 
-		// get toute les position possible puis arraylist de enum
+		// get the enum in an ArrayList and use it randomly
 		ArrayList<Direction> list = new ArrayList<Direction>(EnumSet.allOf(Direction.class));
 		int index = random.nextInt(list.size());
-		// apel de la methode moveC du contructeur
+		// call of MoveComponent
 		controller.moveComponent(demon, list.get(index));
 	}
 
