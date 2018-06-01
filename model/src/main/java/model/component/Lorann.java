@@ -1,20 +1,32 @@
 package model.component;
 
 import java.awt.Image;
-
+/**
+ * 
+ * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public class Lorann extends Component implements ILorann {
 	private final static String PATH = "Pictures/Lorann";
 
 	private boolean alive;
 	private boolean spellLaunched;
-
+/**
+ * 
+ * @param lorannPermeability
+ * @param demonPermeability
+ * @param coordinate
+ * @param direction
+ */
 	public Lorann(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, Direction direction) {
 		super(PATH, lorannPermeability, demonPermeability, coordinate, direction);
 
 		this.alive = true;
 		this.spellLaunched = false;
 	}
-
+/**
+ * @return boolean
+ */
 	public boolean launchSpell() {
 		if (spellLaunched) {
 			return false;
@@ -23,11 +35,15 @@ public class Lorann extends Component implements ILorann {
 			return true;
 		}
 	}
-
+/**
+ * @return alive
+ */
 	public boolean isAlive() {
 		return alive;
 	}
-
+/**
+ * Kill Lorann
+ */
 	public void kill() {
 		this.alive = false;
 	}
@@ -63,11 +79,17 @@ public class Lorann extends Component implements ILorann {
 			return getSprites().get(0);
 		}
 	}
-
+/**
+ * 
+ * @return spellLaunched
+ */
 	public boolean isSpellLaunched() {
 		return spellLaunched;
 	}
-
+	/**
+	 * 
+	 * @param spellLaunched
+	 */
 	public void setSpellLaunched(boolean spellLaunched) {
 		this.spellLaunched = spellLaunched;
 	}
