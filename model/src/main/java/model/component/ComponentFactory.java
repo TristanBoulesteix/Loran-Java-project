@@ -1,8 +1,11 @@
 package model.component;
 
+import java.util.ArrayList;
+
 public abstract class ComponentFactory {
 	private static Lorann lorann;
 	private static Gate gate;
+	private static ArrayList<Demon> demons;
 
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
@@ -50,14 +53,17 @@ public abstract class ComponentFactory {
 
 				case '2':
 					components[x][y] = createArrbarr(new Coordinate(x, y));
+					demons.add((Demon) components[x][y]);
 					break;
 
 				case '3':
 					components[x][y] = createKyacj(new Coordinate(x, y));
+					demons.add((Demon) components[x][y]);
 					break;
 
 				case '4':
 					components[x][y] = createMarrcg(new Coordinate(x, y));
+					demons.add((Demon) components[x][y]);
 					break;
 
 				case 'G':
@@ -133,5 +139,13 @@ public abstract class ComponentFactory {
 
 	public static Gate getGate() {
 		return gate;
+	}
+
+	public static ArrayList<Demon> getDemons() {
+		return demons;
+	}
+
+	public static void setDemons(ArrayList<Demon> demons) {
+		ComponentFactory.demons = demons;
 	}
 }

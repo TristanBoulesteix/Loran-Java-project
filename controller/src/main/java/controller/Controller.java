@@ -1,11 +1,13 @@
 package controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
 import model.Model;
 import model.component.Component;
+import model.component.ComponentFactory;
 import model.component.Coordinate;
 import model.component.Demon;
 import model.component.Direction;
@@ -29,6 +31,7 @@ public class Controller implements IController, Observer { // Create class contr
 
 	public Controller(Model model) { // Create the controller with parameters
 		this.model = model;
+		this.movers = new ArrayList<DemonMover>();
 		gameFrame = new GameFrame(model, this);
 		initializeGame();
 	}
@@ -45,9 +48,20 @@ public class Controller implements IController, Observer { // Create class contr
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		gameController = new GameController(model.getLorann(), this);
+		gameController = new GameController(model.getLorann(), this, instantiateDemonMover(););
 		game = new Thread(gameController);
 		gameFrame.setVisible(true);
+	}
+
+	private ArrayList<DemonMover> instantiateDemonMover() {
+		ArrayList<Demon> demons = ComponentFactory.getDemons();
+		ArrayList<DemonMover> movers = new ArrayList<DemonMover>();
+
+		for (Demon demon : demons) {
+			movers.add(new DemonMover(demon, this));
+		}
+
+		return movers;
 	}
 
 	@Override
