@@ -4,22 +4,25 @@ import java.sql.SQLException;
 
 import model.component.Component;
 import model.component.ComponentFactory;
+import model.component.Coordinate;
 import model.component.Gate;
 import model.component.IComponent;
 import model.component.Lorann;
+import model.component.Spell;
 import model.dao.DTBReader;
 
 public class Model implements IModel {
 	private IComponent[][] components;
 	private Lorann lorann;
 	private Gate gate;
+	private Spell spell;
 
 	public Model() {
 		components = new Component[12][20];//
 	}
 
 	public synchronized IComponent[][] getMap() {
-		return components;//Creation of a Map
+		return components;// Creation of a Map
 	}
 
 	private String getMapFromDTB(int idMap) throws SQLException {
@@ -34,10 +37,19 @@ public class Model implements IModel {
 	}
 
 	public Lorann getLorann() {
-		return lorann;//Creation of an Lorann
+		return lorann;// Creation of an Lorann
 	}
 
 	public Gate getGate() {
-		return gate;//Creation of a Gate
+		return gate;// Creation of a Gate
+	}
+
+	public Spell getSpell(Coordinate coordinate) {
+		if (spell == null) {
+			spell = ComponentFactory.createSpell(coordinate);
+			return spell;
+		} else {
+			return spell;
+		}
 	}
 }
