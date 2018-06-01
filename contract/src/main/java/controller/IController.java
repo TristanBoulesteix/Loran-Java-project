@@ -1,7 +1,12 @@
 package controller;
 
-import java.sql.SQLException;
+import java.awt.Component;
 import java.util.Observable;
+
+import com.sun.javafx.scene.traversal.Direction;
+
+import model.IModel;
+import view.IView;
 
 /**
  * <h1>The Interface IController.</h1>
@@ -10,20 +15,15 @@ import java.util.Observable;
  * @version 1.0
  */
 public interface IController {
-	
-	public Controller(Model model);
-
 	public void play();
-
-	private void initializeGame();
 
 	public synchronized void moveComponent(Component component, Direction direction);
 
 	public void update(Observable arg0, Object arg1);
 
-	public Model getModel();
+	public IModel getModel();
 
-	public GameFrame getGameFrame();
+	public IView getGameFrame();
 
 	public int getScore();
 
@@ -33,5 +33,3 @@ public interface IController {
 
 	public void setVictory(boolean victory);
 }
-
-

@@ -3,7 +3,7 @@ package controller;
 import model.component.Component;
 import model.component.Direction;
 
-public class DemonMover implements Runnable { // Create the class DemonMover wich is implements by Runable
+public class DemonMover { // Create the class DemonMover wich is implements by Runable
 
 	private Direction direction; // Create the attribute direction
 
@@ -16,11 +16,6 @@ public class DemonMover implements Runnable { // Create the class DemonMover wic
 	}
 
 	public void setComponement(Component[][] componementsPosition) { // Edit variables
-
-	}
-
-	@Override
-	public void run() {
 
 	}
 
