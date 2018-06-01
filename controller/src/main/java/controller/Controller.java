@@ -19,6 +19,7 @@ import model.component.Lorann;
 import model.component.Treasure;
 import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
+
 // Create class controller
 public class Controller implements IController, Observer {
 	private GameFrame gameFrame;
@@ -27,16 +28,19 @@ public class Controller implements IController, Observer {
 	private Thread game;
 	private int score;
 	private boolean victory;
+
 	// Create the controller with parameters
 	public Controller(Model model) {
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
 		initializeGame();
 	}
+
 	// Run the game
 	public void play() {
 		game.run();
 	}
+
 	// Initialization of the game
 	private void initializeGame() {
 		setVictory(false);
@@ -50,6 +54,7 @@ public class Controller implements IController, Observer {
 		game = new Thread(gameController);
 		gameFrame.setVisible(true);
 	}
+
 	// Instantiate the movement of the demon
 	private ArrayList<DemonMover> instantiateDemonMover() {
 		ArrayList<Demon> demons = ComponentFactory.getDemons();
@@ -125,6 +130,7 @@ public class Controller implements IController, Observer {
 			}
 		}
 	}
+
 	// Check is Lorann can move here.
 	private synchronized boolean directionisAvailableForLorann(ICoordinate coordinateToCheck) {
 		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
@@ -135,6 +141,7 @@ public class Controller implements IController, Observer {
 			return false;
 		}
 	}
+
 	// Check if the demon can move here.
 	private synchronized boolean directionIsAvailableForDemons(ICoordinate coordinateToCheck) {
 		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
@@ -146,6 +153,7 @@ public class Controller implements IController, Observer {
 		}
 
 	}
+
 	// Realize action relative to the target component
 	private synchronized void checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
@@ -160,17 +168,17 @@ public class Controller implements IController, Observer {
 
 			} else if (componentInPosition instanceof Gate) {
 				Gate gate = (Gate) componentInPosition;
-				//If gate is available, we win the game
+				// If gate is available, we win the game
 				if (gate.isAvailable()) {
 					setVictory(true);
 				} else {
-					//If gate is not available, kill Lorann
+					// If gate is not available, kill Lorann
 					lorann.kill();
 				}
 
 			} else if (componentInPosition instanceof EnergySphere) {
 				EnergySphere sphere = (EnergySphere) componentInPosition;
-				//When we take the EnergySphere, open the gate
+				// When we take the EnergySphere, open the gate
 				if (sphere.isAvailable()) {
 					model.getGate().setAvailable(true);
 				}
@@ -192,7 +200,9 @@ public class Controller implements IController, Observer {
 		if (!arg1.equals(Order.FIRE)) {
 			moveComponent(model.getLorann(), Direction.getDirectionFromOrder((Order) arg1));
 		} else {
-			model.getLorann().launchSpell();
+			if (model.getLorann().launchSpell()) {
+
+			}
 		}
 	}
 

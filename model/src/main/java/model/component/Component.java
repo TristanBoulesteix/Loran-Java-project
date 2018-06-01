@@ -13,6 +13,13 @@ public abstract class Component implements IComponent {
 	private ArrayList<Image> sprites;
 	private Direction direction;
 
+	/**
+	 * 
+	 * @param path
+	 * @param lorannPermeability
+	 * @param demonPermeability
+	 * @param coordinate
+	 */
 	public Component(String path, boolean lorannPermeability, boolean demonPermeability, ICoordinate coordinate,
 			Direction direction) {
 		this.LORANN_PERMEABILITY = lorannPermeability;
@@ -45,10 +52,17 @@ public abstract class Component implements IComponent {
 		return LORANN_PERMEABILITY;
 	}
 
+	/**
+	 * 
+	 * @return sprites
+	 */
 	protected ArrayList<Image> getSprites() {
 		return sprites;
 	}
 
+	/**
+	 * @return DEMON_PERMEABILITY
+	 */
 	public boolean isDEMON_PERMEABLE() {
 		return DEMON_PERMEABILITY;
 	}

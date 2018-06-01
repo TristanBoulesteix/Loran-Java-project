@@ -16,7 +16,12 @@ public class Lorann extends Component implements ILorann {
 	}
 
 	public boolean launchSpell() {
-
+		if (spellLaunched) {
+			return false;
+		} else {
+			spellLaunched = true;
+			return true;
+		}
 	}
 
 	public boolean isAlive() {
@@ -57,5 +62,13 @@ public class Lorann extends Component implements ILorann {
 		default:
 			return getSprites().get(0);
 		}
+	}
+
+	public boolean isSpellLaunched() {
+		return spellLaunched;
+	}
+
+	public void setSpellLaunched(boolean spellLaunched) {
+		this.spellLaunched = spellLaunched;
 	}
 }
