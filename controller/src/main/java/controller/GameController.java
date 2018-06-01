@@ -1,13 +1,13 @@
 package controller;
 
-import model.component.Component;
-import model.component.Lorann;
+import model.component.IComponent;
+import model.component.ILorann;
 
 public class GameController implements Runnable {
-	private Lorann player;
-	private Controller controller;
+	private ILorann player;
+	private IController controller;
 
-	public GameController(Lorann player, Controller controller) {
+	public GameController(ILorann player, IController controller) {
 		this.player = player;
 		this.controller = controller;
 	}
@@ -15,7 +15,7 @@ public class GameController implements Runnable {
 	@Override
 	public void run() {
 		while (player.isAlive() || !controller.isVictory()) {
-			Component[][] components = controller.getModel().getMap();
+			IComponent[][] components = controller.getModel().getMap();
 			controller.getGameFrame().getPanel().updateMap(components);
 
 			try {

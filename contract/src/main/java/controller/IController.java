@@ -1,11 +1,8 @@
 package controller;
 
-import java.awt.Component;
-import java.util.Observable;
-
-import com.sun.javafx.scene.traversal.Direction;
-
 import model.IModel;
+import model.component.Direction;
+import model.component.IComponent;
 import view.IView;
 
 /**
@@ -17,9 +14,7 @@ import view.IView;
 public interface IController {
 	public void play();
 
-	public synchronized void moveComponent(Component component, Direction direction);
-
-	public void update(Observable arg0, Object arg1);
+	public void moveComponent(IComponent component, Direction direction);
 
 	public IModel getModel();
 

@@ -2,7 +2,7 @@ package model.component;
 
 import java.awt.Image;
 
-public class Lorann extends Component {
+public class Lorann extends Component implements ILorann {
 	private final static String PATH = "Pictures/Lorann";
 
 	private boolean alive;

@@ -12,12 +12,14 @@ import model.component.Direction;
 import model.component.Empty;
 import model.component.EnergySphere;
 import model.component.Gate;
+import model.component.IComponent;
+import model.component.ICoordinate;
 import model.component.Lorann;
 import model.component.Treasure;
 import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
 
-public class Controller implements Observer { // Create class controller
+public class Controller implements IController, Observer { // Create class controller
 	private GameFrame gameFrame;
 	private Model model;
 	private GameController gameController;
@@ -48,11 +50,12 @@ public class Controller implements Observer { // Create class controller
 		gameFrame.setVisible(true);
 	}
 
-	public synchronized void moveComponent(Component component, Direction direction) { // Displays the components with
-																						// their
+	@Override
+	public void moveComponent(IComponent component, Direction direction) { // Displays the components with
+																			// their
 		// direction
-		Coordinate currentCoordinates = component.getCoordinate();
-		Coordinate newCoordinates;
+		ICoordinate currentCoordinates = component.getCoordinate();
+		ICoordinate newCoordinates;
 
 		switch (direction) {
 		case DOWN:
@@ -100,8 +103,8 @@ public class Controller implements Observer { // Create class controller
 		}
 	}
 
-	private synchronized boolean directionisAvailable(Coordinate coordinateToCheck) {
-		Component destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
+	private synchronized boolean directionisAvailable(ICoordinate coordinateToCheck) {
+		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 
 		if (destination.isPERMEABLE()) {
 			return true;
@@ -110,7 +113,7 @@ public class Controller implements Observer { // Create class controller
 		}
 	}
 
-	private synchronized Component checkTargetLocation(Component componentToMove, Component componentInPosition) {
+	private synchronized Component checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
 			Lorann lorann = (Lorann) componentToMove;
 

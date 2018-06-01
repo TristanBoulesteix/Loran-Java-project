@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 import model.dao.SpriteReader;
 
-public abstract class Component {
+public abstract class Component implements IComponent {
 	private final boolean PERMEABILITY;
 
-	private Coordinate coordinate;
+	private ICoordinate coordinate;
 	private ArrayList<Image> sprites;
 
-	public Component(String path, boolean permeability, Coordinate coordinate) {
+	public Component(String path, boolean permeability, ICoordinate coordinate) {
 		this.PERMEABILITY = permeability;
 		this.coordinate = coordinate;
 		this.sprites = new ArrayList<Image>();
@@ -20,18 +20,22 @@ public abstract class Component {
 		sprites = reader.getSprites();
 	}
 
-	public Coordinate getCoordinate() {
+	@Override
+	public ICoordinate getCoordinate() {
 		return coordinate;
 	}
 
+	@Override
 	public Image getImage(Direction direction) {
 		return sprites.get(0);
 	}
 
-	public void setCoordinate(Coordinate coordinate) {
+	@Override
+	public void setCoordinate(ICoordinate coordinate) {
 		this.coordinate = coordinate;
 	}
 
+	@Override
 	public boolean isPERMEABLE() {
 		return PERMEABILITY;
 	}
