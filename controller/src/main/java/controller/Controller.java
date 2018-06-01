@@ -187,8 +187,11 @@ public class Controller implements IController, Observer { // Create class contr
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		moveComponent(model.getLorann(), (Direction) arg1);
-		// System.out.println(arg1);
+		if (!arg1.equals(Order.FIRE)) {
+			moveComponent(model.getLorann(), Direction.getDirectionFromOrder((Order) arg1));
+		} else {
+			model.getLorann().launchSpell();
+		}
 	}
 
 	public Model getModel() {

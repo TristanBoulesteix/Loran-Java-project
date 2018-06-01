@@ -8,6 +8,7 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
+import controller.Order;
 import model.Model;
 import model.component.Direction;
 import model.component.IComponent;
@@ -25,7 +26,7 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	}
 
 	public void updateMap(IComponent[][] components) {
-		/*We update the map and we repaint*/
+		/* We update the map and we repaint */
 		this.components = components;
 		repaint();
 	}
@@ -33,7 +34,7 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-			/*We enlarge the images to put the game in full screen*/
+		/* We enlarge the images to put the game in full screen */
 		for (int x = 0; x < components.length; x++) {
 			for (int y = 0; y < components[x].length; y++) {
 				g.drawImage(components[x][y].getImage(Direction.LEFT), y * 91, x * 91, 80, 80, null);
@@ -45,22 +46,22 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-		/*we inform our program of the action of certain keys on the keyboard */
+		/* we inform our program of the action of certain keys on the keyboard */
 		switch (keyCode) {
 		case KeyEvent.VK_UP:
-			observer.update(null, Direction.UP);
+			observer.update(null, Order.UP);
 			break;
 
 		case KeyEvent.VK_DOWN:
-			observer.update(null, Direction.DOWN);
+			observer.update(null, Order.DOWN);
 			break;
 
 		case KeyEvent.VK_LEFT:
-			observer.update(null, Direction.LEFT);
+			observer.update(null, Order.LEFT);
 			break;
 
 		case KeyEvent.VK_RIGHT:
-			observer.update(null, Direction.RIGHT);
+			observer.update(null, Order.RIGHT);
 			break;
 
 		case KeyEvent.VK_ESCAPE:
@@ -68,7 +69,7 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 			break;
 
 		case KeyEvent.VK_SPACE:
-			// observer.update();
+			observer.update(null, Order.FIRE);
 		}
 
 	}
