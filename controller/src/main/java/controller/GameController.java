@@ -20,6 +20,11 @@ public class GameController implements Runnable {
 	public void run() {
 		while (player.isAlive() || !controller.isVictory()) {
 			IComponent[][] components = controller.getModel().getMap();
+
+			for (DemonMover mover : movers) {
+				mover.move();
+			}
+
 			controller.getGameFrame().getPanel().updateMap(components);
 
 			try {

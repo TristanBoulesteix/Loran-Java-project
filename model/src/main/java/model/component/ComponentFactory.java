@@ -9,6 +9,7 @@ public abstract class ComponentFactory {
 
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
+		demons = new ArrayList<Demon>();
 
 		char[] charArray = map.toCharArray();
 
@@ -49,6 +50,8 @@ public abstract class ComponentFactory {
 
 				case '1':
 					components[x][y] = createCargyv(new Coordinate(x, y));
+					demons.add((Demon) components[x][y]);
+
 					break;
 
 				case '2':
