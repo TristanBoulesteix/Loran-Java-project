@@ -35,7 +35,10 @@ public abstract class Demon extends Component implements Kill {
 	public boolean isAlive() {
 		return alive;
 	}
-	
+	/**
+	 * Kill demon
+	 * 
+	 */
 	public void kill() {
 		this.alive = false;
 	}
