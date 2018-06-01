@@ -2,6 +2,8 @@ package controller;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import model.component.IComponent;
 import model.component.ILorann;
 
@@ -40,8 +42,14 @@ public class GameController implements Runnable {
 
 			count++;
 		}
-
-		System.out.println("Dead !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		
+		if (controller.isVictory()) {
+			int finalscore = 100 + controller.getScore();
+		JOptionPane.showMessageDialog(null,  "CONGRATULATION !\nYour score is " + finalscore, "GAME OVER", JOptionPane.OK_OPTION);		
+	} else {
+	JOptionPane.showMessageDialog(null, "GAME OVER\nYour score is " + controller.getScore(), "GAME OVER" ,JOptionPane.OK_OPTION);
 	}
-
+		controller.getGameFrame().dispose();
+	}
+	
 }
