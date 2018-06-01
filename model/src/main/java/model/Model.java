@@ -15,11 +15,11 @@ public class Model implements IModel {
 	private Gate gate;
 
 	public Model() {
-		components = new Component[12][20];
+		components = new Component[12][20];//
 	}
 
 	public synchronized IComponent[][] getMap() {
-		return components;
+		return components;//Creation of a Map
 	}
 
 	private String getMapFromDTB(int idMap) throws SQLException {
@@ -34,10 +34,10 @@ public class Model implements IModel {
 	}
 
 	public Lorann getLorann() {
-		return lorann;
+		return lorann;//Creation of an Lorann
 	}
 
 	public Gate getGate() {
-		return gate;
+		return gate;//Creation of a Gate
 	}
 }
