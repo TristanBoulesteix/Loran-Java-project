@@ -7,7 +7,14 @@ package view;
  * @version 1.0
  */
 public interface IGameFrame {
+	/**
+	 * 
+	 * @return IGamePanel
+	 */
 	public IGamePanel getPanel();
-
+	
+	/**
+	 * 
+	 */
 	public void dispose();
 }
