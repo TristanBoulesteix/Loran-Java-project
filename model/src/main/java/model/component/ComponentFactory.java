@@ -76,27 +76,27 @@ public abstract class ComponentFactory {
 	}
 
 	private static Lorann createLorann(Coordinate coordinate) {
-		return new Lorann(false, coordinate);
+		return new Lorann(true, coordinate);
 	}
 
 	public static Spell createSpell(Coordinate coordinate) {
-		return new Spell(false, coordinate, false);
+		return new Spell(true, coordinate, false);
 	}
 
 	private static Kyracj createKyacj(Coordinate coordinate) {
-		return new Kyracj(false, coordinate);
+		return new Kyracj(true, coordinate);
 	}
 
 	private static Maarcg createMarrcg(Coordinate coordinate) {
-		return new Maarcg(false, coordinate);
+		return new Maarcg(true, coordinate);
 	}
 
 	private static Arrbarr createArrbarr(Coordinate coordinate) {
-		return new Arrbarr(false, coordinate);
+		return new Arrbarr(true, coordinate);
 	}
 
 	private static Cargyv createCargyv(Coordinate coordinate) {
-		return new Cargyv(false, coordinate);
+		return new Cargyv(true, coordinate);
 	}
 
 	private static Treasure createTreasure(Coordinate coordinate) {
