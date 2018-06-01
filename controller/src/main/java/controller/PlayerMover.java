@@ -1,7 +1,7 @@
 package controller;
 
-public class PlayerMover implements Runnable { // Create the class PlayerMover wich is implements by Runable
-
+public class PlayerMover implements Runnable { 
+	//Create the class PlayerMover which is implements by Runnable
 	public void PlayerMover() {
         
 	}

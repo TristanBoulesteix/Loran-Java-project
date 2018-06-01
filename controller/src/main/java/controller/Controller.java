@@ -19,26 +19,26 @@ import model.component.Lorann;
 import model.component.Treasure;
 import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
-
-public class Controller implements IController, Observer { // Create class controller
+// Create class controller
+public class Controller implements IController, Observer {
 	private GameFrame gameFrame;
 	private Model model;
 	private GameController gameController;
 	private Thread game;
 	private int score;
 	private boolean victory;
-
-	public Controller(Model model) { // Create the controller with parameters
+	// Create the controller with parameters
+	public Controller(Model model) {
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
 		initializeGame();
 	}
-
-	public void play() { // Run the game
+	// Run the game
+	public void play() {
 		game.run();
 	}
-
-	private void initializeGame() { // Initialization of the game
+	// Initialization of the game
+	private void initializeGame() {
 		setVictory(false);
 
 		try {
@@ -50,11 +50,12 @@ public class Controller implements IController, Observer { // Create class contr
 		game = new Thread(gameController);
 		gameFrame.setVisible(true);
 	}
-
+	// Instantiate the movement of the demon
 	private ArrayList<DemonMover> instantiateDemonMover() {
 		ArrayList<Demon> demons = ComponentFactory.getDemons();
 		ArrayList<DemonMover> movers = new ArrayList<DemonMover>();
 
+		// Loop for ask all demon to move
 		for (Demon demon : demons) {
 			movers.add(new DemonMover(demon, this));
 		}
@@ -63,12 +64,12 @@ public class Controller implements IController, Observer { // Create class contr
 	}
 
 	@Override
-	public void moveComponent(IComponent component, Direction direction) { // Displays the components with
-																			// their
-		// direction
+	// Displays the components with their direction
+	public void moveComponent(IComponent component, Direction direction) {
+
 		ICoordinate currentCoordinates = component.getCoordinate();
 		ICoordinate newCoordinates;
-
+		// Generate coordinate relative to the direction
 		switch (direction) {
 		case DOWN:
 			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY());
@@ -105,7 +106,7 @@ public class Controller implements IController, Observer { // Create class contr
 			newCoordinates = new Coordinate(currentCoordinates.getX(), currentCoordinates.getY());
 			break;
 		}
-
+		// Condition, if the component is Lorann, check if Lorann can move
 		if (component instanceof Lorann) {
 			if (directionisAvailableForLorann(newCoordinates)) {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
@@ -124,7 +125,7 @@ public class Controller implements IController, Observer { // Create class contr
 			}
 		}
 	}
-
+	// Check is Lorann can move here.
 	private synchronized boolean directionisAvailableForLorann(ICoordinate coordinateToCheck) {
 		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 
@@ -134,7 +135,7 @@ public class Controller implements IController, Observer { // Create class contr
 			return false;
 		}
 	}
-
+	// Check if the demon can move here.
 	private synchronized boolean directionIsAvailableForDemons(ICoordinate coordinateToCheck) {
 		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 
@@ -145,11 +146,11 @@ public class Controller implements IController, Observer { // Create class contr
 		}
 
 	}
-
+	// Realize action relative to the target component
 	private synchronized void checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
 			Lorann lorann = (Lorann) componentToMove;
-
+			// If Lorann catch a treasure, give 10 points.
 			if (componentInPosition instanceof Treasure) {
 				Treasure treasure = (Treasure) componentInPosition;
 
@@ -159,22 +160,23 @@ public class Controller implements IController, Observer { // Create class contr
 
 			} else if (componentInPosition instanceof Gate) {
 				Gate gate = (Gate) componentInPosition;
-
+				//If gate is available, we win the game
 				if (gate.isAvailable()) {
 					setVictory(true);
 				} else {
+					//If gate is not available, kill Lorann
 					lorann.kill();
 				}
 
 			} else if (componentInPosition instanceof EnergySphere) {
 				EnergySphere sphere = (EnergySphere) componentInPosition;
-
+				//When we take the EnergySphere, open the gate
 				if (sphere.isAvailable()) {
 					model.getGate().setAvailable(true);
 				}
 				sphere.setAvailable(false);
 			}
-
+			// If Lorann has the same position than a demon, Lorann die.
 		} else if (componentToMove instanceof Demon) {
 			if (componentInPosition instanceof Lorann) {
 				Lorann lorann = (Lorann) componentInPosition;
