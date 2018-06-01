@@ -31,7 +31,6 @@ public class Controller implements IController, Observer { // Create class contr
 
 	public Controller(Model model) { // Create the controller with parameters
 		this.model = model;
-		this.movers = new ArrayList<DemonMover>();
 		gameFrame = new GameFrame(model, this);
 		initializeGame();
 	}
@@ -48,7 +47,7 @@ public class Controller implements IController, Observer { // Create class contr
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		gameController = new GameController(model.getLorann(), this, instantiateDemonMover(););
+		gameController = new GameController(model.getLorann(), this, instantiateDemonMover());
 		game = new Thread(gameController);
 		gameFrame.setVisible(true);
 	}
