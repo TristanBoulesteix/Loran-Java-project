@@ -6,6 +6,7 @@ public abstract class ComponentFactory {
 	private static Lorann lorann;
 	private static Gate gate;
 	private static ArrayList<Demon> demons;
+
 	/**
 	 * 
 	 * @param map
@@ -87,6 +88,7 @@ public abstract class ComponentFactory {
 
 		return components;
 	}
+
 	/**
 	 * Build new Lorann
 	 * 
@@ -96,6 +98,7 @@ public abstract class ComponentFactory {
 	private static Lorann createLorann(Coordinate coordinate) {
 		return new Lorann(true, true, coordinate, Direction.UP);
 	}
+
 	/**
 	 * Build new Spell
 	 * 
@@ -105,6 +108,7 @@ public abstract class ComponentFactory {
 	public static Spell createSpell(Coordinate coordinate) {
 		return new Spell(true, true, coordinate, false);
 	}
+
 	/**
 	 * Build new Kyracj
 	 * 
@@ -114,6 +118,7 @@ public abstract class ComponentFactory {
 	private static Kyracj createKyacj(Coordinate coordinate) {
 		return new Kyracj(true, false, coordinate, Direction.UP);
 	}
+
 	/**
 	 * Build new Maarcg
 	 * 
@@ -123,6 +128,7 @@ public abstract class ComponentFactory {
 	private static Maarcg createMarrcg(Coordinate coordinate) {
 		return new Maarcg(true, false, coordinate, Direction.UP);
 	}
+
 	/**
 	 * Build new Arrbarr
 	 * 
@@ -132,6 +138,7 @@ public abstract class ComponentFactory {
 	private static Arrbarr createArrbarr(Coordinate coordinate) {
 		return new Arrbarr(true, false, coordinate, Direction.UP);
 	}
+
 	/**
 	 * Build new Cargyv
 	 * 
@@ -141,6 +148,7 @@ public abstract class ComponentFactory {
 	private static Cargyv createCargyv(Coordinate coordinate) {
 		return new Cargyv(true, false, coordinate, Direction.UP);
 	}
+
 	/**
 	 * Build new Treasure
 	 * 
@@ -150,6 +158,7 @@ public abstract class ComponentFactory {
 	private static Treasure createTreasure(Coordinate coordinate) {
 		return new Treasure(true, false, coordinate, true);
 	}
+
 	/**
 	 * Build new EnergySphere
 	 * 
@@ -159,6 +168,7 @@ public abstract class ComponentFactory {
 	private static EnergySphere createEnergySphere(Coordinate coordinate) {
 		return new EnergySphere(true, false, coordinate, true);
 	}
+
 	/**
 	 * Build new Gate
 	 * 
@@ -168,6 +178,7 @@ public abstract class ComponentFactory {
 	private static Gate createGate(Coordinate coordinate) {
 		return new Gate(true, false, coordinate, false);
 	}
+
 	/**
 	 * Build new CornerSet
 	 * 
@@ -177,6 +188,7 @@ public abstract class ComponentFactory {
 	private static CornerSet createCornerSet(Coordinate coordinate) {
 		return new CornerSet(coordinate);
 	}
+
 	/**
 	 * Build new HorizontalSet
 	 * 
@@ -186,6 +198,7 @@ public abstract class ComponentFactory {
 	private static HorizontalSet createHorizontalSet(Coordinate coordinate) {
 		return new HorizontalSet(coordinate);
 	}
+
 	/**
 	 * Build new VerticalSet
 	 * 
@@ -195,6 +208,7 @@ public abstract class ComponentFactory {
 	private static VerticalSet createVerticalSet(Coordinate coordinate) {
 		return new VerticalSet(coordinate);
 	}
+
 	/**
 	 * Build new Empty
 	 * 
@@ -204,6 +218,7 @@ public abstract class ComponentFactory {
 	private static Empty createEmpty(Coordinate coordinate) {
 		return new Empty(coordinate);
 	}
+
 	/**
 	 * Get Lorann
 	 * 
@@ -212,6 +227,7 @@ public abstract class ComponentFactory {
 	public static Lorann getLorann() {
 		return lorann;
 	}
+
 	/**
 	 * Get Gate
 	 * 
@@ -220,6 +236,7 @@ public abstract class ComponentFactory {
 	public static Gate getGate() {
 		return gate;
 	}
+
 	/**
 	 * Get Demons
 	 * 
@@ -228,6 +245,7 @@ public abstract class ComponentFactory {
 	public static ArrayList<Demon> getDemons() {
 		return demons;
 	}
+
 	/**
 	 * Set Demons
 	 * 

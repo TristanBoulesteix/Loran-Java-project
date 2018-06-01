@@ -201,7 +201,7 @@ public class Controller implements IController, Observer {
 			moveComponent(model.getLorann(), Direction.getDirectionFromOrder((Order) arg1));
 		} else {
 			if (model.getLorann().launchSpell()) {
-
+				moveComponent(component, Direction.getOpositeDirection(model.getLorann().getDirection()));
 			}
 		}
 	}
