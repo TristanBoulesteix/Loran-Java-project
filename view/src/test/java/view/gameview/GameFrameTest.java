@@ -37,6 +37,7 @@ public class GameFrameTest {
 	public void testGetPanel() {
 		
 		final GamePanel expected = this.frame.getPanel();
+		//asserEquals compare the expected value relative to GamePanel from the frame
 		//final GamePanel expected = new GamePanel(model, null);
 		assertEquals(expected, frame.getPanel());
 	}
