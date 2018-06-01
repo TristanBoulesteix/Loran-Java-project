@@ -17,27 +17,36 @@ public class Model implements IModel {
 	public Model() {
 		components = new Component[12][20];//
 	}
-
+	/**
+	 * @return IComponent[][]  Map
+	 */
 	public synchronized IComponent[][] getMap() {
-		return components;//Creation of a Map
+		return components;
 	}
 
 	private String getMapFromDTB(int idMap) throws SQLException {
 		return DTBReader.ReturnMap(idMap);
 	}
-
+	/**
+	 * Generate map thanks to an ID
+	 * 
+	 */
 	public void generateMap(int idMap) throws SQLException {
 		String map = getMapFromDTB(idMap);
 		components = ComponentFactory.buildComponentsFromMap(map);
 		lorann = ComponentFactory.getLorann();
 		gate = ComponentFactory.getGate();
 	}
-
+	/**
+	 * @return Lorann
+	 */
 	public Lorann getLorann() {
-		return lorann;//Creation of an Lorann
+		return lorann;
 	}
-
+	/**
+	 * @return Gate
+	 */
 	public Gate getGate() {
-		return gate;//Creation of a Gate
+		return gate;
 	}
 }
