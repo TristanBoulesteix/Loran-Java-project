@@ -23,6 +23,7 @@ Controller control;
 	@Before
 	public void setUp() throws Exception {
 		control = new Controller(new Model());
+		//Creation of an new Controller Before
 	}
 
 	@After
@@ -32,7 +33,9 @@ Controller control;
 	@Test
 	public void testGetScore() {
 		final int expected = 0;
+		//the final int expected of the method testGetScore
 		assertEquals(expected,control.getScore());
+		//after we use assertEquals to find if contro.getScore is = with expected
 		
 		
 	}

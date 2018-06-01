@@ -13,12 +13,14 @@ public class LevelSelector {
 	}
 
 	public static int getLevel() {
+		/*we program our popup with all the options of choice*/
 		String nom = (String) JOptionPane.showInputDialog(null, "Choose a Map!", "Lorann-MapSelector",
 				JOptionPane.QUESTION_MESSAGE, null, LEVEL_LIST, LEVEL_LIST[0]);
 
 		if (nom == null) {
 			System.exit(0);
 		}
+		/*Here is our switch with its choices*/
 		switch (nom) {
 		case "Map 1":
 			return 1;
