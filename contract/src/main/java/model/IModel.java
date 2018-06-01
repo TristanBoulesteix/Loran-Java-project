@@ -13,11 +13,27 @@ import model.component.ILorann;
  * @version 1.0
  */
 public interface IModel {
+	/**
+	 * 
+	 * @return
+	 */
 	public IComponent[][] getMap();
-
+	
+	/**
+	 * 
+	 * @param idMap
+	 * @throws SQLException
+	 */
 	public void generateMap(int idMap) throws SQLException;
-
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public ILorann getLorann();
-
+	/**
+	 * 
+	 * @return
+	 */
 	public IGate getGate();
 }
