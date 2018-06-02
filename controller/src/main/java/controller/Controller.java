@@ -14,6 +14,7 @@ import model.component.Gate;
 import model.component.IComponent;
 import model.component.ICoordinate;
 import model.component.Lorann;
+import model.component.Spell;
 import model.component.Treasure;
 import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
@@ -72,6 +73,7 @@ public class Controller implements IController {
 
 		ICoordinate currentCoordinates = component.getCoordinate();
 		ICoordinate newCoordinates;
+
 		// Generate coordinate relative to the direction
 		switch (direction) {
 		case DOWN:
@@ -109,6 +111,7 @@ public class Controller implements IController {
 			newCoordinates = new Coordinate(currentCoordinates.getX(), currentCoordinates.getY());
 			break;
 		}
+
 		// Condition, if the component is Lorann, check if Lorann can move
 		if (component instanceof Lorann) {
 			if (directionisAvailableForLorann(newCoordinates)) {
@@ -126,7 +129,26 @@ public class Controller implements IController {
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
+		} else if (component instanceof Spell) {
+			moveSpell((Spell) component, newCoordinates, true);
 		}
+	}
+
+	/**
+	 * This method is used to move the <b>spell</b>. Because the spell move in a
+	 * very different way than others components, we use a different method than
+	 * <b>moveComponent()</b>.
+	 * 
+	 * @param spell
+	 *            the spell to move
+	 * @param newCoordinates
+	 *            the future coordinates of the spell
+	 * @param justLanched
+	 *            if the component is just lanched or if it was already lanched
+	 *            (bolean)
+	 */
+	public void moveSpell(Spell spell, ICoordinate newCoordinates, boolean justLanched) {
+
 	}
 
 	// Check is Lorann can move here.
