@@ -2,25 +2,38 @@ package view.levelselector;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
+/**
+ * 
+ * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public class LevelSelector {
 
-	private int level;
 	private final static String[] LEVEL_LIST = { "Map 1", "Map 2", "Map 3", "Map 4", "Map 5" };
 
+	/**
+	 * 
+	 */
 	public LevelSelector() {
 		super();
 	}
-	// Display the popup to select level and return the level number
+	
+	/**
+	 * Display the popup to select level and return the level number
+	 * we program our popup with all the options of choice
+	 * Here is our switch with its choices
+	 * Default, its an error
+	 * @return int
+	 */
 	public static int getLevel() {
-		/*we program our popup with all the options of choice*/
+		
 		String nom = (String) JOptionPane.showInputDialog(null, "Choose a Map!", "Lorann-MapSelector",
 				JOptionPane.QUESTION_MESSAGE, null, LEVEL_LIST, LEVEL_LIST[0]);
 
 		if (nom == null) {
 			System.exit(0);
 		}
-		/*Here is our switch with its choices*/
+		
 		switch (nom) {
 		case "Map 1":
 			return 1;
@@ -36,7 +49,7 @@ public class LevelSelector {
 
 		case "Map 5":
 			return 5;
-			//Default, its an error
+			
 		default:
 	
 			final JPanel panel = new JPanel();

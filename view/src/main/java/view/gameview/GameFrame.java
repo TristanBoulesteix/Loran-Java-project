@@ -8,34 +8,45 @@ import javax.swing.JFrame;
 import controller.IController;
 import model.Model;
 import view.IGameFrame;
-
+/**
+ * 
+ * @author @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 @SuppressWarnings("serial")
 public class GameFrame extends JFrame implements IGameFrame {
 	private GamePanel panel;
-
+/**
+ *  We create a Frame with parameters 
+ *  We put the Panel attentive to the events 
+ *  Prevent the creation of a shortcut bar at the top of the screen 
+ *  We put the title of the game on the Frame 
+ *  We put the Frame on the center of the screen 
+ *  We close the processus when we close the window 
+ *  We put the Frame on full screen 
+ *  We put the background in black 
+ *  We put the Panel on the center of the Frame 
+ *  We forbid resizing
+ * @param model
+ * @param controller
+ */
 	public GameFrame(Model model, IController controller) {
-		/* We create a Frame with parameters */
+		
 		this.panel = new GamePanel(model, controller);
-		/* we put the Panel attentive to the events */
-		this.panel.setFocusable(true);
-		/* prevent the creation of a shortcut bar at the top of the screen */
+		this.panel.setFocusable(true);	
 		this.setUndecorated(true);
-		/* We put the title of the game on the Frame */
 		this.setTitle("Lorann");
-		/* We put the Frame on the center of the screen */
 		this.setLocationRelativeTo(null);
-		/* We close the processus when we close the window */
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		/* We put the Frame on full screen */
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		/* We put the background in black */
 		this.getContentPane().setBackground(Color.BLACK);
-		/* We put the Panel on the center of the Frame */
 		this.getContentPane().add(panel, BorderLayout.CENTER);
-		/* we forbid resizing */
 		this.setResizable(false);
 	}
 
+	/**
+	 * 
+	 */
 	public GamePanel getPanel() {
 		return panel;
 	}
