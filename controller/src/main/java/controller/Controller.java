@@ -1,7 +1,7 @@
 package controller;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import model.Model;
 import model.component.ComponentFactory;
@@ -56,9 +56,9 @@ public class Controller implements IController {
 	}
 
 	// Instantiate the movement of the demon
-	private ArrayList<DemonMover> instantiateDemonMover() {
-		ArrayList<Demon> demons = ComponentFactory.getDemons();
-		ArrayList<DemonMover> movers = new ArrayList<DemonMover>();
+	private CopyOnWriteArrayList<DemonMover> instantiateDemonMover() {
+		CopyOnWriteArrayList<Demon> demons = ComponentFactory.getDemons();
+		CopyOnWriteArrayList<DemonMover> movers = new CopyOnWriteArrayList<DemonMover>();
 
 		// Loop for ask all demon to move
 		for (Demon demon : demons) {
@@ -69,7 +69,7 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public void moveComponent(IComponent component, Direction direction) {
+	public synchronized void moveComponent(IComponent component, Direction direction) {
 		ICoordinate currentCoordinates = component.getCoordinate();
 		ICoordinate newCoordinates;
 
@@ -147,9 +147,6 @@ public class Controller implements IController {
 	 */
 	private synchronized void moveSpell(Spell spell, ICoordinate newCoordinatesForTheSpell,
 			Direction currentDirection) {
-		System.out.print(currentDirection);
-		System.out.println(newCoordinatesForTheSpell);
-
 		if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] instanceof Lorann) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
@@ -161,7 +158,8 @@ public class Controller implements IController {
 
 		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
 				.getY()] instanceof Setting) {
-			moveComponent(spell, Direction.getOppositeDirection(currentDirection));
+			spell.setDirection(Direction.getOppositeDirection(currentDirection));
+			moveComponent(spell, spell.getDirection());
 
 		} else {
 			model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
@@ -234,16 +232,25 @@ public class Controller implements IController {
 					model.getGate().setAvailable(true);
 				}
 				sphere.setAvailable(false);
+			} else if (componentInPosition instanceof Spell) {
+				lorann.setSpellLaunched(false);
 			}
+
 			// If Lorann has the same position than a demon, Lorann die.
 		} else if (componentToMove instanceof Demon) {
 			if (componentInPosition instanceof Lorann) {
 				Lorann lorann = (Lorann) componentInPosition;
 				lorann.kill();
-
+			} else if (componentInPosition instanceof Spell) {
+				Demon demon = (Demon) componentToMove;
+				demon.kill();
 			}
 		}
+	}
 
+	public void removeComponent(IComponent component) {
+		model.getMap()[component.getCoordinate().getX()][component.getCoordinate().getY()] = new Empty(
+				component.getCoordinate());
 	}
 
 	public void setAction(Order order) {

@@ -59,4 +59,12 @@ public interface IController {
 	 * @param victory
 	 */
 	public void setVictory(boolean victory);
+
+	/**
+	 * Remove a component like a demon for the rest of the game.
+	 * 
+	 * @param component
+	 *            The component to remove from the map
+	 */
+	public void removeComponent(IComponent component);
 }

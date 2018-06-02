@@ -1,6 +1,7 @@
 package controller;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -10,9 +11,9 @@ import model.component.ILorann;
 public class GameController implements Runnable {
 	private ILorann player;
 	private IController controller;
-	private ArrayList<DemonMover> movers;
+	private List<DemonMover> movers;
 
-	public GameController(ILorann player, IController controller, ArrayList<DemonMover> movers) {
+	public GameController(ILorann player, IController controller, CopyOnWriteArrayList<DemonMover> movers) {
 		this.player = player;
 		this.controller = controller;
 		this.movers = movers;
@@ -32,7 +33,12 @@ public class GameController implements Runnable {
 				}
 
 				for (DemonMover mover : movers) {
-					mover.move();
+					if (!mover.getDemon().isAlive()) {
+						controller.removeComponent(mover.getDemon());
+						movers.remove(mover);
+					} else {
+						mover.move();
+					}
 				}
 				count = 0;
 			}
