@@ -26,6 +26,11 @@ public class GameController implements Runnable {
 			IComponent[][] components = controller.getModel().getMap();
 
 			if (count == 4) {
+				if (controller.getModel().getLorann().isSpellLaunched()) {
+					controller.moveComponent((IComponent) controller.getModel().getSpell(null),
+							((IComponent) controller.getModel().getSpell(null)).getDirection());
+				}
+
 				for (DemonMover mover : movers) {
 					mover.move();
 				}

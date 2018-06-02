@@ -1,7 +1,9 @@
 package controller;
+
 /**
  * 
- * @author cpt_n2mo
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public enum Order {

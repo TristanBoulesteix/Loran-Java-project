@@ -4,7 +4,8 @@ import java.awt.Image;
 
 /**
  * 
- * @author cpt_n2mo
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public interface IComponent {
@@ -13,19 +14,20 @@ public interface IComponent {
 	 * @return ICoordinate
 	 */
 	public ICoordinate getCoordinate();
+
 	/**
 	 * 
 	 * @param direction
 	 * @return Image
 	 */
 	public Image getImage(Direction direction);
-	
+
 	/**
 	 * 
 	 * @param coordinate
 	 */
 	public void setCoordinate(ICoordinate coordinate);
-	
+
 	/**
 	 * 
 	 * @return boolean
@@ -37,5 +39,19 @@ public interface IComponent {
 	 * @return boolean
 	 */
 	public boolean isDEMON_PERMEABLE();
+
+	/**
+	 * 
+	 * @return direction the Direction
+	 */
+	public Direction getDirection();
+
+	/**
+	 * set the Direction
+	 * 
+	 * @param Direction
+	 * 
+	 */
+	public void setDirection(Direction direction);
 
 }
