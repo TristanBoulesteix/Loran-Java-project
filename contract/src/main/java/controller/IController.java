@@ -12,7 +12,7 @@ import view.IGameFrame;
  * @version 1.0
  */
 public interface IController {
-	
+
 	public void play();
 
 	/**
@@ -22,18 +22,20 @@ public interface IController {
 	 */
 	public void moveComponent(IComponent component, Direction direction);
 
+	public void setAction(Order order);
+
 	/**
 	 * 
 	 * @return Imodel
 	 */
 	public IModel getModel();
-	
+
 	/**
 	 * 
 	 * @return IGameFrame
 	 */
 	public IGameFrame getGameFrame();
-	
+
 	/**
 	 * 
 	 * @return int
@@ -45,13 +47,13 @@ public interface IController {
 	 * @param score
 	 */
 	public void setScore(int score);
-	
+
 	/**
 	 * 
 	 * @return boolean
 	 */
 	public boolean isVictory();
-	
+
 	/**
 	 * 
 	 * @param victory

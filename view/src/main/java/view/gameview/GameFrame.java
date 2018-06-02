@@ -2,10 +2,10 @@ package view.gameview;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.Observer;
 
 import javax.swing.JFrame;
 
+import controller.IController;
 import model.Model;
 import view.IGameFrame;
 
@@ -13,9 +13,9 @@ import view.IGameFrame;
 public class GameFrame extends JFrame implements IGameFrame {
 	private GamePanel panel;
 
-	public GameFrame(Model model, Observer observer) {
+	public GameFrame(Model model, IController controller) {
 		/* We create a Frame with parameters */
-		this.panel = new GamePanel(model, observer);
+		this.panel = new GamePanel(model, controller);
 		/* we put the Panel attentive to the events */
 		this.panel.setFocusable(true);
 		/* prevent the creation of a shortcut bar at the top of the screen */

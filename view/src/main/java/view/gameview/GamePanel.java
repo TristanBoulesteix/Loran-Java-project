@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Observer;
 
 import javax.swing.JPanel;
 
+import controller.IController;
 import controller.Order;
 import model.Model;
 import model.component.Direction;
@@ -17,11 +17,11 @@ import view.IGamePanel;
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	private IComponent[][] components;
-	private Observer observer;
+	private IController controller;
 
-	public GamePanel(Model model, Observer observer) {
+	public GamePanel(Model model, IController controller) {
 		this.addKeyListener(this);
-		this.observer = observer;
+		this.controller = controller;
 		this.setBackground(Color.BLACK);
 	}
 
@@ -49,19 +49,19 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 		/* we inform our program of the action of certain keys on the keyboard */
 		switch (keyCode) {
 		case KeyEvent.VK_UP:
-			observer.update(null, Order.UP);
+			controller.setAction(Order.UP);
 			break;
 
 		case KeyEvent.VK_DOWN:
-			observer.update(null, Order.DOWN);
+			controller.setAction(Order.DOWN);
 			break;
 
 		case KeyEvent.VK_LEFT:
-			observer.update(null, Order.LEFT);
+			controller.setAction(Order.LEFT);
 			break;
 
 		case KeyEvent.VK_RIGHT:
-			observer.update(null, Order.RIGHT);
+			controller.setAction(Order.RIGHT);
 			break;
 
 		case KeyEvent.VK_ESCAPE:
@@ -69,7 +69,7 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 			break;
 
 		case KeyEvent.VK_SPACE:
-			observer.update(null, Order.FIRE);
+			controller.setAction(Order.FIRE);
 		}
 
 	}
