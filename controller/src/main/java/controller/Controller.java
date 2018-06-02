@@ -2,7 +2,6 @@ package controller;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Observable;
 
 import model.Model;
 import model.component.ComponentFactory;
@@ -204,21 +203,6 @@ public class Controller implements IController {
 		} else {
 			// Move the component
 			moveComponent(model.getLorann(), Direction.getDirectionFromOrder(order));
-		}
-
-	}
-
-	@Override
-	public synchronized void update(Observable arg0, Object arg1) {
-		if (arg1.equals(Order.FIRE)) {
-			// Launch the spell if the order is to fire
-			if (model.getLorann().launchSpell()) {
-				moveComponent(model.getSpell(new Coordinate(model.getLorann().getCoordinate())),
-						Direction.getOpositeDirection(model.getLorann().getDirection()));
-			}
-		} else {
-			// Move the component
-			moveComponent(model.getLorann(), Direction.getDirectionFromOrder((Order) arg1));
 		}
 
 	}
