@@ -53,11 +53,13 @@ public enum Direction {
 	}
 
 	/**
+	 * This method allow us to get two opposite direction of an other direction
 	 * 
 	 * @param direction
-	 * @return Direction
+	 * 
+	 * @return Direction the opposite direction
 	 */
-	public static Direction getOpositeDirection(Direction direction) {
+	public static Direction getOppositeDirection(Direction direction) {
 		switch (direction) {
 		case DOWN:
 			return UP;

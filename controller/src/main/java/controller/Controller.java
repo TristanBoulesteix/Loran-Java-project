@@ -145,7 +145,11 @@ public class Controller implements IController {
 	 * @param the
 	 *            current direction of the spell
 	 */
-	private void moveSpell(Spell spell, ICoordinate newCoordinatesForTheSpell, Direction currentDirection) {
+	private synchronized void moveSpell(Spell spell, ICoordinate newCoordinatesForTheSpell,
+			Direction currentDirection) {
+		System.out.print(currentDirection);
+		System.out.println(newCoordinatesForTheSpell);
+
 		if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] instanceof Lorann) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
@@ -157,7 +161,7 @@ public class Controller implements IController {
 
 		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
 				.getY()] instanceof Setting) {
-			moveComponent(spell, Direction.getOpositeDirection(currentDirection));
+			moveComponent(spell, Direction.getOppositeDirection(currentDirection));
 
 		} else {
 			model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
@@ -247,7 +251,7 @@ public class Controller implements IController {
 			// Launch the spell if the order is to fire
 			if (model.getLorann().launchSpell()) {
 				moveComponent((IComponent) model.getSpell(new Coordinate(model.getLorann().getCoordinate())),
-						Direction.getOpositeDirection(model.getLorann().getDirection()));
+						Direction.getOppositeDirection(model.getLorann().getDirection()));
 			}
 		} else {
 			// Move the component
