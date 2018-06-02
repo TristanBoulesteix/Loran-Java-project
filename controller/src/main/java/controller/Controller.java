@@ -308,28 +308,31 @@ public class Controller implements IController {
 	}
 
 	/**
-	 * 
+	 * @return score the current score
 	 */
 	public int getScore() {
 		return score;
 	}
 
 	/**
-	 * 
+	 * @param score
+	 *            the score to set
 	 */
 	public void setScore(int score) {
 		this.score = score;
 	}
 
 	/**
+	 * check if the victory happened
 	 * 
+	 * @return victory A boolean to check the victory
 	 */
 	public boolean isVictory() {
 		return victory;
 	}
 
 	/**
-	 * 
+	 * @param victory
 	 */
 	public void setVictory(boolean victory) {
 		this.victory = victory;
