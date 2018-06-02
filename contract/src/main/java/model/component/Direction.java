@@ -3,7 +3,11 @@ package model.component;
 import javax.swing.JOptionPane;
 
 import controller.Order;
-
+/**
+ * 
+ * @author cpt_n2mo
+ *
+ */
 public enum Direction {
 	UP, UPRIGHT, UPLEFT, RIGHT, LEFT, DOWN, DOWNRIGHT, DOWNLEFT;
 /**

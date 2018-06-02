@@ -2,6 +2,11 @@ package model.component;
 
 import java.awt.Image;
 
+/**
+ * 
+ * @author cpt_n2mo
+ *
+ */
 public interface IComponent {
 	/**
 	 * 
