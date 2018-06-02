@@ -167,17 +167,29 @@ public class Controller implements IController {
 	 */
 	private synchronized void moveSpell(Spell spell, ICoordinate newCoordinatesForTheSpell,
 			Direction currentDirection) {
+
+		// If the future position of the spell contain Lorann
 		if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] instanceof Lorann) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
 
+			// If the future position of the spell contain a demon
 		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
 				.getY()] instanceof Demon) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
 
+			// If the future position of the spell contain a border
 		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
 				.getY()] instanceof Setting) {
+			spell.setDirection(Direction.getOppositeDirection(currentDirection));
+			moveComponent(spell, spell.getDirection());
+
+			// If the future position of the spell contain an energy sphere
+		} else if ((model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
+				.getY()] instanceof EnergySphere)
+				|| (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
+						.getY()] instanceof Gate)) {
 			spell.setDirection(Direction.getOppositeDirection(currentDirection));
 			moveComponent(spell, spell.getDirection());
 
@@ -259,6 +271,7 @@ public class Controller implements IController {
 				sphere.setAvailable(false);
 			} else if (componentInPosition instanceof Spell) {
 				lorann.setSpellLaunched(false);
+
 			}
 
 			// If Lorann has the same position than a demon, Lorann die.
@@ -301,6 +314,9 @@ public class Controller implements IController {
 	}
 
 	/**
+	 * get the model
+	 * 
+	 * @return model
 	 * 
 	 */
 	public Model getModel() {
@@ -308,6 +324,9 @@ public class Controller implements IController {
 	}
 
 	/**
+	 * get the GameFrame
+	 * 
+	 * @return the game frame
 	 * 
 	 */
 	public GameFrame getGameFrame() {
