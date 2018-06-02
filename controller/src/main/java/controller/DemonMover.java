@@ -6,14 +6,14 @@ import java.util.Random;
 
 import model.component.Demon;
 import model.component.Direction;
+
 //Create the class DemonMover which is implements by Runnable
-public class DemonMover { 
-	// Create the attribute direction
-	private Demon demon; 
+public class DemonMover {
+	private Demon demon;
 	private static Controller controller;
-	
+
 	// Demons Movement
-	public DemonMover(Demon demon, Controller controller) { 
+	public DemonMover(Demon demon, Controller controller) {
 		this.demon = demon;
 		DemonMover.controller = controller;
 

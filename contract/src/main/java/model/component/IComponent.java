@@ -40,4 +40,18 @@ public interface IComponent {
 	 */
 	public boolean isDEMON_PERMEABLE();
 
+	/**
+	 * 
+	 * @return direction the Direction
+	 */
+	public Direction getDirection();
+
+	/**
+	 * set the Direction
+	 * 
+	 * @param Direction
+	 * 
+	 */
+	public void setDirection(Direction direction);
+
 }

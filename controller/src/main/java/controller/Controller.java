@@ -246,7 +246,7 @@ public class Controller implements IController {
 		if (order.equals(Order.FIRE)) {
 			// Launch the spell if the order is to fire
 			if (model.getLorann().launchSpell()) {
-				moveComponent(model.getSpell(new Coordinate(model.getLorann().getCoordinate())),
+				moveComponent((IComponent) model.getSpell(new Coordinate(model.getLorann().getCoordinate())),
 						Direction.getOpositeDirection(model.getLorann().getDirection()));
 			}
 		} else {

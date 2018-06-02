@@ -13,7 +13,6 @@ public abstract class Component implements IComponent {
 	private ArrayList<Image> sprites;
 	private Direction direction;
 
-
 	/**
 	 * 
 	 * @param path
@@ -54,7 +53,6 @@ public abstract class Component implements IComponent {
 		return LORANN_PERMEABILITY;
 	}
 
-
 	/**
 	 * 
 	 * @return sprites
@@ -64,19 +62,17 @@ public abstract class Component implements IComponent {
 		return sprites;
 	}
 
-
-	/**
-	 * @return DEMON_PERMEABILITY
-	 */
-
+	@Override
 	public boolean isDEMON_PERMEABLE() {
 		return DEMON_PERMEABILITY;
 	}
 
+	@Override
 	public Direction getDirection() {
 		return direction;
 	}
 
+	@Override
 	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}

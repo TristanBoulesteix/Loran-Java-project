@@ -7,6 +7,7 @@ import model.component.ComponentFactory;
 import model.component.Coordinate;
 import model.component.Gate;
 import model.component.IComponent;
+import model.component.ICoordinate;
 import model.component.Lorann;
 import model.component.Spell;
 import model.dao.DTBReader;
@@ -44,9 +45,10 @@ public class Model implements IModel {
 		return gate;// Creation of a Gate
 	}
 
-	public Spell getSpell(Coordinate coordinate) {
+	@Override
+	public ISpell getSpell(ICoordinate coordinate) {
 		if (spell == null) {
-			spell = ComponentFactory.createSpell(coordinate);
+			spell = ComponentFactory.createSpell((Coordinate) coordinate);
 			return spell;
 		} else {
 			return spell;

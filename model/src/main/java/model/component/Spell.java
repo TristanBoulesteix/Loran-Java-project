@@ -1,12 +1,14 @@
 package model.component;
 
+import model.ISpell;
+
 /**
  * 
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */
-public class Spell extends Touch implements Kill {
+public class Spell extends Touch implements ISpell, Kill {
 	private final static String PATH = "Pictures/spell";
 
 	private IComponent target;
@@ -46,10 +48,12 @@ public class Spell extends Touch implements Kill {
 		}
 	}
 
+	@Override
 	public IComponent getTarget() {
 		return target;
 	}
 
+	@Override
 	public void setTarget(IComponent target) {
 		this.target = target;
 	}
