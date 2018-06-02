@@ -14,6 +14,7 @@ import model.component.Gate;
 import model.component.IComponent;
 import model.component.ICoordinate;
 import model.component.Lorann;
+import model.component.Setting;
 import model.component.Spell;
 import model.component.Treasure;
 import view.gameview.GameFrame;
@@ -68,9 +69,7 @@ public class Controller implements IController {
 	}
 
 	@Override
-	// Displays the components with their direction
 	public void moveComponent(IComponent component, Direction direction) {
-
 		ICoordinate currentCoordinates = component.getCoordinate();
 		ICoordinate newCoordinates;
 
@@ -130,7 +129,7 @@ public class Controller implements IController {
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
 		} else if (component instanceof Spell) {
-			moveSpell((Spell) component, newCoordinates, true);
+			moveSpell((Spell) component, newCoordinates, direction);
 		}
 	}
 
@@ -141,17 +140,40 @@ public class Controller implements IController {
 	 * 
 	 * @param spell
 	 *            the spell to move
-	 * @param newCoordinates
+	 * @param newCoordinatesForTheSpell
 	 *            the future coordinates of the spell
-	 * @param justLanched
-	 *            if the component is just lanched or if it was already lanched
-	 *            (bolean)
+	 * @param the
+	 *            current direction of the spell
 	 */
-	public void moveSpell(Spell spell, ICoordinate newCoordinates, boolean justLanched) {
+	private void moveSpell(Spell spell, ICoordinate newCoordinatesForTheSpell, Direction currentDirection) {
+		if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] instanceof Lorann) {
+			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
+			spell.actionWhenContactHappend();
 
+		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
+				.getY()] instanceof Demon) {
+			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
+			spell.actionWhenContactHappend();
+
+		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
+				.getY()] instanceof Setting) {
+			moveComponent(spell, Direction.getOpositeDirection(currentDirection));
+
+		} else {
+			model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
+					spell.getCoordinate());
+			spell.setCoordinate(newCoordinatesForTheSpell);
+			model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] = spell;
+
+		}
 	}
 
-	// Check is Lorann can move here.
+	/**
+	 * Check if Lorann can move here.
+	 * 
+	 * @param coordinateToCheck
+	 * @return a boolean to allow or not the move
+	 */
 	private synchronized boolean directionisAvailableForLorann(ICoordinate coordinateToCheck) {
 		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 
@@ -162,7 +184,12 @@ public class Controller implements IController {
 		}
 	}
 
-	// Check if the demon can move here.
+	/**
+	 * Check if the demon can move here.
+	 * 
+	 * @param coordinateToCheck
+	 * @return a boolean to allow or not the move
+	 */
 	private synchronized boolean directionIsAvailableForDemons(ICoordinate coordinateToCheck) {
 		IComponent destination = model.getMap()[coordinateToCheck.getX()][coordinateToCheck.getY()];
 

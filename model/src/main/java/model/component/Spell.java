@@ -1,20 +1,27 @@
 package model.component;
+
 /**
  * 
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public class Spell extends Touch implements Kill {
 	private final static String PATH = "Pictures/spell";
-/**
- * 
- * @param lorannPermeability
- * @param demonPermeability
- * @param coordinate
- * @param available
- */
+
+	private IComponent target;
+
+	/**
+	 * 
+	 * @param lorannPermeability
+	 * @param demonPermeability
+	 * @param coordinate
+	 * @param available
+	 */
 	public Spell(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available) {
 		super(PATH, lorannPermeability, demonPermeability, coordinate, available, Direction.UP);
+
+		setTarget(null);
 	}
 
 	@Override
@@ -23,6 +30,28 @@ public class Spell extends Touch implements Kill {
 			Demon character = (Demon) target;
 			character.kill();
 		}
+	}
+
+	@Override
+	public void actionWhenContactHappend() {
+		super.actionWhenContactHappend();
+
+		if (target instanceof Lorann) {
+			Lorann lorann = (Lorann) target;
+			lorann.setSpellLaunched(false);
+
+		} else if (target instanceof Demon) {
+			Demon demon = (Demon) target;
+			demon.kill();
+		}
+	}
+
+	public IComponent getTarget() {
+		return target;
+	}
+
+	public void setTarget(IComponent target) {
+		this.target = target;
 	}
 
 }
