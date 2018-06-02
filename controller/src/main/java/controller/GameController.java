@@ -28,8 +28,8 @@ public class GameController implements Runnable {
 
 			if (count == 4) {
 				if (controller.getModel().getLorann().isSpellLaunched()) {
-					controller.moveComponent((IComponent) controller.getModel().getSpell(null),
-							((IComponent) controller.getModel().getSpell(null)).getDirection());
+					controller.moveComponent((IComponent) controller.getModel().getSpell(null, null),
+							((IComponent) controller.getModel().getSpell(null, null)).getDirection());
 				}
 
 				for (DemonMover mover : movers) {

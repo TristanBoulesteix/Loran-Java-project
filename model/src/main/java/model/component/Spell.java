@@ -20,8 +20,9 @@ public class Spell extends Touch implements ISpell, Kill {
 	 * @param coordinate
 	 * @param available
 	 */
-	public Spell(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available) {
-		super(PATH, lorannPermeability, demonPermeability, coordinate, available, Direction.UP);
+	public Spell(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available,
+			Direction direction) {
+		super(PATH, lorannPermeability, demonPermeability, coordinate, available, direction);
 
 		setTarget(null);
 	}

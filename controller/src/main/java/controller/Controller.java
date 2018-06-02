@@ -135,6 +135,7 @@ public class Controller implements IController {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
 
 				component.setCoordinate(newCoordinates);
+				component.setDirection(direction);
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
@@ -143,6 +144,7 @@ public class Controller implements IController {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
 
 				component.setCoordinate(newCoordinates);
+				component.setDirection(direction);
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
@@ -277,13 +279,18 @@ public class Controller implements IController {
 	}
 
 	/**
+	 * Set an action for Lorann
 	 * 
+	 * @param order
+	 *            The order Lorann has to execute
 	 */
 	public void setAction(Order order) {
 		if (order.equals(Order.FIRE)) {
 			// Launch the spell if the order is to fire
 			if (model.getLorann().launchSpell()) {
-				moveComponent((IComponent) model.getSpell(new Coordinate(model.getLorann().getCoordinate())),
+				moveComponent(
+						(IComponent) model.getSpell(new Coordinate(model.getLorann().getCoordinate()),
+								Direction.getOppositeDirection(model.getLorann().getDirection())),
 						Direction.getOppositeDirection(model.getLorann().getDirection()));
 			}
 		} else {

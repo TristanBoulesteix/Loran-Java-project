@@ -2,6 +2,7 @@ package model;
 
 import java.sql.SQLException;
 
+import model.component.Direction;
 import model.component.IComponent;
 import model.component.ICoordinate;
 import model.component.IGate;
@@ -46,7 +47,15 @@ public interface IModel {
 	 * 
 	 * @param coordinate
 	 *            of the spell
-	 * @return
+	 * @param direction
+	 *            the current direction of the spell
+	 * 
+	 * @return ISpell the spell
 	 */
-	public ISpell getSpell(ICoordinate coordinate);
+	public ISpell getSpell(ICoordinate coordinate, Direction direction);
+
+	/**
+	 * Reinitialize the spell to null value
+	 */
+	public void setSpellToNull();
 }

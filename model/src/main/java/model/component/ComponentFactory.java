@@ -8,8 +8,12 @@ public abstract class ComponentFactory {
 	private static CopyOnWriteArrayList<Demon> demons;
 
 	/**
+	 * Build each component in function of the the map and put them into an array of
+	 * two dimensions of Components
 	 * 
 	 * @param map
+	 *            the map
+	 * 
 	 * @return Component[][]
 	 */
 	public static Component[][] buildComponentsFromMap(String map) {
@@ -105,8 +109,8 @@ public abstract class ComponentFactory {
 	 * @param coordinate
 	 * @return Spell
 	 */
-	public static Spell createSpell(Coordinate coordinate) {
-		return new Spell(true, true, coordinate, false);
+	public static Spell createSpell(Coordinate coordinate, Direction direction) {
+		return new Spell(true, true, coordinate, false, direction);
 	}
 
 	/**
