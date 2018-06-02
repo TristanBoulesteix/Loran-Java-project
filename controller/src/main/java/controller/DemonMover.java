@@ -7,7 +7,11 @@ import java.util.Random;
 import model.component.Demon;
 import model.component.Direction;
 
-//Create the class DemonMover which is implements by Runnable
+/**
+ * Create the class DemonMover which is implements by Runnable
+ * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public class DemonMover {
 	private Demon demon;
 	private static Controller controller;
@@ -18,26 +22,28 @@ public class DemonMover {
 		DemonMover.controller = controller;
 
 	}
-
+/** 
+ * call of MoveComponent.
+ * get the enum in an ArrayList and use it randomly.
+ *  Creation of the new Random.
+ * 
+ */
 	public void move() {
-		// Creation of the new Random
 		Random random = new Random();
-
-		// get the enum in an ArrayList and use it randomly
 		ArrayList<Direction> list = new ArrayList<Direction>(EnumSet.allOf(Direction.class));
 		int index = random.nextInt(list.size());
-		// call of MoveComponent
 		controller.moveComponent(demon, list.get(index));
 	}
-
+/**get the enum in an ArrayList and use it randomly.
+ * 	Creation of the new Random.
+ *  Call of MoveComponent
+ * @param demonToMove
+ */
 	public static void move(Demon demonToMove) {
-		// Creation of the new Random
+	
 		Random random = new Random();
-
-		// get the enum in an ArrayList and use it randomly
 		ArrayList<Direction> list = new ArrayList<Direction>(EnumSet.allOf(Direction.class));
 		int index = random.nextInt(list.size());
-		// call of MoveComponent
 		controller.moveComponent(demonToMove, list.get(index));
 	}
 
