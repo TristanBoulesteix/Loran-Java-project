@@ -194,8 +194,10 @@ public class Controller implements IController {
 			moveComponent(spell, spell.getDirection());
 
 		} else {
-			model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
-					spell.getCoordinate());
+			if (!(model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] instanceof Lorann)) {
+				model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
+						spell.getCoordinate());
+			}
 			spell.setCoordinate(newCoordinatesForTheSpell);
 			model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] = spell;
 
@@ -249,6 +251,8 @@ public class Controller implements IController {
 				Treasure treasure = (Treasure) componentInPosition;
 
 				this.score = score + treasure.getValue();
+
+				// If Lorann meet a demon, kill him
 			} else if (componentInPosition instanceof Demon) {
 				this.model.getLorann().kill();
 
@@ -258,7 +262,7 @@ public class Controller implements IController {
 				if (gate.isAvailable()) {
 					setVictory(true);
 				} else {
-					// If gate is not available, kill Lorann
+					// If the gate is not available, kill Lorann
 					lorann.kill();
 				}
 
