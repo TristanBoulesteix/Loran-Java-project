@@ -20,7 +20,11 @@ import model.component.Treasure;
 import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
 
-// Create class controller
+/**
+ * 
+ **@author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public class Controller implements IController {
 	private GameFrame gameFrame;
 	private Model model;
@@ -29,19 +33,26 @@ public class Controller implements IController {
 	private int score;
 	private boolean victory;
 
-	// Create the controller with parameters
+	/**
+	 * 
+	 * @param model
+	 */
 	public Controller(Model model) {
 		this.model = model;
 		gameFrame = new GameFrame(model, this);
 		initializeGame();
 	}
 
-	// Run the game
+	/**
+	 * 
+	 */
 	public void play() {
 		game.run();
 	}
 
-	// Initialization of the game
+	/**
+	 *  Initialization of the game
+	 */
 	private void initializeGame() {
 		setVictory(false);
 
@@ -55,7 +66,10 @@ public class Controller implements IController {
 		gameFrame.setVisible(true);
 	}
 
-	// Instantiate the movement of the demon
+	/**
+	 * Instantiate the movement of the demon
+	 * @return ArrayList<DemonMover>
+	 */
 	private ArrayList<DemonMover> instantiateDemonMover() {
 		ArrayList<Demon> demons = ComponentFactory.getDemons();
 		ArrayList<DemonMover> movers = new ArrayList<DemonMover>();
@@ -67,13 +81,15 @@ public class Controller implements IController {
 
 		return movers;
 	}
-
+/**
+ * Generate coordinate relative to the direction
+ */
 	@Override
 	public void moveComponent(IComponent component, Direction direction) {
 		ICoordinate currentCoordinates = component.getCoordinate();
 		ICoordinate newCoordinates;
 
-		// Generate coordinate relative to the direction
+		
 		switch (direction) {
 		case DOWN:
 			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY());
@@ -205,7 +221,11 @@ public class Controller implements IController {
 
 	}
 
-	// Realize action relative to the target component
+/**
+ *  Realize action relative to the target component
+ * @param componentToMove
+ * @param componentInPosition
+ */
 	private synchronized void checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
 			Lorann lorann = (Lorann) componentToMove;
@@ -245,7 +265,9 @@ public class Controller implements IController {
 		}
 
 	}
-
+/**
+ * 
+ */
 	public void setAction(Order order) {
 		if (order.equals(Order.FIRE)) {
 			// Launch the spell if the order is to fire
@@ -259,27 +281,39 @@ public class Controller implements IController {
 		}
 
 	}
-
+/**
+ * 
+ */
 	public Model getModel() {
 		return model;
 	}
-
+/**
+ * 
+ */
 	public GameFrame getGameFrame() {
 		return gameFrame;
 	}
-
+/**
+ * 
+ */
 	public int getScore() {
 		return score;
 	}
-
+/**
+ * 
+ */
 	public void setScore(int score) {
 		this.score = score;
 	}
-
+/**
+ * 
+ */
 	public boolean isVictory() {
 		return victory;
 	}
-
+/**
+ * 
+ */
 	public void setVictory(boolean victory) {
 		this.victory = victory;
 	}
