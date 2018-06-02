@@ -3,18 +3,20 @@ package model.component;
 import javax.swing.JOptionPane;
 
 import controller.Order;
+
 /**
  * 
- * @author cpt_n2mo
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public enum Direction {
 	UP, UPRIGHT, UPLEFT, RIGHT, LEFT, DOWN, DOWNRIGHT, DOWNLEFT;
-/**
- * 
- * @param order
- * @return Direction
- */
+	/**
+	 * 
+	 * @param order
+	 * @return Direction
+	 */
 	public static Direction getDirectionFromOrder(Order order) {
 		switch (order) {
 		case DOWN:
