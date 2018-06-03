@@ -172,6 +172,7 @@ public class Controller implements IController {
 		if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] instanceof Lorann) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
+			model.setSpellToNull();
 
 			// If the future position of the spell contain a demon
 		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
@@ -273,8 +274,11 @@ public class Controller implements IController {
 					model.getGate().setAvailable(true);
 				}
 				sphere.setAvailable(false);
+
+				// If the position of Lorann will be the spell, get it
 			} else if (componentInPosition instanceof Spell) {
 				lorann.setSpellLaunched(false);
+				model.setSpellToNull();
 
 			}
 
@@ -283,6 +287,7 @@ public class Controller implements IController {
 			if (componentInPosition instanceof Lorann) {
 				Lorann lorann = (Lorann) componentInPosition;
 				lorann.kill();
+
 			} else if (componentInPosition instanceof Spell) {
 				Demon demon = (Demon) componentToMove;
 				demon.kill();
