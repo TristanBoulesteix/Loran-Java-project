@@ -1,6 +1,6 @@
 package model.component;
 
-public interface ISpell {
+public interface ISpell extends IComponent {
 	/**
 	 * 
 	 * @return {@link IComponent} the component targeted

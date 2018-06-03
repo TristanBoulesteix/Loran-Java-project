@@ -172,6 +172,8 @@ public class Controller implements IController {
 		if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] instanceof Lorann) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
+			model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
+					spell.getCoordinate());
 			model.setSpellToNull();
 
 			// If the future position of the spell contain a demon
@@ -278,7 +280,8 @@ public class Controller implements IController {
 				// If the position of Lorann will be the spell, get it
 			} else if (componentInPosition instanceof Spell) {
 				lorann.setSpellLaunched(false);
-
+				model.getMap()[componentInPosition.getCoordinate().getX()][componentInPosition.getCoordinate()
+						.getY()] = new Empty(componentInPosition.getCoordinate());
 				model.setSpellToNull();
 
 			}
