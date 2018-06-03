@@ -22,7 +22,7 @@ import view.levelselector.LevelSelector;
 
 /**
  * 
- ** @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ ** @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */
@@ -45,6 +45,7 @@ public class Controller implements IController {
 	}
 
 	/**
+	 * Launch the game
 	 * 
 	 */
 	public void play() {
@@ -70,13 +71,13 @@ public class Controller implements IController {
 	/**
 	 * Instantiate the movement of the demon
 	 * 
-	 * @return ArrayList<DemonMover>
+	 * @return movers The list of all the movers
 	 */
 	private CopyOnWriteArrayList<DemonMover> instantiateDemonMover() {
 		CopyOnWriteArrayList<Demon> demons = ComponentFactory.getDemons();
 		CopyOnWriteArrayList<DemonMover> movers = new CopyOnWriteArrayList<DemonMover>();
 
-		// Loop for ask all demon to move
+		// Loop which add a new DemonMover for each demon into the ArrayList
 		for (Demon demon : demons) {
 			movers.add(new DemonMover(demon, this));
 		}
@@ -85,7 +86,12 @@ public class Controller implements IController {
 	}
 
 	/**
-	 * Generate coordinate relative to the direction
+	 * Method used to move a component
+	 * 
+	 * @param component
+	 *            The component to move
+	 * @param direction
+	 *            The direction that the component will take
 	 */
 	@Override
 	public synchronized void moveComponent(IComponent component, Direction direction) {
@@ -129,7 +135,7 @@ public class Controller implements IController {
 			break;
 		}
 
-		// Condition, if the component is Lorann, check if Lorann can move
+		// Condition: if the component is Lorann, check if Lorann can move
 		if (component instanceof Lorann) {
 			if (directionisAvailableForLorann(newCoordinates)) {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
@@ -139,6 +145,8 @@ public class Controller implements IController {
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
+
+			// Condition: if the component is a demon, check if it can move
 		} else if (component instanceof Demon) {
 			if (directionIsAvailableForDemons(newCoordinates)) {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
@@ -148,6 +156,8 @@ public class Controller implements IController {
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
+
+			// Condition: if the component is the spell, move it
 		} else if (component instanceof Spell) {
 			moveSpell((Spell) component, newCoordinates, direction);
 		}
