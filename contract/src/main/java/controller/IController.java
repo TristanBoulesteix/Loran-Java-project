@@ -59,4 +59,6 @@ public interface IController {
 	 * @param victory
 	 */
 	public void setVictory(boolean victory);
+
+	public void removeComponent(IComponent component);
 }

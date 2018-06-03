@@ -7,29 +7,30 @@ import javax.swing.JOptionPane;
 
 import model.component.IComponent;
 import model.component.ILorann;
+
 /**
  * 
- *@author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public class GameController implements Runnable {
 	private ILorann player;
 	private IController controller;
 	private List<DemonMover> movers;
-/**
- * 
- * @param player
- * @param controller
- * @param movers
- */
+
+	/**
+	 * 
+	 * @param player
+	 * @param controller
+	 * @param movers
+	 */
 	public GameController(ILorann player, IController controller, CopyOnWriteArrayList<DemonMover> movers) {
 		this.player = player;
 		this.controller = controller;
 		this.movers = movers;
 	}
-/**
- * 
- */
+
 	@Override
 	public void run() {
 		int count = 0;
