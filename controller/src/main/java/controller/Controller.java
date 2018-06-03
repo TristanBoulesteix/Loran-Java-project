@@ -1,7 +1,7 @@
 package controller;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import model.Model;
 import model.component.ComponentFactory;
@@ -22,7 +22,8 @@ import view.levelselector.LevelSelector;
 
 /**
  * 
- **@author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ ** @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public class Controller implements IController {
@@ -51,7 +52,7 @@ public class Controller implements IController {
 	}
 
 	/**
-	 *  Initialization of the game
+	 * Initialization of the game
 	 */
 	private void initializeGame() {
 		setVictory(false);
@@ -68,11 +69,12 @@ public class Controller implements IController {
 
 	/**
 	 * Instantiate the movement of the demon
+	 * 
 	 * @return ArrayList<DemonMover>
 	 */
-	private ArrayList<DemonMover> instantiateDemonMover() {
-		ArrayList<Demon> demons = ComponentFactory.getDemons();
-		ArrayList<DemonMover> movers = new ArrayList<DemonMover>();
+	private CopyOnWriteArrayList<DemonMover> instantiateDemonMover() {
+		CopyOnWriteArrayList<Demon> demons = ComponentFactory.getDemons();
+		CopyOnWriteArrayList<DemonMover> movers = new CopyOnWriteArrayList<DemonMover>();
 
 		// Loop for ask all demon to move
 		for (Demon demon : demons) {
@@ -81,15 +83,15 @@ public class Controller implements IController {
 
 		return movers;
 	}
-/**
- * Generate coordinate relative to the direction
- */
+
+	/**
+	 * Generate coordinate relative to the direction
+	 */
 	@Override
-	public void moveComponent(IComponent component, Direction direction) {
+	public synchronized void moveComponent(IComponent component, Direction direction) {
 		ICoordinate currentCoordinates = component.getCoordinate();
 		ICoordinate newCoordinates;
 
-		
 		switch (direction) {
 		case DOWN:
 			newCoordinates = new Coordinate(currentCoordinates.getX() + 1, currentCoordinates.getY());
@@ -133,6 +135,7 @@ public class Controller implements IController {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
 
 				component.setCoordinate(newCoordinates);
+				component.setDirection(direction);
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
@@ -141,6 +144,7 @@ public class Controller implements IController {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
 
 				component.setCoordinate(newCoordinates);
+				component.setDirection(direction);
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
@@ -163,25 +167,40 @@ public class Controller implements IController {
 	 */
 	private synchronized void moveSpell(Spell spell, ICoordinate newCoordinatesForTheSpell,
 			Direction currentDirection) {
-		System.out.print(currentDirection);
-		System.out.println(newCoordinatesForTheSpell);
 
+		// If the future position of the spell contain Lorann
 		if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] instanceof Lorann) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
+			model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
+					spell.getCoordinate());
+			model.setSpellToNull();
 
+			// If the future position of the spell contain a demon
 		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
 				.getY()] instanceof Demon) {
 			spell.setTarget(model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()]);
 			spell.actionWhenContactHappend();
 
+			// If the future position of the spell contain a border
 		} else if (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
 				.getY()] instanceof Setting) {
-			moveComponent(spell, Direction.getOppositeDirection(currentDirection));
+			spell.setDirection(Direction.getOppositeDirection(currentDirection));
+			moveComponent(spell, spell.getDirection());
+
+			// If the future position of the spell contain an energy sphere
+		} else if ((model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
+				.getY()] instanceof EnergySphere)
+				|| (model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell
+						.getY()] instanceof Gate)) {
+			spell.setDirection(Direction.getOppositeDirection(currentDirection));
+			moveComponent(spell, spell.getDirection());
 
 		} else {
-			model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
-					spell.getCoordinate());
+			if (!(model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] instanceof Lorann)) {
+				model.getMap()[spell.getCoordinate().getX()][spell.getCoordinate().getY()] = new Empty(
+						spell.getCoordinate());
+			}
 			spell.setCoordinate(newCoordinatesForTheSpell);
 			model.getMap()[newCoordinatesForTheSpell.getX()][newCoordinatesForTheSpell.getY()] = spell;
 
@@ -221,19 +240,22 @@ public class Controller implements IController {
 
 	}
 
-/**
- *  Realize action relative to the target component
- * @param componentToMove
- * @param componentInPosition
- */
+	/**
+	 * Realize action relative to the target component
+	 * 
+	 * @param componentToMove
+	 * @param componentInPosition
+	 */
 	private synchronized void checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
 			Lorann lorann = (Lorann) componentToMove;
-			// If Lorann catch a treasure, give 10 points.
+			// If Lorann catch a treasure, give 10 points to the player.
 			if (componentInPosition instanceof Treasure) {
 				Treasure treasure = (Treasure) componentInPosition;
 
 				this.score = score + treasure.getValue();
+
+				// If Lorann meet a demon, kill him
 			} else if (componentInPosition instanceof Demon) {
 				this.model.getLorann().kill();
 
@@ -243,7 +265,7 @@ public class Controller implements IController {
 				if (gate.isAvailable()) {
 					setVictory(true);
 				} else {
-					// If gate is not available, kill Lorann
+					// If the gate is not available, kill Lorann
 					lorann.kill();
 				}
 
@@ -254,25 +276,47 @@ public class Controller implements IController {
 					model.getGate().setAvailable(true);
 				}
 				sphere.setAvailable(false);
+
+				// If the position of Lorann will be the spell, get it
+			} else if (componentInPosition instanceof Spell) {
+				lorann.setSpellLaunched(false);
+				model.getMap()[componentInPosition.getCoordinate().getX()][componentInPosition.getCoordinate()
+						.getY()] = new Empty(componentInPosition.getCoordinate());
+				model.setSpellToNull();
+
 			}
+
 			// If Lorann has the same position than a demon, Lorann die.
 		} else if (componentToMove instanceof Demon) {
 			if (componentInPosition instanceof Lorann) {
 				Lorann lorann = (Lorann) componentInPosition;
 				lorann.kill();
 
+			} else if (componentInPosition instanceof Spell) {
+				Demon demon = (Demon) componentToMove;
+				demon.kill();
 			}
 		}
-
 	}
-/**
- * 
- */
+
+	public void removeComponent(IComponent component) {
+		model.getMap()[component.getCoordinate().getX()][component.getCoordinate().getY()] = new Empty(
+				component.getCoordinate());
+	}
+
+	/**
+	 * Set an action for Lorann
+	 * 
+	 * @param order
+	 *            The order Lorann has to execute
+	 */
 	public void setAction(Order order) {
 		if (order.equals(Order.FIRE)) {
 			// Launch the spell if the order is to fire
 			if (model.getLorann().launchSpell()) {
-				moveComponent((IComponent) model.getSpell(new Coordinate(model.getLorann().getCoordinate())),
+				moveComponent(
+						(IComponent) model.getSpell(new Coordinate(model.getLorann().getCoordinate()),
+								Direction.getOppositeDirection(model.getLorann().getDirection())),
 						Direction.getOppositeDirection(model.getLorann().getDirection()));
 			}
 		} else {
@@ -281,39 +325,54 @@ public class Controller implements IController {
 		}
 
 	}
-/**
- * 
- */
+
+	/**
+	 * get the model
+	 * 
+	 * @return model
+	 * 
+	 */
 	public Model getModel() {
 		return model;
 	}
-/**
- * 
- */
+
+	/**
+	 * get the GameFrame
+	 * 
+	 * @return the game frame
+	 * 
+	 */
 	public GameFrame getGameFrame() {
 		return gameFrame;
 	}
-/**
- * 
- */
+
+	/**
+	 * @return score the current score
+	 */
 	public int getScore() {
 		return score;
 	}
-/**
- * 
- */
+
+	/**
+	 * @param score
+	 *            the score to set
+	 */
 	public void setScore(int score) {
 		this.score = score;
 	}
-/**
- * 
- */
+
+	/**
+	 * check if the victory happened
+	 * 
+	 * @return victory A boolean to check the victory
+	 */
 	public boolean isVictory() {
 		return victory;
 	}
-/**
- * 
- */
+
+	/**
+	 * @param victory
+	 */
 	public void setVictory(boolean victory) {
 		this.victory = victory;
 	}

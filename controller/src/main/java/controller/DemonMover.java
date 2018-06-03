@@ -47,4 +47,12 @@ public class DemonMover {
 		controller.moveComponent(demonToMove, list.get(index));
 	}
 
+	/**
+	 * 
+	 * @return demon The demon
+	 */
+	public Demon getDemon() {
+		return demon;
+	}
+
 }

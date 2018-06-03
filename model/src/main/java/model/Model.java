@@ -5,9 +5,11 @@ import java.sql.SQLException;
 import model.component.Component;
 import model.component.ComponentFactory;
 import model.component.Coordinate;
+import model.component.Direction;
 import model.component.Gate;
 import model.component.IComponent;
 import model.component.ICoordinate;
+import model.component.ISpell;
 import model.component.Lorann;
 import model.component.Spell;
 import model.dao.DTBReader;
@@ -46,12 +48,17 @@ public class Model implements IModel {
 	}
 
 	@Override
-	public ISpell getSpell(ICoordinate coordinate) {
+	public ISpell getSpell(ICoordinate coordinate, Direction direction) {
 		if (spell == null) {
-			spell = ComponentFactory.createSpell((Coordinate) coordinate);
+			spell = ComponentFactory.createSpell((Coordinate) coordinate, direction);
 			return spell;
 		} else {
 			return spell;
 		}
+	}
+
+	@Override
+	public void setSpellToNull() {
+		spell = null;
 	}
 }

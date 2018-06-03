@@ -1,20 +1,24 @@
 package model.component;
 
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class ComponentFactory {
 	private static Lorann lorann;
 	private static Gate gate;
-	private static ArrayList<Demon> demons;
+	private static CopyOnWriteArrayList<Demon> demons;
 
 	/**
+	 * Build each component in function of the the map and put them into an array of
+	 * two dimensions of Components
 	 * 
 	 * @param map
+	 *            the map
+	 * 
 	 * @return Component[][]
 	 */
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
-		demons = new ArrayList<Demon>();
+		demons = new CopyOnWriteArrayList<Demon>();
 
 		char[] charArray = map.toCharArray();
 
@@ -105,8 +109,8 @@ public abstract class ComponentFactory {
 	 * @param coordinate
 	 * @return Spell
 	 */
-	public static Spell createSpell(Coordinate coordinate) {
-		return new Spell(true, true, coordinate, false);
+	public static Spell createSpell(Coordinate coordinate, Direction direction) {
+		return new Spell(true, true, coordinate, false, direction);
 	}
 
 	/**
@@ -242,7 +246,7 @@ public abstract class ComponentFactory {
 	 * 
 	 * @return demons
 	 */
-	public static ArrayList<Demon> getDemons() {
+	public static CopyOnWriteArrayList<Demon> getDemons() {
 		return demons;
 	}
 
@@ -251,7 +255,7 @@ public abstract class ComponentFactory {
 	 * 
 	 * @param demons
 	 */
-	public static void setDemons(ArrayList<Demon> demons) {
+	public static void setDemons(CopyOnWriteArrayList<Demon> demons) {
 		ComponentFactory.demons = demons;
 	}
 }
