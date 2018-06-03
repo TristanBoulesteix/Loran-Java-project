@@ -6,7 +6,11 @@ import javax.swing.JOptionPane;
 
 import model.component.IComponent;
 import model.component.ILorann;
-
+/**
+ * 
+ *@author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public class GameController implements Runnable {
 	private ILorann player;
 	private IController controller;

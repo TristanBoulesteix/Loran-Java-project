@@ -1,7 +1,11 @@
 package model;
 
 import model.component.IComponent;
-
+/**
+ * 
+ * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public interface ISpell {
 	/**
 	 * 
