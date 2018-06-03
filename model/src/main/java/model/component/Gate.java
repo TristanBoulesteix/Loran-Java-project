@@ -28,10 +28,13 @@ public class Gate extends Touch implements IGate, Kill {
 			}
 		}
 	}
-
+/**
+ * If direction equal up, the sprite of the door is closed else, it's
+ * open
+ */
 	@Override
-	public Image getImage(Direction direction) { // If direction equal up, the sprite of the door is closed else, it's
-													// open
+	public Image getImage(Direction direction) { 
+													 
 		if (isAvailable()) {
 			return getSprites().get(1);
 		} else {

@@ -1,7 +1,11 @@
 package model.component;
 
 import java.util.concurrent.CopyOnWriteArrayList;
-
+/**
+ * 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public abstract class ComponentFactory {
 	private static Lorann lorann;
 	private static Gate gate;

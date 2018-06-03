@@ -4,7 +4,11 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 import model.dao.SpriteReader;
-
+/**
+ * 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public abstract class Component implements IComponent {
 	private final boolean LORANN_PERMEABILITY;
 	private final boolean DEMON_PERMEABILITY;

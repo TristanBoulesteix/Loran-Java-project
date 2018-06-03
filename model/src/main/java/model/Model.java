@@ -13,34 +13,46 @@ import model.component.ISpell;
 import model.component.Lorann;
 import model.component.Spell;
 import model.dao.DTBReader;
-
+/**
+ * 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ *
+ */
 public class Model implements IModel {
 	private IComponent[][] components;
 	private Lorann lorann;
 	private Gate gate;
 	private Spell spell;
-
+/**
+ * 
+ */
 	public Model() {
 		components = new Component[12][20];//
 	}
-
+/**
+ *  Creation of a Map
+ */
 	public synchronized IComponent[][] getMap() {
-		return components;// Creation of a Map
+		return components;
 	}
 
 	private String getMapFromDTB(int idMap) throws SQLException {
 		return DTBReader.ReturnMap(idMap);
 	}
-
+/**
+ * 
+ */
 	public void generateMap(int idMap) throws SQLException {
 		String map = getMapFromDTB(idMap);
 		components = ComponentFactory.buildComponentsFromMap(map);
 		lorann = ComponentFactory.getLorann();
 		gate = ComponentFactory.getGate();
 	}
-
+/**
+ * Creation of an Lorann
+ */
 	public Lorann getLorann() {
-		return lorann;// Creation of an Lorann
+		return lorann;
 	}
 
 	public Gate getGate() {
