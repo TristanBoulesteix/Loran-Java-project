@@ -247,7 +247,7 @@ public class Controller implements IController {
 	private synchronized void checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
 			Lorann lorann = (Lorann) componentToMove;
-			// If Lorann catch a treasure, give 10 points.
+			// If Lorann catch a treasure, give 10 points to the player.
 			if (componentInPosition instanceof Treasure) {
 				Treasure treasure = (Treasure) componentInPosition;
 
@@ -278,6 +278,7 @@ public class Controller implements IController {
 				// If the position of Lorann will be the spell, get it
 			} else if (componentInPosition instanceof Spell) {
 				lorann.setSpellLaunched(false);
+
 				model.setSpellToNull();
 
 			}

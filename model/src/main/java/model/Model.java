@@ -9,6 +9,7 @@ import model.component.Direction;
 import model.component.Gate;
 import model.component.IComponent;
 import model.component.ICoordinate;
+import model.component.ISpell;
 import model.component.Lorann;
 import model.component.Spell;
 import model.dao.DTBReader;

@@ -1,7 +1,5 @@
 package model.component;
 
-import model.ISpell;
-
 /**
  * 
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean

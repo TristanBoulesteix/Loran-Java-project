@@ -1,6 +1,4 @@
-package model;
-
-import model.component.IComponent;
+package model.component;
 
 public interface ISpell {
 	/**

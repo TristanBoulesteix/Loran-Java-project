@@ -7,6 +7,7 @@ import model.component.IComponent;
 import model.component.ICoordinate;
 import model.component.IGate;
 import model.component.ILorann;
+import model.component.ISpell;
 
 /**
  * <h1>The Interface IModel.</h1>
