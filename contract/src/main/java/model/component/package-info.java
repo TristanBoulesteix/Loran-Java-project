@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author tboul
+ * @author Tristan BOULESTEIX
  *
  */
 package model.component;

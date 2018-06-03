@@ -2,7 +2,7 @@ package model.component;
 
 /**
  * 
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */

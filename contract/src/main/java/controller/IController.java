@@ -22,6 +22,11 @@ public interface IController {
 	 */
 	public void moveComponent(IComponent component, Direction direction);
 
+	/**
+	 * 
+	 * @param order
+	 *            The order Lorann has to execute
+	 */
 	public void setAction(Order order);
 
 	/**
@@ -60,5 +65,9 @@ public interface IController {
 	 */
 	public void setVictory(boolean victory);
 
+	/**
+	 * 
+	 * @param component
+	 */
 	public void removeComponent(IComponent component);
 }
