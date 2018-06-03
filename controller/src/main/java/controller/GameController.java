@@ -16,13 +16,20 @@ public class GameController implements Runnable {
 	private ILorann player;
 	private IController controller;
 	private List<DemonMover> movers;
-
+/**
+ * 
+ * @param player
+ * @param controller
+ * @param movers
+ */
 	public GameController(ILorann player, IController controller, CopyOnWriteArrayList<DemonMover> movers) {
 		this.player = player;
 		this.controller = controller;
 		this.movers = movers;
 	}
-
+/**
+ * 
+ */
 	@Override
 	public void run() {
 		int count = 0;
