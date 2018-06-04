@@ -22,7 +22,8 @@ import view.levelselector.LevelSelector;
 
 /**
  * <h1>The class Controller.</h1>
- ** @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ ** 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */
@@ -36,8 +37,9 @@ public class Controller implements IController {
 
 	/**
 	 * Constructor call.
+	 * 
 	 * @param model
-	 * The model.
+	 *            The model.
 	 */
 	public Controller(Model model) {
 		this.model = model;
@@ -173,8 +175,8 @@ public class Controller implements IController {
 	 *            the spell to move
 	 * @param newCoordinatesForTheSpell
 	 *            the future coordinates of the spell
-	 * @param the
-	 *            current direction of the spell
+	 * @param currentDirection
+	 *            the current direction of the spell
 	 */
 	private synchronized void moveSpell(Spell spell, ICoordinate newCoordinatesForTheSpell,
 			Direction currentDirection) {
@@ -222,6 +224,7 @@ public class Controller implements IController {
 	 * Check if Lorann can move here.
 	 * 
 	 * @param coordinateToCheck
+	 *            The coordinates to check
 	 * @return a boolean to allow or not the move
 	 */
 	private synchronized boolean directionisAvailableForLorann(ICoordinate coordinateToCheck) {
@@ -238,6 +241,7 @@ public class Controller implements IController {
 	 * Check if the demon can move here.
 	 * 
 	 * @param coordinateToCheck
+	 *            The coordinates to check
 	 * @return a boolean to allow or not the move
 	 */
 	private synchronized boolean directionIsAvailableForDemons(ICoordinate coordinateToCheck) {
@@ -255,7 +259,10 @@ public class Controller implements IController {
 	 * Realize action relative to the target component
 	 * 
 	 * @param componentToMove
+	 *            The component to move
 	 * @param componentInPosition
+	 *            The component which will be at the position of the component to
+	 *            move
 	 */
 	private synchronized void checkTargetLocation(IComponent componentToMove, IComponent componentInPosition) {
 		if (componentToMove instanceof Lorann) {
@@ -341,8 +348,7 @@ public class Controller implements IController {
 	 * 
 	 * Get the model.
 	 * 
-	 * @return model
-	 * The model.
+	 * @return model The model.
 	 */
 	public Model getModel() {
 		return model;
@@ -360,6 +366,7 @@ public class Controller implements IController {
 
 	/**
 	 * Operation call to get a score.
+	 * 
 	 * @return score the current score
 	 */
 	public int getScore() {
@@ -368,6 +375,7 @@ public class Controller implements IController {
 
 	/**
 	 * Operation call to set the score
+	 * 
 	 * @param score
 	 *            the score to set.
 	 */
@@ -386,6 +394,7 @@ public class Controller implements IController {
 
 	/**
 	 * @param victory
+	 *            The victory boolean
 	 */
 	public void setVictory(boolean victory) {
 		this.victory = victory;

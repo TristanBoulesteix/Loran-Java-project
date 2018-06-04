@@ -28,6 +28,8 @@ public class Spell extends Touch implements ISpell, Kill {
 	 * 
 	 * @param available
 	 *            The availability.
+	 * @param coordinate
+	 *            The default coordinates of the component
 	 * 
 	 */
 	public Spell(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available,

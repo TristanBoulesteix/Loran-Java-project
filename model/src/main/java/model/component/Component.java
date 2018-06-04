@@ -4,9 +4,12 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 import model.dao.SpriteReader;
+
 /**
  * <h1>The Component class.</h1>
- * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public abstract class Component implements IComponent {
@@ -18,15 +21,18 @@ public abstract class Component implements IComponent {
 	private Direction direction;
 
 	/**
-	 * Constructor of component.
+	 * Constructor of component
+	 * 
 	 * @param path
-	 * The path.
+	 *            The path.
 	 * @param lorannPermeability
-	 * The lorann Permeability.
+	 *            The lorann Permeability.
 	 * @param demonPermeability
-	 * The demon Permeability.
+	 *            The demon Permeability.
 	 * @param coordinate
-	 * The coordinate.
+	 *            The coordinate.
+	 * @param direction
+	 *            The default direction of the component
 	 */
 
 	public Component(String path, boolean lorannPermeability, boolean demonPermeability, ICoordinate coordinate,
@@ -63,8 +69,8 @@ public abstract class Component implements IComponent {
 
 	/**
 	 * Operation call to get the Sprites.
-	 * @return sprites
-	 * the sprites.
+	 * 
+	 * @return sprites the sprites.
 	 */
 
 	protected ArrayList<Image> getSprites() {

@@ -8,35 +8,38 @@ import javax.swing.JFrame;
 import controller.IController;
 import model.Model;
 import view.IGameFrame;
+
 /**
  * <h1>The gameFrame class.</h1>
- * @author @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * 
+ * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 @SuppressWarnings("serial")
 public class GameFrame extends JFrame implements IGameFrame {
 	private GamePanel panel;
-/**
- * Constructor of game frame
- * @param model
- * The model.
- * @param controller
- * The controller.
- */
+
+	/**
+	 * Constructor of game frame
+	 * 
+	 * @param model
+	 *            The model.
+	 * @param controller
+	 *            The controller.
+	 */
 	public GameFrame(Model model, IController controller) {
-/*  We create a Frame with parameters 
- *  We put the Panel attentive to the events 
- *  Prevent the creation of a shortcut bar at the top of the screen 
- *  We put the title of the game on the Frame 
- *  We put the Frame on the center of the screen 
- *  We close the processus when we close the window 
- *  We put the Frame on full screen 
- *  We put the background in black 
- *  We put the Panel on the center of the Frame 
- *  We forbid resizing*/
-		
+		/*
+		 * We create a Frame with parameters We put the Panel attentive to the events
+		 * Prevent the creation of a shortcut bar at the top of the screen We put the
+		 * title of the game on the Frame We put the Frame on the center of the screen
+		 * We close the processus when we close the window We put the Frame on full
+		 * screen We put the background in black We put the Panel on the center of the
+		 * Frame We forbid resizing
+		 */
+
 		this.panel = new GamePanel(model, controller);
-		this.panel.setFocusable(true);	
+		this.panel.setFocusable(true);
 		this.setUndecorated(true);
 		this.setTitle("Lorann");
 		this.setLocationRelativeTo(null);

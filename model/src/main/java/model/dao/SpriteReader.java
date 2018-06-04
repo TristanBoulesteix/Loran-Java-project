@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 
 /**
  * <h1>The SpriteReader class.</h1>
+ * 
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
@@ -21,6 +22,7 @@ public class SpriteReader {
 	/**
 	 * 
 	 * @param path
+	 *            The path for the folder which contain the sprites
 	 */
 	public SpriteReader(String path) {
 		this.path = path;
@@ -34,13 +36,14 @@ public class SpriteReader {
 	}
 
 	/**
-	 * Get images list from file system
-	 * Add Images in ArrayList
+	 * Get images list from file system Add Images in ArrayList
+	 * 
 	 * @throws IOException
+	 *             IO exception
 	 */
 	private void generateImagesList() throws IOException {
 		File folder = new File(getClass().getClassLoader().getResource(path).getFile()).getAbsoluteFile();
-		File[] listOfFiles = folder.listFiles(); 
+		File[] listOfFiles = folder.listFiles();
 		for (int i = 0; i < listOfFiles.length; i++) {
 			sprites.add(ImageIO.read(listOfFiles[i].getAbsoluteFile()));
 		}
@@ -48,7 +51,7 @@ public class SpriteReader {
 
 	/**
 	 * 
-	 * @return sprites
+	 * @return sprites The list of all the sprite for the component
 	 */
 	public ArrayList<Image> getSprites() {
 		return sprites;
