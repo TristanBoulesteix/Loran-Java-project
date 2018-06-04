@@ -137,11 +137,11 @@ public class Controller implements IController {
 
 		// Condition: if the component is Lorann, check if Lorann can move
 		if (component instanceof Lorann) {
+			component.setDirection(direction);
 			if (directionisAvailableForLorann(newCoordinates)) {
 				checkTargetLocation(component, model.getMap()[newCoordinates.getX()][newCoordinates.getY()]);
 
 				component.setCoordinate(newCoordinates);
-				component.setDirection(direction);
 				model.getMap()[currentCoordinates.getX()][currentCoordinates.getY()] = new Empty(currentCoordinates);
 				model.getMap()[newCoordinates.getX()][newCoordinates.getY()] = component;
 			}
