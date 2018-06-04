@@ -9,7 +9,7 @@ import model.component.Direction;
 
 /**
  * Create the class DemonMover which is implements by Runnable
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
 public class DemonMover {
