@@ -15,11 +15,20 @@ public class Spell extends Touch implements ISpell, Kill {
 	private IComponent target;
 
 	/**
+	 * Constructor of spell.
 	 * 
 	 * @param lorannPermeability
+	 * The Lorann Permeability.
+	 * 
 	 * @param demonPermeability
+	 * The demon Permeability.
+	 * 
 	 * @param coordinate
+	 * The coordinate.
+	 * 
 	 * @param available
+	 * The availability.
+	 * 
 	 */
 	public Spell(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available,
 			Direction direction) {

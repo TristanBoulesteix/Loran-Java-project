@@ -10,10 +10,15 @@ public class Arrbarr extends Demon {
 
 
 	/**
+	 * Constructor call to create a Arrbarr.
 	 * 
 	 * @param lorannPermeability
+	 * The lorann permeability.
 	 * @param demonPermeability
+	 * The demon permeability.
+	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 */
 
 	public Arrbarr(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, Direction direction) {

@@ -15,11 +15,16 @@ public class Lorann extends Component implements ILorann {
 	private boolean spellLaunched;
 
 	/**
+	 * The constructor of Lorann.
 	 * 
 	 * @param lorannPermeability
+	 * The Lorann Permeability.
 	 * @param demonPermeability
+	 * The demon  Permeability.
 	 * @param coordinate
+	 * The coordinate.
 	 * @param direction
+	 * The direction.
 	 */
 	public Lorann(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, Direction direction) {
 		super(PATH, lorannPermeability, demonPermeability, coordinate, direction);

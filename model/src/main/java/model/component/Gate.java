@@ -9,11 +9,16 @@ import java.awt.Image;
 public class Gate extends Touch implements IGate, Kill {
 	private final static String PATH = "Pictures/gate";
 	/**
+	 * Constructor of gate.
 	 * 
 	 * @param lorannPermeability
+	 * The Lorann permeability.
 	 * @param demonPermeability
+	 * The demon permeability.
 	 * @param coordinate
+	 * The coordinate.
 	 * @param available
+	 * the avaibility.
 	 */
 	public Gate(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available) {
 		super(PATH, lorannPermeability, demonPermeability, coordinate, available, Direction.UP);

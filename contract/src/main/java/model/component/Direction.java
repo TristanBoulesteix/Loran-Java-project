@@ -12,9 +12,11 @@ import controller.Order;
 public enum Direction {
 	UP, UPRIGHT, UPLEFT, RIGHT, LEFT, DOWN, DOWNRIGHT, DOWNLEFT;
 	/**
-	 * 
+	 * Operation call to get the direction from the Order.
 	 * @param order
+	 * 			The order of the human.
 	 * @return Direction
+	 * 			The result direction of Lorann.
 	 */
 	public static Direction getDirectionFromOrder(Order order) {
 		switch (order) {
@@ -52,11 +54,11 @@ public enum Direction {
 	}
 
 	/**
-	 * This method allow us to get two opposite direction of an other direction
+	 * This method allow us to get two opposite direction of an other direction.
 	 * 
 	 * @param direction
 	 * 
-	 * @return Direction the opposite direction
+	 * @return Direction The opposite direction.
 	 */
 	public static Direction getOppositeDirection(Direction direction) {
 		switch (direction) {

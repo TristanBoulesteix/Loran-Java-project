@@ -15,7 +15,7 @@ public abstract class Main {
 	 * The main method.
 	 *
 	 * @param args
-	 *            the arguments
+	 *            The arguments.
 	 */
 	public static void main(final String[] args) {
 		//Instantiate new model

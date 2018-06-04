@@ -35,8 +35,9 @@ public class Controller implements IController {
 	private boolean victory;
 
 	/**
-	 * 
+	 * Constructor call.
 	 * @param model
+	 * The model.
 	 */
 	public Controller(Model model) {
 		this.model = model;
@@ -315,10 +316,10 @@ public class Controller implements IController {
 	}
 
 	/**
-	 * Set an action for Lorann
+	 * Set an action for Lorann.
 	 * 
 	 * @param order
-	 *            The order Lorann has to execute
+	 *            The order Lorann has to execute.
 	 */
 	public void setAction(Order order) {
 		if (order.equals(Order.FIRE)) {
@@ -337,19 +338,20 @@ public class Controller implements IController {
 	}
 
 	/**
-	 * get the model
+	 * 
+	 * Get the model.
 	 * 
 	 * @return model
-	 * 
+	 * The model.
 	 */
 	public Model getModel() {
 		return model;
 	}
 
 	/**
-	 * get the GameFrame
+	 * Get the GameFrame.
 	 * 
-	 * @return the game frame
+	 * @return The game frame
 	 * 
 	 */
 	public GameFrame getGameFrame() {
@@ -357,6 +359,7 @@ public class Controller implements IController {
 	}
 
 	/**
+	 * Operation call to get a score.
 	 * @return score the current score
 	 */
 	public int getScore() {
@@ -364,8 +367,9 @@ public class Controller implements IController {
 	}
 
 	/**
+	 * Operation call to set the score
 	 * @param score
-	 *            the score to set
+	 *            the score to set.
 	 */
 	public void setScore(int score) {
 		this.score = score;

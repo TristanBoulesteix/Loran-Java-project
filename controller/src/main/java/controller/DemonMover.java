@@ -8,7 +8,7 @@ import model.component.Demon;
 import model.component.Direction;
 
 /**
- * Create the class DemonMover which is implements by Runnable
+ * Create the class DemonMover which is implements by Runnable.
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
@@ -16,14 +16,20 @@ public class DemonMover {
 	private Demon demon;
 	private static Controller controller;
 
-	// Demons Movement
+	/**
+	 * Operation call to move Demon.
+	 * @param demon
+	 * The demon.
+	 * @param controller
+	 * The controller.
+	 */
 	public DemonMover(Demon demon, Controller controller) {
 		this.demon = demon;
 		DemonMover.controller = controller;
 
 	}
 /** 
- * call of MoveComponent.
+ * Call of MoveComponent.
  * get the enum in an ArrayList and use it randomly.
  *  Creation of the new Random.
  * 
@@ -34,10 +40,11 @@ public class DemonMover {
 		int index = random.nextInt(list.size());
 		controller.moveComponent(demon, list.get(index));
 	}
-/**get the enum in an ArrayList and use it randomly.
+/**Get the enum in an ArrayList and use it randomly.
  * 	Creation of the new Random.
- *  Call of MoveComponent
+ *  Call of MoveComponent.
  * @param demonToMove
+ * The Demon to move.
  */
 	public static void move(Demon demonToMove) {
 	
@@ -48,8 +55,9 @@ public class DemonMover {
 	}
 
 	/**
-	 * 
-	 * @return demon The demon
+	 * Operation call to get a Demon.
+	 * @return demon 
+	 * The demon.
 	 */
 	public Demon getDemon() {
 		return demon;

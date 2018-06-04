@@ -20,10 +20,13 @@ public class GameController implements Runnable {
 	private List<DemonMover> movers;
 
 	/**
-	 * 
+	 * Operation call to control the game.
 	 * @param player
+	 * 	The player.
 	 * @param controller
+	 * 	The controller.
 	 * @param movers
+	 * The movers.
 	 */
 	public GameController(ILorann player, IController controller, CopyOnWriteArrayList<DemonMover> movers) {
 		this.player = player;
@@ -71,7 +74,7 @@ public class GameController implements Runnable {
 		}
 
 		if (controller.isVictory()) {
-			// Add popup for victory or defeat
+			// Add popup for victory or defeat.
 			int finalscore = 100 + controller.getScore();
 			JOptionPane.showMessageDialog(null, "CONGRATULATION !\nYour score is " + finalscore, "GAME OVER",
 					JOptionPane.INFORMATION_MESSAGE);

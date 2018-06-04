@@ -8,15 +8,17 @@ package model.component;
  */
 public interface ISpell extends IComponent {
 	/**
-	 * 
-	 * @return {@link IComponent} the component targeted
+	 * Operation call to get a Target
+	 * @return {@link IComponent} 
+	 * The component targeted.
 	 */
 	public IComponent getTarget();
 
 	/**
-	 * 
+	 * Operation call to set the target.
 	 * 
 	 * @param target
+	 * The component targeted.
 	 */
 	public void setTarget(IComponent target);
 }

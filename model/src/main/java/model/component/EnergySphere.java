@@ -7,11 +7,16 @@ package model.component;
 public class EnergySphere extends Touch {
 	private final static String PATH = "Pictures/energySphere";
 /**
+ * Constructor of energy sphere.
  * 
  * @param lorannPermeability
+ * The Lorann Permeability.
  * @param demonPermeability
+ * The Demon Permeability.
  * @param coordinate
+ * The coordinate.
  * @param available
+ * The availability.
  */
 	public EnergySphere(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate,
 			boolean available) {

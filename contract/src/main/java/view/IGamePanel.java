@@ -8,8 +8,9 @@ import model.component.IComponent;
  */
 public interface IGamePanel {
 	/**
-	 * 
+	 * Operation call to update the Map.
 	 * @param components
+	 * The updated Map.
 	 */
 	public void updateMap(IComponent[][] components);
 }

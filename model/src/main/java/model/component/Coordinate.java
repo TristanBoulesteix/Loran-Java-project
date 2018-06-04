@@ -9,17 +9,20 @@ public class Coordinate implements ICoordinate {
 	private int x;
 	private int y;
 	/**
-	 * 
+	 * Constructor of Coordinate.
 	 * @param x
+	 * The X.
 	 * @param y
+	 * The Y.
 	 */
 	public Coordinate(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 	/**
-	 * 
+	 * Second constructor of Coordinate.
 	 * @param coordinate
+	 * The coordinate.
 	 */
 	public Coordinate(ICoordinate coordinate) {
 		this.x = coordinate.getX();

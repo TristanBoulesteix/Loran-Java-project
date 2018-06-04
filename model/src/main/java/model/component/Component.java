@@ -18,11 +18,15 @@ public abstract class Component implements IComponent {
 	private Direction direction;
 
 	/**
-	 * 
+	 * Constructor of component.
 	 * @param path
+	 * The path.
 	 * @param lorannPermeability
+	 * The lorann Permeability.
 	 * @param demonPermeability
+	 * The demon Permeability.
 	 * @param coordinate
+	 * The coordinate.
 	 */
 
 	public Component(String path, boolean lorannPermeability, boolean demonPermeability, ICoordinate coordinate,
@@ -58,8 +62,9 @@ public abstract class Component implements IComponent {
 	}
 
 	/**
-	 * 
+	 * Operation call to get the Sprites.
 	 * @return sprites
+	 * the sprites.
 	 */
 
 	protected ArrayList<Image> getSprites() {

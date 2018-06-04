@@ -13,12 +13,13 @@ public abstract class ComponentFactory {
 
 	/**
 	 * Build each component in function of the the map and put them into an array of
-	 * two dimensions of Components
+	 * two dimensions of Components.
 	 * 
 	 * @param map
-	 *            the map
+	 *            The map.
 	 * 
 	 * @return Component[][]
+	 * The component.
 	 */
 	public static Component[][] buildComponentsFromMap(String map) {
 		Component[][] components = new Component[12][20];
@@ -98,166 +99,196 @@ public abstract class ComponentFactory {
 	}
 
 	/**
-	 * Build new Lorann
+	 * Build new Lorann.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Lorann
+	 * The Lorann.
 	 */
 	private static Lorann createLorann(Coordinate coordinate) {
 		return new Lorann(true, true, coordinate, Direction.UP);
 	}
 
 	/**
-	 * Build new Spell
+	 * Build new Spell.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Spell
+	 * The Spell.
 	 */
 	public static Spell createSpell(Coordinate coordinate, Direction direction) {
 		return new Spell(true, true, coordinate, false, direction);
 	}
 
 	/**
-	 * Build new Kyracj
+	 * Build new Kyracj.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Kyracj
+	 * The Kyracj.
 	 */
 	private static Kyracj createKyacj(Coordinate coordinate) {
 		return new Kyracj(true, false, coordinate, Direction.UP);
 	}
 
 	/**
-	 * Build new Maarcg
+	 * Build new Maarcg.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Maarcg
+	 * The Maarcg.
 	 */
 	private static Maarcg createMarrcg(Coordinate coordinate) {
 		return new Maarcg(true, false, coordinate, Direction.UP);
 	}
 
 	/**
-	 * Build new Arrbarr
+	 * Build new Arrbarr.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Arrbarr
+	 * The Arrbarr.
 	 */
 	private static Arrbarr createArrbarr(Coordinate coordinate) {
 		return new Arrbarr(true, false, coordinate, Direction.UP);
 	}
 
 	/**
-	 * Build new Cargyv
+	 * Build new Cargyv.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Cargyv
+	 * The Cargyv.
 	 */
 	private static Cargyv createCargyv(Coordinate coordinate) {
 		return new Cargyv(true, false, coordinate, Direction.UP);
 	}
 
 	/**
-	 * Build new Treasure
+	 * Build new Treasure.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Treasure
+	 * The Treasure.
 	 */
 	private static Treasure createTreasure(Coordinate coordinate) {
 		return new Treasure(true, false, coordinate, true);
 	}
 
 	/**
-	 * Build new EnergySphere
+	 * Build new EnergySphere.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return EnergySphere
+	 * The Energy sphere.
 	 */
 	private static EnergySphere createEnergySphere(Coordinate coordinate) {
 		return new EnergySphere(true, false, coordinate, true);
 	}
 
 	/**
-	 * Build new Gate
+	 * Build new Gate.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Gate
+	 * The Gate.
 	 */
 	private static Gate createGate(Coordinate coordinate) {
 		return new Gate(true, false, coordinate, false);
 	}
 
 	/**
-	 * Build new CornerSet
+	 * Build new CornerSet.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return CornerSet
+	 * The cornerSet.
 	 */
 	private static CornerSet createCornerSet(Coordinate coordinate) {
 		return new CornerSet(coordinate);
 	}
 
 	/**
-	 * Build new HorizontalSet
+	 * Build new HorizontalSet.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return HorizontalSet
+	 * The Horizontal set.
 	 */
 	private static HorizontalSet createHorizontalSet(Coordinate coordinate) {
 		return new HorizontalSet(coordinate);
 	}
 
 	/**
-	 * Build new VerticalSet
+	 * Build new VerticalSet.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return VerticalSet
+	 * The vertical set.
 	 */
 	private static VerticalSet createVerticalSet(Coordinate coordinate) {
 		return new VerticalSet(coordinate);
 	}
 
 	/**
-	 * Build new Empty
+	 * Build new Empty.
 	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 * @return Empty
+	 * The empty.
 	 */
 	private static Empty createEmpty(Coordinate coordinate) {
 		return new Empty(coordinate);
 	}
 
 	/**
-	 * Get Lorann
+	 * Get a Lorann.
 	 * 
 	 * @return Lorann
+	 * The Lorann.
 	 */
 	public static Lorann getLorann() {
 		return lorann;
 	}
 
 	/**
-	 * Get Gate
+	 * Get Gate.
 	 * 
 	 * @return gate
+	 * the gate.
 	 */
 	public static Gate getGate() {
 		return gate;
 	}
 
 	/**
-	 * Get Demons
+	 * Get Demons.
 	 * 
 	 * @return demons
+	 * the demon.
 	 */
 	public static CopyOnWriteArrayList<Demon> getDemons() {
 		return demons;
 	}
 
 	/**
-	 * Set Demons
+	 * Set Demons.
 	 * 
 	 * @param demons
+	 * The demon.
 	 */
 	public static void setDemons(CopyOnWriteArrayList<Demon> demons) {
 		ComponentFactory.demons = demons;

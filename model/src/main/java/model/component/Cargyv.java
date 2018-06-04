@@ -9,10 +9,14 @@ public class Cargyv extends Demon {
 
 
 	/**
-	 * 
+	 * Constructor call to create a Cargyv.
 	 * @param lorannPermeability
+	 * The Lorann Permeability.
 	 * @param demonPermeability
+	 * The Demon permeability.
+	 * 
 	 * @param coordinate
+	 * The coordinate.
 	 */
 
 	public Cargyv(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, Direction direction) {

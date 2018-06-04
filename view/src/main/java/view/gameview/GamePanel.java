@@ -25,9 +25,12 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	private IController controller;
 
 	/**
+	 * Constructor of Game Panel.
 	 * 
 	 * @param model
+	 * The model.
 	 * @param controller
+	 * The controller.
 	 */
 	public GamePanel(Model model, IController controller) {
 		this.addKeyListener(this);
@@ -36,7 +39,7 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	}
 
 	/**
-	 * We update the map and we repaint
+	 * Operation call to update the map.
 	 */
 	public void updateMap(IComponent[][] components) {
 
@@ -44,13 +47,13 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 		repaint();
 	}
 
-	/**
-	 * We enlarge the images to put the game in full screen
-	 */
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-
+/**
+	 * We enlarge the images to put the game in full screen
+	 */
 		for (int x = 0; x < components.length; x++) {
 			for (int y = 0; y < components[x].length; y++) {
 				g.drawImage(components[x][y].getImage(components[x][y].getDirection()), y * 91, x * 91, 80, 80, null);
@@ -59,13 +62,13 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 
 	}
 
-	/**
-	 * we inform our program of the action of certain keys on the keyboard
-	 */
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-
+/**
+	 * we inform our program of the action of certain keys on the keyboard
+	 */
 		switch (keyCode) {
 		case KeyEvent.VK_UP:
 			controller.setAction(Order.UP);
@@ -93,18 +96,13 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 
 	}
 
-	/**
-	 * 
-	 */
+
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 
 	}
 
-	/**
-	 * 
-	 */
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub

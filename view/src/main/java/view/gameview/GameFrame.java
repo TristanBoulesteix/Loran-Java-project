@@ -17,7 +17,14 @@ import view.IGameFrame;
 public class GameFrame extends JFrame implements IGameFrame {
 	private GamePanel panel;
 /**
- *  We create a Frame with parameters 
+ * Constructor of game frame
+ * @param model
+ * The model.
+ * @param controller
+ * The controller.
+ */
+	public GameFrame(Model model, IController controller) {
+/*  We create a Frame with parameters 
  *  We put the Panel attentive to the events 
  *  Prevent the creation of a shortcut bar at the top of the screen 
  *  We put the title of the game on the Frame 
@@ -26,11 +33,7 @@ public class GameFrame extends JFrame implements IGameFrame {
  *  We put the Frame on full screen 
  *  We put the background in black 
  *  We put the Panel on the center of the Frame 
- *  We forbid resizing
- * @param model
- * @param controller
- */
-	public GameFrame(Model model, IController controller) {
+ *  We forbid resizing*/
 		
 		this.panel = new GamePanel(model, controller);
 		this.panel.setFocusable(true);	
@@ -44,9 +47,6 @@ public class GameFrame extends JFrame implements IGameFrame {
 		this.setResizable(false);
 	}
 
-	/**
-	 * 
-	 */
 	public GamePanel getPanel() {
 		return panel;
 	}

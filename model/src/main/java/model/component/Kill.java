@@ -6,5 +6,10 @@ package model.component;
  *
  */
 public interface Kill {
+	/**
+	 * Constructor of kill.
+	 * @param target
+	 * The target.
+	 */
 	public void kill(Component target);
 }

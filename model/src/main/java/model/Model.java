@@ -24,7 +24,7 @@ public class Model implements IModel {
 	private Gate gate;
 	private Spell spell;
 /**
- * 
+ * Constructor of Model.
  */
 	public Model() {
 		components = new Component[12][20];//
@@ -35,12 +35,19 @@ public class Model implements IModel {
 	public synchronized IComponent[][] getMap() {
 		return components;
 	}
-
+/**
+ * Operation call to get a Map from DTB.
+ * @param idMap
+ * The id of the Map.
+ * @return String
+ * 	The id.
+ * @throws SQLException
+ */
 	private String getMapFromDTB(int idMap) throws SQLException {
 		return DTBReader.ReturnMap(idMap);
 	}
 /**
- * 
+ * Operation call to generate the Map.
  */
 	public void generateMap(int idMap) throws SQLException {
 		String map = getMapFromDTB(idMap);
@@ -49,12 +56,14 @@ public class Model implements IModel {
 		gate = ComponentFactory.getGate();
 	}
 /**
- * Creation of an Lorann
+ * Creation of an Lorann.
  */
 	public Lorann getLorann() {
 		return lorann;
 	}
-
+/**
+ * Operation call to get a gate.
+ */
 	public Gate getGate() {
 		return gate;// Creation of a Gate
 	}

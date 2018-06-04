@@ -8,13 +8,14 @@ package view;
  */
 public interface IGameFrame {
 	/**
-	 * 
+	 * Operation call to get a Panel.
 	 * @return IGamePanel
+	 * The GamePanel.
 	 */
 	public IGamePanel getPanel();
 	
 	/**
-	 * 
+	 * Operation call to dispose.
 	 */
 	public void dispose();
 }
