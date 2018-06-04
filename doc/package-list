@@ -3,7 +3,6 @@ main
 model
 model.component
 model.dao
-showboard
 view
 view.gameview
 view.levelselector
