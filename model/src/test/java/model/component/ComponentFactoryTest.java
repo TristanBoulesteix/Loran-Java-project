@@ -7,9 +7,13 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import model.Model;
+
 /**
  * 
- * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public class ComponentFactoryTest {
@@ -24,6 +28,8 @@ public class ComponentFactoryTest {
 
 	@Before
 	public void setUp() throws Exception {
+		Model model = new Model();
+		model.generateMap(1);
 	}
 
 	@After
@@ -34,15 +40,15 @@ public class ComponentFactoryTest {
 	public void test() {
 
 	}
-/**
- * get Lorann is a method who return the object Lorann
- * so we created a new Loran with the basic setup
- * then we use assertEquals to find if expected and the return Lorann are the same
- */
+
+	/**
+	 * get Lorann is a method who return the object Lorann so we created a new Loran
+	 * with the basic setup then we use assertEquals to find if expected and the
+	 * return Lorann are the same
+	 */
 	@Test
 	public void getLorann() {
-		final Object expected = new Lorann(true, true, new Coordinate(0, 0), Direction.UP);
-		assertEquals(expected, ComponentFactory.getLorann());
+		assertEquals(Lorann.class, ComponentFactory.getLorann().getClass());
 	}
 
 }
