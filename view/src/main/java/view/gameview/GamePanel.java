@@ -15,6 +15,7 @@ import view.IGamePanel;
 
 /**
  * <h1>The GamePanel class.</h1>
+ * 
  * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
@@ -28,9 +29,9 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	 * Constructor of Game Panel.
 	 * 
 	 * @param model
-	 * The model.
+	 *            The model.
 	 * @param controller
-	 * The controller.
+	 *            The controller.
 	 */
 	public GamePanel(Model model, IController controller) {
 		this.addKeyListener(this);
@@ -39,21 +40,23 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	}
 
 	/**
-	 * Operation call to update the map.
+	 * Update the map and then repaint the panel
+	 * 
+	 * @param components
+	 *            The map
 	 */
 	public void updateMap(IComponent[][] components) {
 
 		this.components = components;
-		repaint();
+		this.repaint();
 	}
 
-	
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-/**
-	 * We enlarge the images to put the game in full screen
-	 */
+		/**
+		 * We enlarge the images to put the game in full screen
+		 */
 		for (int x = 0; x < components.length; x++) {
 			for (int y = 0; y < components[x].length; y++) {
 				g.drawImage(components[x][y].getImage(components[x][y].getDirection()), y * 91, x * 91, 80, 80, null);
@@ -62,13 +65,12 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 
 	}
 
-	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-/**
-	 * we inform our program of the action of certain keys on the keyboard
-	 */
+		/**
+		 * we inform our program of the action of certain keys on the keyboard
+		 */
 		switch (keyCode) {
 		case KeyEvent.VK_UP:
 			controller.setAction(Order.UP);
@@ -95,7 +97,6 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 		}
 
 	}
-
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
