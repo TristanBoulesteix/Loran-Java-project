@@ -6,19 +6,19 @@ package model.component;
  *         Pierre
  *
  */
-public interface ILorann {
+public interface ILorann extends IComponent {
 
 	/**
 	 * Operation call to launch the spell.
-	 * @return boolean
-	 * The spell.
+	 * 
+	 * @return boolean The spell.
 	 */
 	public boolean launchSpell();
 
 	/**
 	 * Operation call to set Alive.
-	 * @return boolean
-	 * The Alive.
+	 * 
+	 * @return boolean The Alive.
 	 */
 	public boolean isAlive();
 
@@ -29,8 +29,8 @@ public interface ILorann {
 
 	/**
 	 * Operation call to had a spel Launched.
-	 * @return true 
-	 * If the spell is launched.
+	 * 
+	 * @return true If the spell is launched.
 	 */
 	public boolean isSpellLaunched();
 
@@ -38,7 +38,7 @@ public interface ILorann {
 	 * Operation to set the Spell Launched.
 	 * 
 	 * @param spellLaunched
-	 * The spell set.
+	 *            The spell set.
 	 */
 	public void setSpellLaunched(boolean spellLaunched);
 }
