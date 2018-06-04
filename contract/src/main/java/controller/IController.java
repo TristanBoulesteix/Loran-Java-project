@@ -8,8 +8,8 @@ import view.IGameFrame;
 /**
  * <h1>The Interface IController.</h1>
  * 
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * 
  */
 public interface IController {
 
