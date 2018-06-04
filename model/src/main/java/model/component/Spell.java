@@ -1,10 +1,10 @@
 package model.component;
 
 import java.awt.Image;
-import java.util.ArrayList;
 
 /**
  * <h1>The Spell class.</h1>
+ * 
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
@@ -18,16 +18,16 @@ public class Spell extends Touch implements ISpell, Kill {
 	 * Constructor of spell.
 	 * 
 	 * @param lorannPermeability
-	 * The Lorann Permeability.
+	 *            The Lorann permeability.
 	 * 
 	 * @param demonPermeability
-	 * The demon Permeability.
+	 *            The demon permeability.
 	 * 
 	 * @param coordinate
-	 * The coordinate.
+	 *            The coordinate.
 	 * 
 	 * @param available
-	 * The availability.
+	 *            The availability.
 	 * 
 	 */
 	public Spell(boolean lorannPermeability, boolean demonPermeability, Coordinate coordinate, boolean available,
