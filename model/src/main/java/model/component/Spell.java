@@ -1,5 +1,8 @@
 package model.component;
 
+import java.awt.Image;
+import java.util.ArrayList;
+
 /**
  * 
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
@@ -57,4 +60,9 @@ public class Spell extends Touch implements ISpell, Kill {
 		this.target = target;
 	}
 
+	@Override
+	public Image getImage(Direction direction) {
+		int random = (int) (Math.random() * (getSprites().size() - 1));
+		return getSprites().get(random);
+	}
 }
