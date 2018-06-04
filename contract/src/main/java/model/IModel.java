@@ -12,14 +12,15 @@ import model.component.ISpell;
 /**
  * <h1>The Interface IModel.</h1>
  *
- * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  * 
  */
 public interface IModel {
 	/**
 	 * Operation call to get a Map
-	 * @return IComponent
-	 * The Map.
+	 * 
+	 * @return IComponent The Map.
 	 * 
 	 */
 	public IComponent[][] getMap();
@@ -30,20 +31,21 @@ public interface IModel {
 	 * @param idMap
 	 *            The id of the level.
 	 * @throws SQLException
+	 *             The SQL exception
 	 */
 	public void generateMap(int idMap) throws SQLException;
 
 	/**
 	 * operation call to get a Lorann.
-	 * @return ILorann
-	 * The Lorann.
+	 * 
+	 * @return ILorann The Lorann.
 	 */
 	public ILorann getLorann();
 
 	/**
 	 * Operation call to get a Gate.
-	 * @return IGate
-	 * The Gate.
+	 * 
+	 * @return IGate The Gate.
 	 */
 	public IGate getGate();
 
@@ -55,8 +57,7 @@ public interface IModel {
 	 * @param direction
 	 *            The current direction of the spell.
 	 * 
-	 * @return ISpell 
-	 * The spell.
+	 * @return ISpell The spell.
 	 */
 	public ISpell getSpell(ICoordinate coordinate, Direction direction);
 

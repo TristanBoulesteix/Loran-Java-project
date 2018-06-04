@@ -8,7 +8,8 @@ import org.junit.Test;
 
 /**
  * <h1>The GameFrameTest class.</h1>
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ * 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */
@@ -19,6 +20,7 @@ public class GameFrameTest {
 	/**
 	 * 
 	 * @throws Exception
+	 *             An exception
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,6 +29,7 @@ public class GameFrameTest {
 	/**
 	 * 
 	 * @throws Exception
+	 *             An exception
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
@@ -35,6 +38,7 @@ public class GameFrameTest {
 	/**
 	 * 
 	 * @throws Exception
+	 *             An exception
 	 */
 	@Before
 	public void setUp() throws Exception {
@@ -42,6 +46,11 @@ public class GameFrameTest {
 		// frame = new GameFrame(model, null);
 	}
 
+	/**
+	 * 
+	 * @throws Exception
+	 *             An exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}

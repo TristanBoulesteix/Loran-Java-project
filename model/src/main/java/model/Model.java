@@ -13,9 +13,12 @@ import model.component.ISpell;
 import model.component.Lorann;
 import model.component.Spell;
 import model.dao.DTBReader;
+
 /**
  * <h1>The Model class.</h1>
- * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public class Model implements IModel {
@@ -23,47 +26,54 @@ public class Model implements IModel {
 	private Lorann lorann;
 	private Gate gate;
 	private Spell spell;
-/**
- * Constructor of Model.
- */
+
+	/**
+	 * Constructor of Model.
+	 */
 	public Model() {
 		components = new Component[12][20];//
 	}
-/**
- *  Creation of a Map
- */
+
+	/**
+	 * Creation of a Map
+	 */
 	public synchronized IComponent[][] getMap() {
 		return components;
 	}
-/**
- * Operation call to get a Map from DTB.
- * @param idMap
- * The id of the Map.
- * @return String
- * 	The id.
- * @throws SQLException
- */
+
+	/**
+	 * Operation call to get a Map from DTB.
+	 * 
+	 * @param idMap
+	 *            The id of the Map.
+	 * @return String The id.
+	 * @throws SQLException
+	 *             The SQL exception
+	 */
 	private String getMapFromDTB(int idMap) throws SQLException {
 		return DTBReader.ReturnMap(idMap);
 	}
-/**
- * Operation call to generate the Map.
- */
+
+	/**
+	 * Operation call to generate the Map.
+	 */
 	public void generateMap(int idMap) throws SQLException {
 		String map = getMapFromDTB(idMap);
 		components = ComponentFactory.buildComponentsFromMap(map);
 		lorann = ComponentFactory.getLorann();
 		gate = ComponentFactory.getGate();
 	}
-/**
- * Creation of an Lorann.
- */
+
+	/**
+	 * Creation of an Lorann.
+	 */
 	public Lorann getLorann() {
 		return lorann;
 	}
-/**
- * Operation call to get a gate.
- */
+
+	/**
+	 * Operation call to get a gate.
+	 */
 	public Gate getGate() {
 		return gate;// Creation of a Gate
 	}

@@ -5,18 +5,20 @@ import javax.swing.JOptionPane;
 import controller.Order;
 
 /**
- * <h1> The Enum Direction.</h1>
- * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * <h1>The Enum Direction.</h1>
+ * 
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public enum Direction {
 	UP, UPRIGHT, UPLEFT, RIGHT, LEFT, DOWN, DOWNRIGHT, DOWNLEFT;
 	/**
 	 * Operation call to get the direction from the Order.
+	 * 
 	 * @param order
-	 * 			The order of the human.
-	 * @return Direction
-	 * 			The result direction of Lorann.
+	 *            The order of the human.
+	 * @return Direction The result direction of Lorann.
 	 */
 	public static Direction getDirectionFromOrder(Order order) {
 		switch (order) {
@@ -57,6 +59,7 @@ public enum Direction {
 	 * This method allow us to get two opposite direction of an other direction.
 	 * 
 	 * @param direction
+	 *            The direction to oppose
 	 * 
 	 * @return Direction The opposite direction.
 	 */

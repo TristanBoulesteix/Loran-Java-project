@@ -12,6 +12,7 @@ import model.Model;
 
 /**
  * <h1>The test class ControllerTest.</h1>
+ * 
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *

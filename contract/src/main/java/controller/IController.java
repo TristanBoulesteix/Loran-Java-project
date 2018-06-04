@@ -8,7 +8,8 @@ import view.IGameFrame;
 /**
  * <h1>The Interface IController.</h1>
  * 
- * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  * 
  */
 public interface IController {
@@ -17,13 +18,17 @@ public interface IController {
 
 	/**
 	 * Operation call when a component move.
+	 * 
 	 * @param component
+	 *            The component to move
 	 * @param direction
+	 *            The current direction of the component
 	 */
 	public void moveComponent(IComponent component, Direction direction);
 
 	/**
 	 * Operation call when Lorann has an order to execute.
+	 * 
 	 * @param order
 	 *            The order Lorann has to execute.
 	 */
@@ -31,15 +36,15 @@ public interface IController {
 
 	/**
 	 * Operation call to get a model.
-	 * @return Imodel 
-	 * The interface the Model.
+	 * 
+	 * @return Imodel The interface the Model.
 	 */
 	public IModel getModel();
 
 	/**
 	 * Operation call to get a GameFrame.
-	 * @return 
-	 * IGameFrame The interface the GameFrame.
+	 * 
+	 * @return IGameFrame The interface the GameFrame.
 	 */
 	public IGameFrame getGameFrame();
 
@@ -52,28 +57,32 @@ public interface IController {
 
 	/**
 	 * Operation call to set a score
-	 * @param score The new score.
+	 * 
+	 * @param score
+	 *            The new score.
 	 */
 	public void setScore(int score);
 
 	/**
 	 * Operation call to ad a Victory.
-	 * @return boolean 
-	 * If the Victory is true or false.
+	 * 
+	 * @return boolean If the Victory is true or false.
 	 */
 	public boolean isVictory();
 
 	/**
 	 * Operation call to set a victory.
+	 * 
 	 * @param victory
-	 * set the victory to true or false.
+	 *            set the victory to true or false.
 	 */
 	public void setVictory(boolean victory);
 
 	/**
 	 * Operation call to remove a Component
+	 * 
 	 * @param component
-	 * The component.
+	 *            The component.
 	 */
 	public void removeComponent(IComponent component);
 }
