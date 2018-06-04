@@ -8,9 +8,9 @@ import java.sql.Statement;
 
 /**
  * <h1>The Class LorannDTBConnector.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ *<h1></h1>
+ *@author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * 
  */
 final class LorannDTBConnector {
 
