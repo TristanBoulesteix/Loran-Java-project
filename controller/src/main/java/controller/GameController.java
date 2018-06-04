@@ -74,10 +74,10 @@ public class GameController implements Runnable {
 			// Add popup for victory or defeat
 			int finalscore = 100 + controller.getScore();
 			JOptionPane.showMessageDialog(null, "CONGRATULATION !\nYour score is " + finalscore, "GAME OVER",
-					JOptionPane.OK_OPTION);
+					JOptionPane.INFORMATION_MESSAGE);
 		} else {
 			JOptionPane.showMessageDialog(null, "GAME OVER\nYour score is " + controller.getScore(), "GAME OVER",
-					JOptionPane.OK_OPTION);
+					JOptionPane.INFORMATION_MESSAGE);
 		}
 		controller.getGameFrame().dispose();
 	}
