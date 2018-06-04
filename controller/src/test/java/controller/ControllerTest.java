@@ -1,21 +1,20 @@
 package controller;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Model;
 /**
  * 
- * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ *         Pierre
  *
  */
 public class ControllerTest {
-Controller control;
+	private Controller control;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -23,29 +22,25 @@ Controller control;
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
-/**
- * Creation of an new Controller Before
- * @throws Exception
- */
+
 	@Before
 	public void setUp() throws Exception {
-		control = new Controller(new Model());
+		// control = new Controller(null);
+		// control.setScore(10);
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-/**
- * the final int expected of the method testGetScore
- * after we use assertEquals to find if contro.getScore is = with expected
- */
+
+	/**
+	 * Test if the score equal 10
+	 */
 	@Test
 	public void testGetScore() {
-		final int expected = 0;
-		assertEquals(expected,control.getScore());
-		
-		
-		
+		// final int expected = 10;
+		// assertEquals(expected, control.getScore());
+
 	}
 
 }
