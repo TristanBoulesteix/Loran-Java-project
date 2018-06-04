@@ -3,7 +3,7 @@ package model.component;
 import java.awt.Image;
 
 /**
- * 
+ * <h1>The Interface IComponent.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *

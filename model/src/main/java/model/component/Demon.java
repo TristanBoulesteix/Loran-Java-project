@@ -1,7 +1,7 @@
 package model.component;
 /**
- * Demon class
  * 
+ * <h1>The Demon class.</h1>
  * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

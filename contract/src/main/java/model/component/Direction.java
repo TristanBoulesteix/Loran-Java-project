@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import controller.Order;
 
 /**
- * 
+ * <h1> The Enum Direction.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

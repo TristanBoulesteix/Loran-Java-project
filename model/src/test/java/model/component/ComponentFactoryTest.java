@@ -11,7 +11,7 @@ import org.junit.Test;
 import model.Model;
 
 /**
- * 
+ * <h1>The ComponentFactoryTest class.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *

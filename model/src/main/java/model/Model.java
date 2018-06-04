@@ -14,7 +14,7 @@ import model.component.Lorann;
 import model.component.Spell;
 import model.dao.DTBReader;
 /**
- * 
+ * <h1>The Model class.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

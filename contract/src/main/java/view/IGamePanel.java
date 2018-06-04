@@ -2,7 +2,7 @@ package view;
 
 import model.component.IComponent;
 /**
- * 
+ * <h1>The interface IGamePanel.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

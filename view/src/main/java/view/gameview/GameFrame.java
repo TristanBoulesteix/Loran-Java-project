@@ -9,7 +9,7 @@ import controller.IController;
 import model.Model;
 import view.IGameFrame;
 /**
- * 
+ * <h1>The gameFrame class.</h1>
  * @author @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

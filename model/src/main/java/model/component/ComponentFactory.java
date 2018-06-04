@@ -2,7 +2,7 @@ package model.component;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 /**
- * 
+ * <h1>The ComponentFactory class.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 /**
- * 
+ * <h1>The Spell class.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *

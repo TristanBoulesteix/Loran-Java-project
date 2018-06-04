@@ -1,6 +1,6 @@
 package model.component;
 /**
- * 
+ * <h1>The Empty class.</h1>
  * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

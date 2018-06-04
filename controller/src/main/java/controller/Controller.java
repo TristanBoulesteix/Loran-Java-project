@@ -21,7 +21,7 @@ import view.gameview.GameFrame;
 import view.levelselector.LevelSelector;
 
 /**
- * 
+ * <h1>The class Controller.</h1>
  ** @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *

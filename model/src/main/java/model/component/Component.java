@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import model.dao.SpriteReader;
 /**
- * 
+ * <h1>The Component class.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

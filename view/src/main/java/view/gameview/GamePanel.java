@@ -14,7 +14,7 @@ import model.component.IComponent;
 import view.IGamePanel;
 
 /**
- * 
+ * <h1>The GamePanel class.</h1>
  * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *

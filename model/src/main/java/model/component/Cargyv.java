@@ -1,6 +1,6 @@
 package model.component;
 /**
- * 
+ * <h1>The Cargyv class.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

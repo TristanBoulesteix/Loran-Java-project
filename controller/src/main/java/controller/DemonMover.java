@@ -8,7 +8,7 @@ import model.component.Demon;
 import model.component.Direction;
 
 /**
- * Create the class DemonMover which is implements by Runnable.
+ * <h1>Create the class DemonMover which is implements by Runnable.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

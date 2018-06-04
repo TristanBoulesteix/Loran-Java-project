@@ -1,7 +1,7 @@
 package model.component;
 
 /**
- * 
+ * <h1>The interface ILorann.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *

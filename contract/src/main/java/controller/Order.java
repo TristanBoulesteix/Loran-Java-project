@@ -1,7 +1,7 @@
 package controller;
 
 /**
- * 
+ * <h1>The Enum Order.</h1>
  * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */

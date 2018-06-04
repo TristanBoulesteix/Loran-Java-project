@@ -1,7 +1,8 @@
 package model.component;
 /**
- * Coordinates use by component
  * 
+ * <h1>The Coordinate class.</h1>
+ * Coordinates use by component
  * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
