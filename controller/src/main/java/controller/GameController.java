@@ -5,6 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.swing.JOptionPane;
 
+import model.Model;
 import model.component.IComponent;
 import model.component.ILorann;
 
@@ -38,7 +39,7 @@ public class GameController implements Runnable {
 	public void run() {
 		int count = 0;
 
-		while (player.isAlive()) {
+		do {
 			IComponent[][] components = controller.getModel().getMap();
 
 			if (count == 4) {
@@ -71,18 +72,28 @@ public class GameController implements Runnable {
 			if (controller.isVictory()) {
 				break;
 			}
-		}
+		}while (player.isAlive());
 
+		int choice;
 		if (controller.isVictory()) {
 			// Add popup for victory or defeat.
 			int finalscore = 100 + controller.getScore();
-			JOptionPane.showMessageDialog(null, "CONGRATULATION !\nYour score is " + finalscore, "GAME OVER",
-					JOptionPane.INFORMATION_MESSAGE);
+			choice = JOptionPane.showConfirmDialog(null, "CONGRATULATION !\nYour score is " + finalscore + "\n\nDo you want to save the World of Nova-Ann again?", "GAME OVER",
+					JOptionPane.YES_NO_OPTION);
+			
 		} else {
-			JOptionPane.showMessageDialog(null, "GAME OVER\nYour score is " + controller.getScore(), "GAME OVER",
-					JOptionPane.INFORMATION_MESSAGE);
+			choice = JOptionPane.showConfirmDialog(null, "GAME OVER\nYour score is " + controller.getScore() + "\n\nDo you want to try again?", "GAME OVER",
+					JOptionPane.YES_NO_OPTION);
 		}
+		if(choice == JOptionPane.OK_OPTION) {
+			Model restartModel = new Model();
+			Controller restartController = new Controller(restartModel);
+			controller.getGameFrame().dispose();
+			restartController.play();
+		}
+		else{
 		controller.getGameFrame().dispose();
+		}
 	}
 
 }
