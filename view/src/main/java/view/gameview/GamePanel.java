@@ -16,15 +16,17 @@ import view.IGamePanel;
 /**
  * <h1>The GamePanel class.</h1>
  * 
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */
-@SuppressWarnings("serial")
 public class GamePanel extends JPanel implements IGamePanel, KeyListener {
+	/**
+	 * Default ID of the Panel.
+	 */
+	private static final long serialVersionUID = 1877366843920835435L;
 	private IComponent[][] components;
 	private IController controller;
-
 	/**
 	 * Constructor of Game Panel.
 	 * 
@@ -54,7 +56,7 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		/**
+		/*
 		 * We enlarge the images to put the game in full screen
 		 */
 		for (int x = 0; x < components.length; x++) {
@@ -68,7 +70,7 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-		/**
+		/*
 		 * we inform our program of the action of certain keys on the keyboard
 		 */
 		switch (keyCode) {
@@ -100,14 +102,10 @@ public class GamePanel extends JPanel implements IGamePanel, KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

@@ -12,14 +12,16 @@ import view.IGameFrame;
 /**
  * <h1>The gameFrame class.</h1>
  * 
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */
-@SuppressWarnings("serial")
 public class GameFrame extends JFrame implements IGameFrame {
+	/**
+	 *Default ID of the Frame. 
+	 */
+	private static final long serialVersionUID = -4728961914482503188L;
 	private GamePanel panel;
-
 	/**
 	 * Constructor of game frame
 	 * 
@@ -33,7 +35,7 @@ public class GameFrame extends JFrame implements IGameFrame {
 		 * We create a Frame with parameters We put the Panel attentive to the events
 		 * Prevent the creation of a shortcut bar at the top of the screen We put the
 		 * title of the game on the Frame We put the Frame on the center of the screen
-		 * We close the processus when we close the window We put the Frame on full
+		 * We close the process's when we close the window We put the Frame on full
 		 * screen We put the background in black We put the Panel on the center of the
 		 * Frame We forbid resizing
 		 */
@@ -45,7 +47,6 @@ public class GameFrame extends JFrame implements IGameFrame {
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		this.getContentPane().setBackground(Color.BLACK);
 		this.getContentPane().add(panel, BorderLayout.CENTER);
 		this.setResizable(false);
 	}

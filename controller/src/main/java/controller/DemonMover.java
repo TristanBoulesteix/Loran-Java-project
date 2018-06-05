@@ -16,7 +16,7 @@ import model.component.Direction;
  */
 public class DemonMover {
 	private Demon demon;
-	private static Controller controller;
+	private Controller controller;
 
 	/**
 	 * Operation call to move Demon.
@@ -28,7 +28,7 @@ public class DemonMover {
 	 */
 	public DemonMover(Demon demon, Controller controller) {
 		this.demon = demon;
-		DemonMover.controller = controller;
+		this.controller = controller;
 
 	}
 

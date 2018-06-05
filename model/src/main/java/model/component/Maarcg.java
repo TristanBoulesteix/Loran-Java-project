@@ -1,7 +1,7 @@
 package model.component;
 /**
  * <h1>The Maarcg class.</h1>
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
 public class Maarcg extends Demon {

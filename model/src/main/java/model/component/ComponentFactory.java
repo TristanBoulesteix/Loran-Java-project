@@ -273,13 +273,5 @@ public abstract class ComponentFactory {
 		return demons;
 	}
 
-	/**
-	 * Set Demons.
-	 * 
-	 * @param demons
-	 *            The demon.
-	 */
-	public static void setDemons(CopyOnWriteArrayList<Demon> demons) {
-		ComponentFactory.demons = demons;
-	}
+	
 }
