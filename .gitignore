@@ -31,6 +31,7 @@ vpp/.DS_Store
 model/src/main/ressources/Pictures/set/.DS_Store
 model/src/main/ressources/Pictures/.DS_Store
 model/src/main/ressources/.DS_Store
+*.DS_Store
 
 vpp/.LorannTeam.vpp.lck
 
