@@ -3,7 +3,7 @@ package model.component;
 import java.awt.Image;
 /**
  * <h1>The Gate class.</h1>
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
 public class Gate extends Touch implements IGate, Kill {

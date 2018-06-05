@@ -4,7 +4,7 @@ package model.component;
  * 
  * <h1>The Coordinate class.</h1> Coordinates use by component
  * 
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */
@@ -66,13 +66,6 @@ public class Coordinate implements ICoordinate {
 		this.y = y;
 	}
 
-	@Override
-	public String toString() {
-		String toReturn;
-
-		toReturn = "x = " + x;
-		toReturn = toReturn + " y = " + y;
-		return toReturn;
-	}
+	
 
 }

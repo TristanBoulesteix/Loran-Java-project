@@ -2,7 +2,7 @@ package model.component;
 /**
  * 
  * <h1>The Demon class.</h1>
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
 public abstract class Demon extends Component implements Kill {

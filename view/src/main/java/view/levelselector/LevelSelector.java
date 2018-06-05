@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
  * <h1>The LevelSelector class.</h1>
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
 public class LevelSelector {

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * <h1>The DTBReader class.</h1>
  * 
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean
  *         Pierre
  *
  */

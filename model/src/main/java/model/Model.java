@@ -65,7 +65,7 @@ public class Model implements IModel {
 	}
 
 	/**
-	 * Creation of an Lorann.
+	 * Creation of Lorann.
 	 */
 	public Lorann getLorann() {
 		return lorann;
@@ -75,7 +75,7 @@ public class Model implements IModel {
 	 * Operation call to get a gate.
 	 */
 	public Gate getGate() {
-		return gate;// Creation of a Gate
+		return gate;
 	}
 
 	@Override

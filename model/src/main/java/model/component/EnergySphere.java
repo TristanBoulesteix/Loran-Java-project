@@ -1,7 +1,7 @@
 package model.component;
 /**
  * <h1>The EnergySphere class.</h1>
- * @author BOULSTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
+ * @author BOULESTEIX Tristan, MAITRE Maxime, AZZOUZI Zacharia, KARDOUS Jean Pierre
  *
  */
 public class EnergySphere extends Touch {
@@ -23,10 +23,6 @@ public class EnergySphere extends Touch {
 		super(PATH, lorannPermeability, demonPermeability, coordinate, available, Direction.UP);
 	}
 
-	@Override
-	public void actionWhenContactHappend() {
-		super.actionWhenContactHappend();
 
-	}
 
 }
