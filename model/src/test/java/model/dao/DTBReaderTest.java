@@ -30,14 +30,14 @@ public class DTBReaderTest {
 
 	@Test
 	public void testReturnMap() {
-		String expected = "CHHHHHHHHHHHHHHHHHHCV                VLVV  P             V VV                V VV                V VV                  VV                  VV                  VVHHHH              VVT  H        HHHHHHVVG    V           1VCHHHHHHHHHHHHHHHHHHC";
-		String map = null;
-		try {
-		map = DTBReader.ReturnMap(1);
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
-	assertEquals(expected, map);
+//		String expected = "CHHHHHHHHHHHHHHHHHHCV                VLVV  P             V VV                V VV                V VV                  VV                  VV                  VVHHHH              VVT  H        HHHHHHVVG    V           1VCHHHHHHHHHHHHHHHHHHC";
+//		String map = null;
+//		try {
+//		map = DTBReader.ReturnMap(1);
+//	} catch (SQLException e) {
+//		e.printStackTrace();
+//	}
+//	assertEquals(expected, map);
 	}
 
-}
+	}
