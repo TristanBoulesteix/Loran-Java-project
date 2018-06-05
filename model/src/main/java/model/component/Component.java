@@ -34,7 +34,6 @@ public abstract class Component implements IComponent {
 	 * @param direction
 	 *            The default direction of the component
 	 */
-
 	public Component(String path, boolean lorannPermeability, boolean demonPermeability, ICoordinate coordinate,
 			Direction direction) {
 		this.LORANN_PERMEABILITY = lorannPermeability;
