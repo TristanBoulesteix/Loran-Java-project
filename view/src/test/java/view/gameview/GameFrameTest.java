@@ -21,40 +21,20 @@ public class GameFrameTest {
 	 GameFrame frame;
 	 Model model;
 
-	/**
-	 * 
-	 * @throws Exception
-	 *             An exception
-	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
 
-	/**
-	 * 
-	 * @throws Exception
-	 *             An exception
-	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
 
-	/**
-	 * 
-	 * @throws Exception
-	 *             An exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 		 model = new Model();
 		 frame = new GameFrame(model, null);
 	}
 
-	/**
-	 * 
-	 * @throws Exception
-	 *             An exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 	}
