@@ -37,7 +37,6 @@ public class GameFrame extends JFrame implements IGameFrame {
 		 * screen We put the background in black We put the Panel on the center of the
 		 * Frame We forbid resizing
 		 */
-
 		this.panel = new GamePanel(model, controller);
 		this.panel.setFocusable(true);
 		this.setUndecorated(true);
