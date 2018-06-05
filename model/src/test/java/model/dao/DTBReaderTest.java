@@ -1,8 +1,8 @@
 package model.dao;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 
-import java.sql.SQLException;
+//import java.sql.SQLException;
 
 import org.junit.After;
 import org.junit.AfterClass;

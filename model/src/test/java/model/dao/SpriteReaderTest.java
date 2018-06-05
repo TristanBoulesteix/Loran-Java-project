@@ -11,7 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SpriteReaderTest {
-//	private final static String PATH = "Pictures/";
+	private final static String PATH = "Pictures/";
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -32,17 +32,17 @@ public class SpriteReaderTest {
 
 	@Test
 	public void test() {
-//		String expected = "Can't create an ImageInputStream!";
-//		String exception = null;
+		String expected = "Can't create an ImageInputStream!";
+		String exception = null;
 
-//		try {
-//			@SuppressWarnings("unused")
-//			SpriteReader reader = new SpriteReader(PATH);
-//		} catch (IOException e) {
-//			exception = e.getMessage();
+		try {
+			@SuppressWarnings("unused")
+			SpriteReader reader = new SpriteReader(PATH);
+		} catch (IOException e) {
+			exception = e.getMessage();
 		}
 
-//		assertEquals(expected, exception);
-//	}
+		assertEquals(expected, exception);
+	}
 
 }

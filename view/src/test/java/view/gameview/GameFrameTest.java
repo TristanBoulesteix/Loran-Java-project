@@ -1,10 +1,14 @@
 package view.gameview;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import model.Model;
 
 /**
  * <h1>The GameFrameTest class.</h1>
@@ -14,8 +18,8 @@ import org.junit.Test;
  *
  */
 public class GameFrameTest {
-	// GameFrame frame;
-	// Model model;
+	 GameFrame frame;
+	 Model model;
 
 	/**
 	 * 
@@ -42,8 +46,8 @@ public class GameFrameTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		// model = new Model();
-		// frame = new GameFrame(model, null);
+		 model = new Model();
+		 frame = new GameFrame(model, null);
 	}
 
 	/**
@@ -60,9 +64,9 @@ public class GameFrameTest {
 	 */
 	@Test
 	public void testGetPanel() {
-		//
-		// final GamePanel expected = this.frame.getPanel();
-		// assertEquals(expected, frame.getPanel());
+		
+		 final GamePanel expected = this.frame.getPanel();
+		 assertEquals(expected, frame.getPanel());
 	}
 
 }

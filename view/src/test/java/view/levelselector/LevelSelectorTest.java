@@ -1,14 +1,13 @@
 package view.levelselector;
 
-// import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-//import view.levelselector.LevelSelector;
+import view.levelselector.LevelSelector;
 
 public class LevelSelectorTest {
 
@@ -30,8 +29,8 @@ public class LevelSelectorTest {
 
 	@Test
 	public void testGetLevel() {
-//		final int expected = 1;
-//		assertEquals (expected, LevelSelector.getLevel());
+		final int expected = 1;
+		assertEquals (expected, LevelSelector.getLevel());
 	}
 
 }
