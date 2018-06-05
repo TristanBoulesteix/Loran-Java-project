@@ -23,16 +23,13 @@ public class SpriteReader {
 	 * 
 	 * @param path
 	 *            The path for the folder which contain the sprites
+	 * @throws IOException
 	 */
-	public SpriteReader(String path) {
+	public SpriteReader(String path) throws IOException {
 		this.path = path;
 		this.sprites = new ArrayList<Image>();
-		try {
-			this.generateImagesList();
+		this.generateImagesList();
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/**

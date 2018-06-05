@@ -1,6 +1,7 @@
 package model.component;
 
 import java.awt.Image;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import model.dao.SpriteReader;
@@ -26,9 +27,9 @@ public abstract class Component implements IComponent {
 	 * @param path
 	 *            The path.
 	 * @param lorannPermeability
-	 *            The lorann Permeability.
+	 *            The lorann permeability.
 	 * @param demonPermeability
-	 *            The demon Permeability.
+	 *            The demon permeability.
 	 * @param coordinate
 	 *            The coordinate.
 	 * @param direction
@@ -42,7 +43,14 @@ public abstract class Component implements IComponent {
 		this.sprites = new ArrayList<Image>();
 		this.setDirection(direction);
 
-		SpriteReader reader = new SpriteReader(path);
+		SpriteReader reader = null;
+
+		try {
+			reader = new SpriteReader(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		sprites = reader.getSprites();
 	}
 
