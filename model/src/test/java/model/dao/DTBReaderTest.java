@@ -1,6 +1,8 @@
 package model.dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.sql.SQLException;
 
 //import java.sql.SQLException;
 
@@ -30,14 +32,14 @@ public class DTBReaderTest {
 
 	@Test
 	public void testReturnMap() {
-	String expected = "CHHHHHHHHHHHHHHHHHHCV                VLVV  P             V VV                V VV                V VV                  VV                  VV                  VVHHHH              VVT  H        HHHHHHVVG    V           1VCHHHHHHHHHHHHHHHHHHC";
+		String expected = "CHHHHHHHHHHHHHHHHHHCV                VLVV  P             V VV                V VV                V VV                  VV                  VV                  VVHHHH              VVT  H        HHHHHHVVG    V           1VCHHHHHHHHHHHHHHHHHHC";
 		String map = null;
 		try {
-		map = DTBReader.ReturnMap(1);
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
-	assertEquals(expected, map);
+			map = DTBReader.ReturnMap(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		assertEquals(expected, map);
 	}
 
-	}
+}
