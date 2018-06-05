@@ -1,10 +1,7 @@
 package view.gameview;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-
 import javax.swing.JFrame;
-
 import controller.IController;
 import model.Model;
 import view.IGameFrame;
