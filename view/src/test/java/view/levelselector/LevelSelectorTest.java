@@ -1,4 +1,4 @@
-package view.gameview;
+package view.levelselector;
 
 import static org.junit.Assert.*;
 
